@@ -1,0 +1,499 @@
+{
+  "type": "module",
+  "name": "apptablet",
+  "version": "4.2.1",
+  "revision": null,
+  "path": "application\/modules\/Apptablet",
+  "repository": null,
+  "date": "Thu, 29 Aug 2013 09:55:02 +0000",
+  "title": "Touch-Tablet",
+  "description": "Tablet Extension",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "<a href=\"http:\/\/www.hire-experts.com\" title=\"Hire-Experts LLC\" target=\"_blank\">Hire-Experts LLC<\/a>"
+  ],
+  "changeLog": null,
+  "meta": {
+    "date": "Thu, 29 Aug 2013 09:55:02 +0000",
+    "title": "Touch-Tablet",
+    "description": "Tablet Extension",
+    "developer": null,
+    "authors": [
+      "<a href=\"http:\/\/www.hire-experts.com\" title=\"Hire-Experts LLC\" target=\"_blank\">Hire-Experts LLC<\/a>"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Apptablet\/settings\/install.php",
+    "class": "Apptablet_Installer",
+    "priority": 100
+  },
+  "dependencies": {
+    "module-core": {
+      "type": "module",
+      "name": "core",
+      "guid": "module-core",
+      "minVersion": "4.1.8",
+      "maxVersion": null,
+      "excludeExcept": null
+    },
+    "module-hecore": {
+      "type": "module",
+      "name": "hecore",
+      "guid": "module-hecore",
+      "minVersion": "4.2.0p5",
+      "maxVersion": null,
+      "excludeExcept": null
+    },
+    "module-apptouch": {
+      "type": "module",
+      "name": "apptouch",
+      "guid": "module-apptouch",
+      "minVersion": "4.2.3",
+      "maxVersion": null,
+      "excludeExcept": null
+    }
+  },
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Apptablet": {
+      "type": "directory",
+      "path": "application\/modules\/Apptablet",
+      "structure": [
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 276,
+          "sha1": "2456ef6fac7e35ee6513aa9a02d24f6d1df278d6"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 221,
+          "sha1": "9ed17ed76597d34b6a0a732e8c67986c7038947e"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/AdminThemesController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 11044,
+          "sha1": "818469fc5d79e1c7416d7b09dd0f3a0c5222693d"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 147,
+          "sha1": "9f1638a8edbe1c5d28789e017fb35b2f2465f01e"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/activity.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 633,
+          "sha1": "38001d3a0ceb3f37c525d259928ad0c872d5ee73"
+        },
+        {
+          "path": "externals\/scripts\/components.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5408,
+          "sha1": "6c9d8e6057cd59649e41fdfe27cfab2241e4aa88"
+        },
+        {
+          "path": "externals\/scripts\/core.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1697,
+          "sha1": "f55f59bf4c4faffc4ad164a354a9f858797bc046"
+        },
+        {
+          "path": "externals\/scripts\/initializers.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1058,
+          "sha1": "75623eb96e4dfd5367225b134dadf264dec1afd7"
+        },
+        {
+          "path": "externals\/scripts\/jquery.lazyload.min.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3205,
+          "sha1": "3dca939907b8cd5d06ec40c83fe429bc6a6ee399"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/activity.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3530,
+          "sha1": "7cdfc5688d8ec32620fd9a623b34008daf9deedb"
+        },
+        {
+          "path": "externals\/styles\/admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/admin\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 740,
+          "sha1": "ab0269233aa9368a77009324131fc2e0bcb12a6a"
+        },
+        {
+          "path": "externals\/styles\/components.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4748,
+          "sha1": "c1487b77212f1e977880eacc898345cb1e10d2ac"
+        },
+        {
+          "path": "externals\/styles\/core.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2482,
+          "sha1": "55294a7c6f46f78e5bc68a3ab7a2ffcee49defe8"
+        },
+        {
+          "path": "externals\/styles\/custom.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3293,
+          "sha1": "6fc0bfbb6fe52fe5d6d6955e7265701ea1a6c67e"
+        },
+        {
+          "path": "externals\/themes",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/themes\/default",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/themes\/default\/theme.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1026,
+          "sha1": "cb93e70e0bd93ef1bef2c11c0dbb3cc23dfe80d8"
+        },
+        {
+          "path": "externals\/themes\/gray",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/themes\/gray\/theme.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 949,
+          "sha1": "a465ebb77c5ea52ca8db102d12e206454f9fa053"
+        },
+        {
+          "path": "externals\/themes\/green",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/themes\/green\/theme.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1026,
+          "sha1": "cb93e70e0bd93ef1bef2c11c0dbb3cc23dfe80d8"
+        },
+        {
+          "path": "externals\/themes\/orange",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/themes\/orange\/theme.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1026,
+          "sha1": "cb93e70e0bd93ef1bef2c11c0dbb3cc23dfe80d8"
+        },
+        {
+          "path": "externals\/themes\/pinkbox",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/themes\/pinkbox\/theme.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1028,
+          "sha1": "33537fe3b9160b8e7968490fdbbcdd8754a61694"
+        },
+        {
+          "path": "externals\/themes\/purplebox",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/themes\/purplebox\/theme.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1028,
+          "sha1": "33537fe3b9160b8e7968490fdbbcdd8754a61694"
+        },
+        {
+          "path": "externals\/themes\/skyblue",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/themes\/skyblue\/theme.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 960,
+          "sha1": "1d031f4dc162ff50b70b8195a3cdea5b18fea8e6"
+        },
+        {
+          "path": "externals\/themes\/yellow",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/themes\/yellow\/theme.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1026,
+          "sha1": "cb93e70e0bd93ef1bef2c11c0dbb3cc23dfe80d8"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4415,
+          "sha1": "a253b512473aa451c634dcb0e952d5834e07b1cb"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1711,
+          "sha1": "11b154584c6fed6fdfb15fbd5c9904885d25f925"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 189,
+          "sha1": "7209ef5bd6d7bd4b7dd2438adf7b44e950fc5b16"
+        },
+        {
+          "path": "View",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "View\/Helper",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "View\/Helper\/Apptablet.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2078,
+          "sha1": "8d85b09f50f262b312b4f812aefbba68e83b6e1c"
+        },
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-themes",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-themes\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5603,
+          "sha1": "4d7a68c60a6444ac68a240abf5d23bfb509256f5"
+        },
+        {
+          "path": "views\/scripts\/_feedItem.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10015,
+          "sha1": "65193c841d52dc047c56b70fc8f17f50e9eed9fe"
+        },
+        {
+          "path": "views\/scripts\/_templates",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/_templates\/ui.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4555,
+          "sha1": "9e19c7b400197d7c2d4ab9116adc2c8b6b4d9bb0"
+        }
+      ]
+    },
+    "application\/languages\/en\/apptablet.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/apptablet.csv",
+      "structure": {
+        "path": "apptablet.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 137,
+        "sha1": "fef8eb949cd5fc7ce9257d6f9defad2e198eb41e"
+      }
+    }
+  }
+}

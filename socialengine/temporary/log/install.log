@@ -1,0 +1,818 @@
+2014-01-20T04:44:03+00:00 NOTICE (5): [8] Undefined offset: 0 (/Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Translate/Adapter.php) [740]
+Error Code: 74b619
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Form.php(2288): Zend_Translate_Adapter->translate(Array)
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Form/Decorator/FormErrors.php(366): Zend_Form->getMessages()
+#2 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Form/Decorator/FormErrors.php(68): Engine_Form_Decorator_FormErrors->_recurseForm(Install_Form_DbInfo, Zend_View)
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Form.php(2644): Engine_Form_Decorator_FormErrors->render('<div class="form-elements">
+<div...')
+#4 /Applications/MAMP/htdocs/socialengine/install/views/scripts/install/db-info.tpl(24): Zend_Form->render(Zend_View)
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/View.php(108): include('/Applications/MAMP/htdocs/social...')
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/View/Abstract.php(835): Zend_View->_run('/Applications/MAMP/htdocs/social...')
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action/Helper/ViewRenderer.php(903): Zend_View_Abstract->render('install/db-info.tpl')
+#8 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action/Helper/ViewRenderer.php(924): Zend_Controller_Action_Helper_ViewRenderer->renderScript('install/db-info.tpl', )
+#9 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action/Helper/ViewRenderer.php(963): Zend_Controller_Action_Helper_ViewRenderer->render()
+#10 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action/HelperBroker.php(277): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#11 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(523): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#12 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('dbInfoAction')
+#13 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#14 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#15 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#16 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#17 {main}
+
+2014-01-21T07:50:42+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/languages/en/question.csv (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: fad2e0
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/languages/en/questio...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:50:42+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Question/Bootstrap.php (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: ea31fc
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Question/Boo...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:50:42+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Question (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 41d5f5
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Question')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:50:42+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/packages/module-question-4.0.0.json (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 78a2b7
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/packages/module-ques...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:54:07+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/languages/en/hecore.csv (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: a69414
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/languages/en/hecore....')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:54:07+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Hecore/Api/Core.php (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 855761
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Hecore/Api/C...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:54:07+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Hecore/Api (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 227b6a
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Hecore/Api')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:54:07+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Hecore (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 3bee1e
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Hecore')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:54:07+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/packages/module-hecore-4.2.0p9.json (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: e9480c
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/packages/module-heco...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:58:03+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/languages/en/like.csv (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 32fa07
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/languages/en/like.cs...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:58:03+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Like/Api/Core.php (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 5137ca
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Like/Api/Cor...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:58:03+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Like/Api (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: f8ee49
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Like/Api')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:58:03+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Like (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 084e59
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Like')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:58:03+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/packages/module-like-4.2.2p4.json (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 27055f
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/packages/module-like...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:58:12+00:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (externals)' in /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#2 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#4 {main}
+2014-01-21T07:59:52+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/languages/en/page.csv (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 918db4
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/languages/en/page.cs...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:59:52+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Page/Api/Core.php (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 9d90cf
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Page/Api/Cor...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:59:52+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Page/Api (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: a3ee8b
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Page/Api')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:59:52+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Page (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: e2456a
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Page')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T07:59:52+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/packages/module-page-4.2.8p4.json (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 744a3e
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/packages/module-page...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T08:00:11+00:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (externals)' in /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#2 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#4 {main}
+2014-01-21T08:11:33+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/languages/en/pagediscussion.csv (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: b21cb0
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/languages/en/pagedis...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T08:11:33+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Pagediscussion/Api/Core.php (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 7140d4
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Pagediscussi...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T08:11:33+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Pagediscussion/Api (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: a67bee
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Pagediscussi...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T08:11:33+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Pagediscussion (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: e4e8a5
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Pagediscussi...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T08:11:33+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/packages/module-pagediscussion-4.1.8p3.json (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: e7ce39
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/packages/module-page...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T08:11:38+00:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (externals)' in /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#2 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#4 {main}
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/languages/en/photoviewer.csv (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: a3d929
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/languages/en/photovi...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Photoviewer/Bootstrap.php (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: a113b3
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Photoviewer/...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Photoviewer (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 4e28ad
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Photoviewer')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/packages/module-photoviewer-4.2.9p7.json (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: d3a954
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/packages/module-phot...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/languages/en/wall.csv (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: e13b43
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/languages/en/wall.cs...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Oauth.php (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 5d26f1
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/libraries/Zend/Oauth...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Oauth/Client.php (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 12e907
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/libraries/Zend/Oauth...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Oauth (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: f1d37d
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/libraries/Zend/Oauth')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Wall/Api/Core.php (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 8a4c03
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Wall/Api/Cor...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Wall/Api (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 4f95ec
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Wall/Api')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Wall (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: b575ad
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Wall')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/packages/module-wall-4.2.6p7.json (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 038564
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/packages/module-wall...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/languages/en/hequestion.csv (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: f2ff8e
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/languages/en/hequest...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Hequestion/Api/Core.php (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 955fa2
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Hequestion/A...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Hequestion/Api (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: a5de60
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Hequestion/A...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Hequestion (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: a0e194
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Hequestion')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:19+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/packages/module-hequestion-4.2.5.json (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: cf8dfc
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/packages/module-hequ...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:01:51+00:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (externals)' in /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#2 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#4 {main}
+2014-01-21T12:02:20+00:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (externals)' in /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#2 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#4 {main}
+2014-01-21T12:36:18+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/languages/en/apptouch.csv (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 04fabd
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/languages/en/apptouc...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:36:18+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Apptouch/Api/Ad.php (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: d0c765
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Apptouch/Api...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:36:18+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Apptouch/Api (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: a05459
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Apptouch/Api')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:36:18+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Apptouch (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: c9c1b8
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Apptouch')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:36:18+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/packages/module-apptouch-4.2.4.json (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 8f2284
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/packages/module-appt...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:36:21+00:00 WARN (4): [2] constant(): Couldn't find constant _ENGINE_SSL (/Applications/MAMP/htdocs/socialengine/temporary/package/packages/module-apptouch-4.2.4/application/modules/Apptouch/settings/install.php) [49]
+Error Code: 9e3616
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/temporary/package/packages/module-apptouch-4.2.4/application/modules/Apptouch/settings/install.php(49): constant('_ENGINE_SSL')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Package/Installer/Abstract.php(162): Apptouch_Installer->onPreInstall()
+#2 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Package/Manager.php(681): Engine_Package_Installer_Abstract->notify('preinstall')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Package/Manager.php(652): Engine_Package_Manager->execute(Engine_Package_Manager_Operation_Install, 'preinstall', )
+#4 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(945): Engine_Package_Manager->callback(Engine_Package_Manager_Transaction, 'preinstall')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->queryAction()
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('queryAction')
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#8 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#9 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#10 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#11 {main}
+
+2014-01-21T12:36:23+00:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (externals)' in /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#2 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#4 {main}
+2014-01-21T12:36:58+00:00 WARN (4): [2] constant(): Couldn't find constant _ENGINE_SSL (/Applications/MAMP/htdocs/socialengine/temporary/package/packages/module-apptouch-4.2.4/application/modules/Apptouch/settings/install.php) [49]
+Error Code: 1735d8
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/temporary/package/packages/module-apptouch-4.2.4/application/modules/Apptouch/settings/install.php(49): constant('_ENGINE_SSL')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Package/Installer/Abstract.php(162): Apptouch_Installer->onPreInstall()
+#2 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Package/Manager.php(681): Engine_Package_Installer_Abstract->notify('preinstall')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Package/Manager.php(652): Engine_Package_Manager->execute(Engine_Package_Manager_Operation_Install, 'preinstall', )
+#4 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(945): Engine_Package_Manager->callback(Engine_Package_Manager_Transaction, 'preinstall')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->queryAction()
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('queryAction')
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#8 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#9 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#10 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#11 {main}
+
+2014-01-21T12:38:05+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/languages/en/apptablet.csv (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 6088d7
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/languages/en/apptabl...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:38:05+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Apptablet/Api/Core.php (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: cf7b76
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Apptablet/Ap...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:38:05+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Apptablet/Api (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 14c325
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Apptablet/Ap...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:38:05+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/modules/Apptablet (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: 02fc18
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/modules/Apptablet')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:38:05+00:00 WARN (4): [2] stat(): stat failed for /Applications/MAMP/htdocs/socialengine/application/packages/module-apptablet-4.2.1.json (/Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php) [77]
+Error Code: ef68d3
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/System.php(77): stat('/Applications/MAMP/htdocs/social...')
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Engine/Vfs/Adapter/Abstract.php(224): Engine_Vfs_Adapter_System->stat('/Applications/MAMP/htdocs/social...')
+#2 /Applications/MAMP/htdocs/socialengine/install/controllers/ManageController.php(752): Engine_Vfs_Adapter_Abstract->info('application/packages/module-appt...')
+#3 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Action.php(513): ManageController->permsAction()
+#4 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php(289): Zend_Controller_Action->dispatch('permsAction')
+#5 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Zend_Controller_Request_Http, Zend_Controller_Response_Http)
+#6 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#7 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#8 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#9 {main}
+
+2014-01-21T12:38:09+00:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (externals)' in /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application/Bootstrap/Bootstrap.php(77): Zend_Controller_Front->dispatch()
+#2 /Applications/MAMP/htdocs/socialengine/application/libraries/Zend/Application.php(358): Zend_Application_Bootstrap_Bootstrap->run()
+#3 /Applications/MAMP/htdocs/socialengine/install/index.php(87): Zend_Application->run()
+#4 {main}
