@@ -1,1 +1,0 @@
-INSERT IGNORE INTO `engine4_core_modules` (`name`, `title`, `description`, `version`, `enabled`, `type`) VALUES  ('question', 'Question', 'Allows a user to submit a HooZoo Question', '4.0.0', 1, 'extra') ;
