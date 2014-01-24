@@ -23,8 +23,8 @@ class Question_Form_Create extends Engine_Form
     $this->addElement('textarea', 'description', array(
       'label' => 'Description',
       'filters' => array(
-        new Engine_Filter_Censor(),
-        'StripTags'
+        new Engine_Filter_Censor()
+        //'StripTags'
       )
     ));
 

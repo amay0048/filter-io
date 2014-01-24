@@ -23,3 +23,5 @@ INSERT IGNORE INTO engine4_core_menuitems (`name`, `module`, `label`, `plugin`, 
 ('question_main_browse', 'question', 'Browse Questions', 'Question_Plugin_Menus::canViewQuestions', '{"route":"question_general","action":"browse"}', 'question_main', '', 1, 0, 1),
 ('question_main_manage', 'question', 'My Questions', 'Question_Plugin_Menus::canCreateQuestions', '{"route":"question_general","action":"manage"}', 'question_main', '', 1, 0, 2),
 ('question_main_create', 'question', 'Create Question', 'Question_Plugin_Menus::canCreateQuestions', '{"route":"question_general","action":"create"}', 'question_main', '', 1, 0, 3);
+INSERT INTO engine4_activity_actiontypes (`type`, `module`, `body`, `enabled`, `displayable`, `attachable`, `commentable`, `shareable`, `is_generated`) VALUES
+('question', 'question', '{item:$subject} asked {var:$question}', 1, 7, 1, 1, 1, 1);
