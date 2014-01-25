@@ -813,6 +813,7 @@ class Apptouch_Controller_Action_Helper_Components extends Apptouch_Controller_A
   // Feed
   public function feed(array $params = array())
   {
+	  /** (amay0048) This is where the feed gets rendered in the touch components **/
     $this->_bridge->attrPage('class', $this->_bridge->attrPage('class') . ' smooth-scroll');
     $feed = array();
 

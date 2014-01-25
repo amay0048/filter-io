@@ -1,0 +1,224 @@
+
+"QUESTION_ADD_OPTION"; "Add an option ... "
+"Add Question"; "Add Question"
+"%s vote"; "%s vote"; "%s votes"
+"%s follower"; "%s followers"; "%s followers"
+"QUESTION_ADD_ANSWER"; "Add an answer ..."
+"QUESTION_ADD_ANWER_SUBMIT"; "Add"
+"QUESTION_FOLLOW"; "Follow"
+"QUESTION_UNFOLLOW"; "Unfollow"
+"QUESTION_ASK_FRIENDS"; "Ask friends"
+"QUESTION_UNVOTE"; "Unvote"
+"QUESTION_SUBMIT"; "Share"
+
+"QUESTION_Everyone"; "Public"
+"QUESTION_Friends and Networks"; "Friends and Networks"
+"QUESTION_Friends Only"; "My Friends"
+"QUESTION_Just Me"; "Only me"
+
+"QUESTION_%s More"; "%s More"
+"QUESTION_ALLOW_ADD_OPTIONS"; "Allow anyone to add options"
+"QUESTIONS_Edit options"; "Edit options"
+"QUESTION_Ask friends"; "Ask friends"
+"QUESTION_Done Editing"; "Complete Editing"
+"QUESTION_OPTION_DELETE"; "Are you sure you would like to delete this option?"
+"QUESTION_QUESTIONS"; "Questions"
+
+"QUESTION_ANSWER_BODY"; "%1$s has answered %2$s with %3$s"
+
+"QUESTION_ERROR"; "Please enter a valid (non-empty and less than 255) question."
+"QUESTION_ERROR_LEAST_OPTIONS"; "Please add at least two options."
+
+
+"ADMIN_ACTIVITY_TYPE_COMMENT_QUESTION"; "When a user (subject) comments on a question (object)"
+"ADMIN_ACTIVITY_TYPE_QUESTION_ANSWER"; "When a user (subject) answered to question (object)"
+"ADMIN_ACTIVITY_TYPE_QUESTION_ASK"; "When a user (subject) asks question (object)"
+"ADMIN_ACTIVITY_TYPE_QUESTION_ASK_SELF"; "When a user (subject) asks question (object) on own profile"
+
+"_ACTIVITY_ACTIONTYPE_COMMENT_QUESTION"; "Comments on your questions"
+"_ACTIVITY_ACTIONTYPE_QUESTION_ANSWER"; "Answers"
+"_ACTIVITY_ACTIONTYPE_QUESTION_ASK"; "Posts a new questions"
+"_ACTIVITY_ACTIONTYPE_QUESTION_ASK_SELF"; "Posts a new question on own profile"
+
+
+"{item:$subject} commented on {item:$owner}'s {item:$object:question}: {body:$body}."; "{item:$subject} commented on {item:$owner}'s {item:$object:question}: {body:$body}."
+"{item:$subject} answered {item:$object} with {var:$body}"; "{item:$subject} answered {item:$object} with {var:$body}"
+"{actors:$subject:$object} asked {var:$question}"; "{actors:$subject:$object} asked {var:$question}"
+"{item:$subject} asked {var:$question}"; "{item:$subject} asked {var:$question}"
+
+
+
+"ACTIVITY_TYPE_QUESTION_ANSWER"; "When someone answers your question"
+"ACTIVITY_TYPE_QUESTION_ASK"; "When someone is asking you"
+"ACTIVITY_TYPE_QUESTION_FOLLOW"; "When someone answered a question you follow"
+
+
+"{item:$subject} has answered {item:$object}."; "{item:$subject} has answered {item:$object}."
+"{item:$subject} has asked you {item:$object}."; "{item:$subject} has asked you {item:$object}."
+"{item:$subject} has answered {item:$object}."; "{item:$subject} has answered {item:$object}."
+
+
+
+"_EMAIL_NOTIFY_QUESTION_ANSWER_TITLE"; "Someone answered your question"
+"_EMAIL_NOTIFY_QUESTION_ASK_TITLE"; "Your friend suggested you to take a part in question"
+"_EMAIL_NOTIFY_QUESTION_FOLLOW_TITLE"; "Someone answered the question you follow"
+
+
+
+
+
+
+
+"_EMAIL_NOTIFY_QUESTION_ANSWER_TITLE"; "Someone answered question of member"
+"_EMAIL_NOTIFY_QUESTION_ANSWER_DESCRIPTION"; "This email is sending to the member when someone answers his question."
+"_EMAIL_NOTIFY_QUESTION_ANSWER_SUBJECT"; "Your question has been answered"
+"_EMAIL_NOTIFY_QUESTION_ANSWER_BODY"; "[header]
+
+[sender_title] has answered your question. Please click the following link to view it:
+
+http://[host][object_link]
+
+[footer]"
+
+"_EMAIL_NOTIFY_QUESTION_ASK_TITLE"; "Member asked friend a question"
+"_EMAIL_NOTIFY_QUESTION_ASK_DESCRIPTION"; "This email is sending to a member when his friend asks him a question."
+"_EMAIL_NOTIFY_QUESTION_ASK_SUBJECT"; "You have been asked a question"
+"_EMAIL_NOTIFY_QUESTION_ASK_BODY"; "[header]
+
+You have been asked a question:
+[object_title]
+
+Please click the following link to view it:
+
+http://[host][object_link]
+
+[footer]"
+
+"_EMAIL_NOTIFY_QUESTION_FOLLOW_TITLE"; "Someone answered on question that member follows"
+"_EMAIL_NOTIFY_QUESTION_FOLLOW_DESCRIPTION"; "This email is sending to the member to notify him that new answer has apperead on question he follows."
+"_EMAIL_NOTIFY_QUESTION_FOLLOW_SUBJECT"; "Someone has answered a question you follow"
+"_EMAIL_NOTIFY_QUESTION_FOLLOW_BODY"; "[header]
+
+[sender_title] has answered the question you follow. Please click the link to view it:
+
+http://[host][object_link]
+
+[footer]"
+
+
+
+
+
+
+
+
+
+
+
+"QUESTION_LIST_TITLE_VOTERS"; "People who voted for this option"
+"QUESTION_FRIENDS"; "Friends"
+
+"%s other people"; "%s other people"; "%s other peoples"
+"QUESTION_REMOVE_LINK"; "Remove from here"
+"QUESTION_ASKED"; "Asked by"
+"QUESTION_ASKED_SUCCESS"; "You asked your friends"
+
+"QUESTION_ADMIN_QUESTION_TITLE"; "Advanced Questions"
+"QUESTION_VIEWS_SCRIPTS_ADMINMANAGE_INDEX_DESCRIPTION"; "This page lists all of the questions your users have posted. You can use this page to monitor these questions and delete offensive material if necessary."
+"QUESTION_ADMIN_DELETE_CONFIRM"; "Are you sure you want to delete the selected questions?"
+
+"QUESTION_DELETE_TITLE"; "Are you sure you want to delete this question?"
+"QUESTION_DELETE_DESCRIPTION"; "You will not have possibility to restore it."
+
+"QUESTION_ADMIN_DELETE_TITLE"; "Are you sure you want to delete this question?"
+"QUESTION_ADMIN_DELETE_DESCRIPTION"; "You will not have possibility to restore it."
+
+"QUESTION_MAX_OPTIONS"; "The question has exceeded a possible limitation of options"
+
+
+"QUESTION_FORM_ADMIN_LEVEL_DESCRIPTION"; "These settings are applied on a per member level basis. Start by selecting the member level you want to modify, then adjust the settings for that level below."
+"QUESTION_Allow Viewing of Questions?"; "Allow Viewing of Questions?"
+"QUESTION_FORM_ADMIN_LEVEL_VIEW_DESCRIPTION"; "Do you want to let members view question? If you will set no, some other settings on this page may not apply."
+
+"QUESTION_Yes, allow viewing of all questions, even private ones."; "Yes, allow viewing of all questions, even private ones."
+"QUESTION_Yes, allow viewing of questions."; "Yes, allow viewing questions."
+"QUESTION_No, do not allow questions to be viewed."; "No, do not allow to view questions."
+
+"QUESTION_Allow Questions?"; "Allow Creating Questions?"
+"QUESTION_Do you want to allow members to create question?"; "Do you want to allow members to create question?"
+"QUESTION_Yes, allow this member level to create question"; "Yes, allow this member level to create question"
+"QUESTION_No, do not allow this member level to create question"; "No, do not allow this member level to create a question"
+
+"QUESTION_Allow Editing of Questions?"; "Allow Editing of Questions?"
+"QUESTION_Do you want to let members edit questions? If set to no, some other settings on this page may not apply."; "Do you want to let members edit questions? If you will set no, some other settings on this page may not apply."
+"QUESTION_Yes, allow members to edit all questions."; "Yes, allow members to edit all questions."
+"QUESTION_Yes, allow members to edit their own questions."; "Yes, allow members to edit their own questions."
+"QUESTION_No, do not allow members to edit their questions."; "No, do not allow members to edit their questions."
+
+"QUESTION_Allow Deletion of Questions?"; "Allow Deletion of Questions?"
+"QUESTION_FORM_ADMIN_LEVEL_DELETE_DESCRIPTION"; "Do you want to let members delete polls? If you will set no, some other settings on this page may not apply."
+"QUESTION_Yes, allow members to delete all questions."; "Yes, allow members to delete all questions."
+"QUESTION_Yes, allow members to delete their own questions."; "Yes, allow members to delete their own questions."
+"QUESTION_No, do not allow members to delete their questions."; "No, do not allow members to delete their questions."
+
+"QUESTION_Allow Commenting on Questions?"; "Allow Commenting on Questions?"
+"QUESTION_Do you want to let members of this level comment on questions?"; "Do you want to let members of this level comment questions?"
+"QUESTION_Yes, allow members to comment on all questions, including private ones."; "Yes, allow members to comment on all questions, including private questions."
+"QUESTION_Yes, allow members to comment on questions."; "Yes, allow members to comment questions."
+"QUESTION_No, do not allow members to comment on questions."; "No, do not allow members to comment questions."
+
+"QUESTION_Question Privacy"; "Question Privacy"
+"QUESTION_FORM_ADMIN_LEVEL_AUTHVIEW_DESCRIPTION"; "Your members can choose from any of the options checked below when they decide who can see their question. If you will not select any options, settings will default to the last saved configuration. If you select only one option, members of this level will not have a choice."
+
+
+"QUESTION_These settings affect all members in your community."; "These settings affect all members in your community."
+"QUESTION_Questions Per Page"; "Questions on each Page"
+"QUESTION_How many questions will be shown per page? (Enter a number between 1 and 999)"; "How many questions will be shown on each page? (Enter a number between 1 and 999)"
+"QUESTION_Maximum Options"; "Maximum Options"
+"QUESTION_How many possible question answers do you want to permit?"; "How many possible question answers do you want to permit?"
+
+
+
+"QUESTION_QUESTION"; "Questions"
+"QUESTION_ADMIN_QUESTION"; "HE - Advanced Questions"
+"QUESTION_ADMIN_MANAGE"; "Manage Questions"
+"QUESTION_ADMIN_LEVELS"; "Member Level Settings"
+"QUESTION_BROWSE"; "Browse Questions"
+"QUESTION_MY"; "My Questions"
+
+"QUESTION_There are no questions created yet."; "There are no questions created yet."
+
+"QUESTION_Title"; "Title"
+"QUESTION_Owner"; "Owner"
+"QUESTION_Votes"; "Votes"
+"QUESTION_Date"; "Date"
+"QUESTION_Options"; "Options"
+
+"QUESTION_Nobody has created a question yet."; "Nobody has created a question yet."
+"QUESTION_NO_USER_QUESTIONS"; "You have not created questions yet"
+
+
+"ITEM_TYPE_QUESTION"; "Questions"
+
+
+
+"QUESTION_FRIEND_QUESTIONS"; "Friends's Questions"
+"QUESTION_POPULAR_QUESTIONS"; "Popular Questions"
+"QUESTION_RECENT_ANSWERS"; "Recent Answers"
+"QUESTION_PROFILE_QUESTIONS"; "Questions"
+
+
+"QUESTION_ASK"; ""
+"pagetitle-question-box-index"; "Question"
+"pagetitle-question-index-index"; "Browse Questions"
+"pagetitle-question-index-manage"; "Manage Questions"
+"pagetitle-question-index-admin-manage"; "Manage Questions"
+"pagetitle-question-index-admin-settings"; "Global Settings"
+
+"questions"; "question"; "questions"
+"question votes"; "question vote"; "question votes"
+
+"%1$s other"; "%1$s other"; "%1$s others"
+"%1$s and %2$s"; "%1$s and %2$s"
+
+"WALL_COMPOSERS_QUESTION"; "Add Question"

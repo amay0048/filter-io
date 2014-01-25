@@ -1,6 +1,4 @@
-socialengine/temporary/*
 socialengine/application/settings/database.php
 socialengine/application/settings/general.php
-*.log
 
-*.log
+*.css
