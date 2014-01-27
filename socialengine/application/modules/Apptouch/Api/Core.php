@@ -308,7 +308,9 @@ class Apptouch_Api_Core extends Core_Api_Abstract
         'timeline',
         'user',
         'video',
-        'wall'
+        'wall',
+		// (amay0048) Added question module here too
+		'question'
       )
     );
 

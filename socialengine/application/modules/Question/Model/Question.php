@@ -2,6 +2,10 @@
  
 class Question_Model_Question extends Core_Model_Item_Abstract
 {
+	public function getRichContent(){
+		/** (amay0048) TODO: This is the place where the wall content for questions gets rendered **/
+		return ' ';
+	}
 	
 	public function comments()
 	{
