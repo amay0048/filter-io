@@ -45,6 +45,7 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
   }
   echo $this->headMeta()->toString()."\n";
   ?>
+<!-- (amay0048) not the correct place for this, but it will work for testing -->
 
 </head>
 <?php
@@ -134,6 +135,13 @@ if (Engine_Api::_()->getDbTable('modules', 'core')->isModuleEnabled('checkin')){
   echo $this->apptouchScript($prefix.'maps.googleapis.com/maps/api/js?sensor=false&libraries=places');
 }
 ?>
+<!-- (amay0048) not the right spot for this. TODO: fix it later -->
+<script type="text/javascript" src="/socialengine/hzsearch/search.js"></script>
+<script type="text/javascript" src="/socialengine/hzsearch/providers.js"></script>
+<script type="text/javascript" src="/socialengine/hzsearch/POS/lexicon.js"></script>
+<script type="text/javascript" src="/socialengine/hzsearch/POS/lexer.js"></script>
+<script type="text/javascript" src="/socialengine/hzsearch/POS/POSTagger.js"></script>
+<script type="text/javascript" src="/socialengine/hzsearch/exclusion.js"></script>
 
 <script data-cfasync="false" type="text/javascript">
   $(document).bind("ready", function () {

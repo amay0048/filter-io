@@ -1,0 +1,181 @@
+var providerTypes = function(string){
+	
+var ret = [];
+
+if(
+	/\bscan\b|\bshow\b|\bbreast\b|\bcancer\b/ig.test(string)
+){
+	ret.push("radiologist")
+}
+if(
+	/\ballergic\b|\breaction\b|\bhives\b|\bskin\b|\ballergy\b|\bnose\b|\bfood\b|\bcause\b|\btime\b|\bcertain\b/ig.test(string)
+){
+	ret.push("allergist")
+}
+if(
+	/\btooth\b|\boral\b|\bsurgery\b/ig.test(string)
+){
+	ret.push("orthodontist")
+}
+if(
+	/\biron\b|\bcount\b|\banemia\b|\bbone\b|\blong\b|\banemic\b|\bblood\b|\bcause\b|\bconsultation\b|\bcancer\b|\bhematology\b/ig.test(string)
+){
+	ret.push("hematologist")
+}
+if(
+	/\bblood\b|\btreatment\b|\blazy\b|\blasik\b|\bsurgery\b|\bcontact\b|\bdamage\b|\bvision\b|\beyelid\b|\blens\b|\byear\b|\bblurry\b|\bmorning\b|\bcause\b|\blaser\b|\bdouble\b|\bfloaters\b|\bdisease\b|\blong\b|\bstye\b|\bglaucoma\b|\bophthalmic\b|\bpathology\b|\bconsultation\b|\bocular\b|\bnormal\b|\bdoctor\b|\bpain\b|\binjury\b|\bretina\b|\bsafe\b|\bright\b|\blight\b|\bform\b|\bpressure\b|\bpigmentation\b|\brefractive\b/ig.test(string)
+){
+	ret.push("ophthalmologist")
+}
+if(
+	/\bpanic\b|\banxiety\b|\bdisorder\b|\bdepressive\b|\bcause\b|\bcant\b|\bdepression\b|\bantidepressants\b|\blong\b|\bsyndrome\b|\bstress\b|\bloss\b|\bgood\b|\bmedication\b|\bsomeone\b|\bpossible\b|\bdepressed\b|\bschizophrenia\b|\bsafe\b|\badhd\b|\bbipolar\b|\bmanic\b|\bautism\b|\btherapy\b|\battention\b|\bdeficit\b|\baspergers\b|\bsame\b|\bgroup\b|\banger\b|\bdisease\b|\bchild\b|\bdoctor\b|\bsevere\b|\battack\b|\bdrug\b|\bphysical\b|\badult\b|\bcompulsive\b|\bobsessive\b|\bmental\b|\btime\b|\bptsd\b|\bconsultation\b|\bpsychiatry\b/ig.test(string)
+){
+	ret.push("psychiatrist")
+}
+if(
+	/\bapnea\b|\bcant\b|\bwake\b|\bnight\b|\binsomnia\b/ig.test(string)
+){
+	ret.push("sleep")
+}
+if(
+	/\bnormal\b|\bperiod\b|\bpregnant\b|\bmiscarriage\b|\birregular\b|\bheavy\b|\bsomething\b|\bwrong\b|\bregular\b|\bblood\b|\btest\b|\bultrasound\b|\bnegative\b|\bhavent\b|\bpregnancy\b|\bpositive\b|\bunprotected\b|\bmorning\b|\bpill\b|\bcause\b|\bbirth\b|\blate\b|\bcontrol\b|\bfirst\b|\bbaby\b|\bclitoris\b|\bodor\b|\bbladder\b|\binfection\b|\blong\b|\bmirena\b|\bgenital\b|\blast\b|\bexperience\b|\bstomach\b|\bswollen\b|\bsore\b|\bmenopause\b|\bvaginal\b|\barea\b|\bmenstrual\b|\bcycle\b|\bbreast\b|\bpain\b|\bdepo\b|\bprovera\b|\bpelvic\b|\bpost\b|\bbrown\b|\bdischarge\b|\bmedication\b|\bsevere\b|\babortion\b|\bvagina\b|\babdominal\b|\bheart\b|\bhysterectomy\b|\bhormone\b|\bcramping\b|\bmonth\b|\bplan\b|\bwhite\b|\burine\b|\bsomeone\b|\bability\b|\bchange\b|\bcancer\b|\buterus\b|\bsign\b|\bright\b|\btube\b|\bectopic\b|\bsafe\b|\bshot\b|\bsecond\b|\btime\b|\bsmall\b|\babnormal\b|\bcyst\b|\bovaries\b|\bobgyn\b|\bthree\b|\blight\b|\bdangerous\b|\bsurgery\b|\bovulation\b|\bovarian\b|\byoure\b|\bwork\b|\bfallopian\b|\burinary\b|\bfluid\b|\bbody\b|\bovary\b|\bpainful\b|\buterine\b|\bwoman\b|\bcervix\b|\bpartial\b|\bpossible\b|\bwomans\b|\bhigh\b|\bpressure\b|\bcystitis\b|\bcervical\b|\bultrasounds\b|\bfibroids\b|\bcommon\b|\blarge\b|\bconstipation\b|\bfetus\b|\bresult\b|\bchronic\b|\bnecessary\b|\bcsection\b|\bnatural\b|\bconsultation\b|\bendometriosis\b|\bcheck\b|\bsmear\b|\bmany\b|\bimplantation\b|\bweight\b|\bgain\b|\bgynecologist\b|\bweek\b|\btreatment\b|\bplacenta\b|\bsugar\b|\bchild\b|\bintercourse\b|\bthird\b|\blabor\b|\blevel\b|\bfertility\b|\btrimester\b|\bcant\b|\bside\b|\bchance\b|\byeast\b|\bpelvis\b|\bdisease\b|\bmuch\b|\bbacterial\b|\bexcessive\b|\bhysterectomies\b|\bherpes\b|\bsharp\b|\bvaginosis\b|\bsickness\b|\bnausea\b|\blittle\b|\bother\b|\bpolycystic\b|\bpcos\b|\bincrease\b|\bprenatal\b|\bfertile\b|\bdiet\b|\biuds\b/ig.test(string)
+){
+	ret.push("obstetrician");
+	ret.push("gynaecologist");
+}
+if(
+	/\bvoice\b|\blump\b|\bneck\b|\bthroat\b|\bside\b|\bnormal\b|\bcause\b|\bcure\b|\btongue\b|\bpossible\b|\btonsil\b|\binfection\b|\bhard\b|\bright\b|\bcancer\b|\bnose\b|\bproblem\b|\bnasal\b|\broof\b|\bmouth\b|\bconstant\b|\blymph\b|\bface\b|\bwrong\b|\bthyroid\b|\bnode\b|\bpainful\b|\bsinus\b|\blong\b|\bmotion\b|\blast\b|\bblood\b|\bclear\b|\bsurgery\b|\bbloody\b|\bsore\b|\bpain\b|\bmuch\b|\bswollen\b|\bchin\b|\bdischarge\b|\bsmell\b|\bcyst\b|\bsame\b|\bmorning\b|\bmucus\b|\bwater\b|\bfluid\b|\bsick\b|\bcold\b|\bcongested\b|\bsevere\b|\bsound\b|\bpressure\b|\bchronic\b|\bsinusitis\b|\bkind\b|\bdoctor\b|\bscar\b|\bgood\b|\bdizziness\b|\bwhite\b|\breason\b|\bwake\b|\bhead\b|\boncology\b|\btreatment\b|\bconsultation\b|\bloss\b|\bsomeone\b|\bstrep\b|\bseptum\b|\bcraniofacial\b|\bcleft\b|\bvertigo\b|\bdisease\b|\brhinoplasty\b|\bresult\b|\btonsillectomy\b|\bbreast\b|\bapnea\b|\bplastic\b|\bitchy\b|\bearache\b|\bsomething\b|\btime\b|\banything\b|\bother\b|\bsafe\b|\bdizzy\b|\bnosebleeds\b|\bbleeds\b|\btest\b|\bcorrection\b/ig.test(string)
+){
+	ret.push("ent")
+}
+if(
+	/\bcause\b|\burine\b|\bblood\b|\bkidney\b|\bdialysis\b|\brenal\b|\bdisease\b/ig.test(string)
+){
+	ret.push("kindey")
+}
+if(
+	/\bheart\b|\brate\b|\bsomething\b|\bwrong\b|\bsomeone\b|\bcongestive\b|\bfailure\b|\battack\b|\bheartbeat\b|\bchest\b|\bpain\b|\bhigh\b|\bblood\b|\bpressure\b|\blife\b|\bnormal\b|\birregular\b|\bcause\b|\bdisease\b|\bbreath\b|\bside\b|\blast\b|\bdizzy\b|\bexercise\b|\bsurgery\b|\bsafe\b|\bserious\b|\bdangerous\b|\bdoctor\b|\bcholesterol\b|\bproblem\b|\bsyndrome\b|\bcoronary\b|\bpacemaker\b|\bstress\b|\btest\b|\bconsultation\b|\blong\b|\bimplant\b|\bvalve\b|\bnecessary\b|\bcardiac\b|\bmurmur\b|\bangina\b|\barrhythmia\b|\bangiography\b/ig.test(string)
+){
+	ret.push("cardiologist")
+}
+if(
+	/\blump\b|\brash\b|\bblack\b|\bitchy\b|\bgroin\b|\banus\b|\bexcessive\b|\bwhite\b|\bboth\b|\baccutane\b|\btreatment\b|\bpimple\b|\bnose\b|\bpainful\b|\btype\b|\blittle\b|\bremoval\b|\bbody\b|\bcyst\b|\bdoctor\b|\binfection\b|\bcure\b|\bacne\b|\bskin\b|\bface\b|\blaser\b|\bmoles\b|\bhead\b|\bcause\b|\bother\b|\blong\b|\bcolor\b|\bcancer\b|\bwart\b|\bhyperpigmentation\b|\bthigh\b|\beczema\b|\bpossible\b|\bexposure\b|\bsafe\b|\btiny\b|\bside\b|\bbutt\b|\barea\b|\bloss\b|\bneck\b|\brashes\b|\bdermatitis\b|\bhair\b|\bmouth\b|\bhives\b|\bform\b|\bfacial\b|\bfungus\b|\bblackheads\b|\bresult\b|\bpigmentation\b|\bmole\b|\bcream\b|\bwork\b|\bnail\b|\bcontrol\b|\bblackhead\b|\bwont\b|\bwhiteheads\b|\bingrown\b|\blast\b|\bacutane\b|\ballergic\b|\brosacea\b|\bsame\b|\bpsoriasis\b|\bsurgery\b|\bmany\b|\bthing\b|\bscar\b|\bwhitehead\b|\bgood\b|\bpoison\b|\bscarring\b|\bdiscoloration\b|\bchild\b|\blarge\b|\btattoo\b|\byoung\b|\bdandruff\b|\bnormal\b|\bdark\b|\bscalp\b|\bringworm\b|\bsmall\b|\bzits\b|\bsomething\b|\breaction\b|\bkind\b|\bchange\b|\bcrack\b|\bstomach\b|\bcold\b|\bweather\b|\bbrown\b|\bjewelry\b|\bfingernail\b|\bchest\b|\bchemical\b|\banything\b|\bclear\b|\bseborrheic\b|\bspider\b|\bsign\b|\binner\b|\bbreast\b|\bwinter\b|\bmuch\b|\bforehead\b|\bspread\b|\bokay\b|\bupper\b|\bstretch\b|\bdamage\b|\bconsultation\b|\bspot\b|\bnipple\b|\bfall\b/ig.test(string)
+){
+	ret.push("dermatologist")
+}
+if(
+	/\bcancer\b/ig.test(string)
+){
+	ret.push("oncologist")
+}
+if(
+	/\bnail\b|\bright\b|\bfoot\b|\btoenail\b|\bankle\b|\bingrown\b|\bpain\b|\bswollen\b|\bplantar\b|\bdead\b|\bheel\b|\bfungus\b/ig.test(string)
+){
+	ret.push("podiatrist")
+}
+if(
+	/\bpain\b/ig.test(string)
+){
+	ret.push("physical-therapist")
+}
+if(
+	/\bheadache\b|\bmigraines\b|\bseizure\b|\bdoctor\b|\bnumbness\b|\bpain\b|\bright\b|\bhand\b|\btime\b|\bneck\b|\bwrong\b|\bcause\b|\bdizzy\b|\bhead\b|\bnerve\b|\bconcussion\b|\bbrain\b|\bstroke\b|\bsyndrome\b|\bmedication\b|\bpressure\b|\bside\b|\bmicrovascular\b|\bmigraine\b|\bmemory\b|\bloss\b|\bbody\b|\balzheimers\b|\bdisease\b|\bparkinsons\b|\bface\b|\bsinus\b|\bmultiple\b|\bconcussions\b|\bsomeone\b|\btest\b|\bepilepsy\b|\bdementia\b|\bdamage\b|\bsclerosis\b|\btreatment\b|\bneurological\b|\bconsultation\b|\btumor\b|\bblood\b|\bnight\b|\bconstant\b|\bischemic\b|\blong\b|\bvertigo\b/ig.test(string)
+){
+	ret.push("neurologist")
+}
+if(
+	/\bplastic surgery\b/ig.test(string)
+){
+	ret.push("plastic-surgeon")
+}
+if(
+	/\bdiabetes\b|\bdiet\b|\bweight\b|\bloss\b|\bhealthy\b/ig.test(string)
+){
+	ret.push("dietitian")
+}
+if(
+	/\bhypothyroidism\b|\bweight\b|\bgain\b|\bcancer\b|\bcause\b|\bthyroid\b|\bnormal\b|\bdiabetes\b|\blevel\b|\bdisease\b|\btype\b|\bhair\b|\bdiabetic\b|\bloss\b|\bdiet\b|\bglucose\b|\bpcos\b/ig.test(string)
+){
+	ret.push("endocrinologist")
+}
+if(
+	/\bpain\b|\bmanagement\b/ig.test(string)
+){
+	ret.push("pain-management")
+}
+if(
+	/\bpainful\b|\berectile\b|\bproblem\b|\bpenis\b|\bprostatitis\b|\bbladder\b|\btesticle\b|\bsmall\b|\bcause\b|\bblood\b|\bsemen\b|\bpain\b|\berection\b|\bcancer\b|\burinary\b|\bkidney\b|\bprostate\b|\burine\b|\bcystitis\b|\bvasectomy\b|\binterstitial\b/ig.test(string)
+){
+	ret.push("urologist")
+}
+if(
+	/\bpain\b/ig.test(string)
+){
+	ret.push("chiropractor")
+}
+if(
+	/\bfever\b|\binfection\b|\bcause\b/ig.test(string)
+){
+	ret.push("infectious-disease")
+}
+if(
+	/\brheumatoid\b|\barthritis\b|\bcause\b|\bjoint\b|\bpain\b|\bgout\b|\bswollen\b|\bmuscle\b|\bsyndrome\b|\blupus\b|\bskin\b|\bdisease\b/ig.test(string)
+){
+	ret.push("rheumatologist")
+}
+if(
+	/\blung\b|\bpulmonary\b|\bcough\b|\bchest\b|\basthma\b|\bbronchitis\b|\bcause\b/ig.test(string)
+){
+	ret.push("pulmonologist")
+}
+if(
+	/\bbreath\b|\bchest\b|\bpain\b|\bblood\b|\bpressure\b|\bsupplement\b|\bsafe\b|\bheart\b|\bhigh\b|\bsomething\b|\bnormal\b|\boral\b|\bherpes\b|\bsick\b|\bwrong\b|\bside\b|\bloss\b|\bright\b|\bcontrol\b|\bperiod\b|\bhead\b|\bwhite\b|\bpenis\b|\bneck\b|\bitchy\b|\bskin\b|\bbody\b|\bchlamydia\b|\bcause\b|\binfection\b|\bdisease\b|\bother\b|\bpregnant\b|\bthroat\b|\bstomach\b|\burinate\b|\btime\b|\btestosterone\b|\bfemale\b|\bmale\b|\bproblem\b|\bcancer\b|\bmuch\b|\brash\b|\burine\b|\bweek\b|\bsensation\b|\blast\b|\btest\b|\bnumb\b|\blong\b|\blittle\b|\blump\b|\bvagina\b|\bsmall\b|\bdoctor\b|\babdomen\b|\bkind\b|\bupper\b|\bdrug\b|\bswollen\b/ig.test(string)
+){
+	ret.push("doctor")
+}
+if(
+	/\bbreath\b|\bmouth\b|\bwisdom\b|\bcause\b|\bdental\b|\boral\b|\brisk\b|\btooth\b|\bsurgery\b|\bpain\b|\bsafe\b|\btime\b|\bextraction\b|\blong\b|\bpainful\b|\btongue\b|\bpossible\b|\bgingivitis\b|\bswollen\b|\bwhite\b|\bhealth\b|\bdentist\b|\bvisit\b|\broot\b|\bcanal\b|\bretainer\b|\bconsultation\b|\bperiodontal\b|\bemergency\b/ig.test(string)
+){
+	ret.push("dentist")
+}
+if(
+	/\bdaughter\b|\bgrowth\b|\bpuberty\b|\bmilk\b|\bcause\b|\bgreen\b|\bfever\b|\bpain\b|\bbaby\b|\brash\b|\bchild\b|\blong\b|\bcontagious\b|\byear\b|\bswollen\b|\bcough\b|\badhd\b|\bdisease\b|\blast\b|\binfant\b|\bthroat\b|\byoung\b|\bmedicine\b|\bchilds\b|\basthma\b|\bsyndrome\b|\bcommon\b|\bconsultation\b|\bskin\b|\brashes\b|\bpremature\b|\bpediatric\b|\bstomach\b|\bcare\b|\bchest\b|\bsurgery\b|\bcure\b|\bhair\b|\bevaluation\b/ig.test(string)
+){
+	ret.push("pediatrician")
+}
+if(
+	/\bknee\b|\bpain\b|\btennis\b|\bmuscle\b|\bshoulder\b|\bankle\b/ig.test(string)
+){
+	ret.push("sports-medicine")
+}
+if(
+	/\bblurry\b|\bvision\b|\bcontact\b|\bdoctor\b/ig.test(string)
+){
+	ret.push("optometrist")
+}
+if(
+	/\bwrong\b|\belbow\b|\bsomething\b|\bmuscle\b|\bshoulder\b|\bfinger\b|\bdoctor\b|\bpain\b|\bspine\b|\bswollen\b|\bknee\b|\bfoot\b|\btendonitis\b|\bspinal\b|\bankle\b|\blong\b|\bscoliosis\b|\bable\b|\bside\b|\bwrist\b|\bright\b|\bsharp\b|\bbone\b|\bcause\b|\bache\b|\barthritis\b|\bproblem\b|\brotator\b|\bcuff\b|\bneck\b|\bsafe\b|\bsyndrome\b|\binjury\b|\bmuch\b|\bsensation\b|\bhand\b|\bnumb\b|\bsurgery\b|\bcarpal\b|\btunnel\b|\bconsultation\b/ig.test(string)
+){
+	ret.push("orthopedic-surgeon")
+}
+if(
+	/\bwrong\b|\bdisease\b|\bcause\b|\brectal\b|\bcolitis\b|\bgerd\b|\bdiarrhea\b|\bheartburn\b|\bpain\b|\bstomach\b|\btreatment\b|\bfatty\b|\bliver\b|\bblood\b|\bright\b|\babdominal\b|\btime\b|\bserious\b|\bproblem\b|\bstool\b|\bbloating\b|\ballergy\b|\bconstipation\b|\bulcer\b|\bpainful\b|\banus\b|\bcancer\b|\bnormal\b|\bsame\b|\bsmall\b|\bloss\b|\bbowel\b|\bcolonoscopy\b|\bgall\b|\bmorning\b|\bmedication\b|\bpossible\b|\bnight\b|\bdiverticulitis\b|\bgastritis\b|\bcolon\b|\bgallbladder\b|\bside\b|\bacid\b|\breflux\b|\bceliac\b|\bcure\b|\bsomeone\b|\bchronic\b|\bfood\b|\bulcerative\b|\bgluten\b|\bcrohns\b|\bintestinal\b|\bsurgery\b|\bdiet\b|\bsevere\b/ig.test(string)
+){
+	ret.push("gastroenterologist")
+}
+
+return ret;
+}
+
+var displayProviders = function(){
+	$('#provider-widget').slideUp().find('ul');
+	var demo_text = $('#text').val();
+	providers = [];
+	providers = providerTypes(demo_text);
+	if (providers.length){
+		$('#provider-widget').slideDown();
+	}
+	for (i in providers){
+		$('#providers').append('<li><a href="./maps/index.html#' + providers[i] + '">Find a&nbsp;' + providers[i] + '&nbsp;near you</a></li>')
+	}
+}

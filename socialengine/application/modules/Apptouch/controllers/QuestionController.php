@@ -26,8 +26,7 @@ class Apptouch_QuestionController
     $question = Engine_Api::_()->getItem('question', $this->_getParam('id'));
     $owner = $question->getOwner();
 	
-	$date = array('title' => $this->view->translate('Posted by') . ' ' . $owner->getTitle() . ' ' /*. $this->view->timestamp($question->creation_date)*/, 'count' => null);
-	
+	//$this->add($date);
 	// I'm reversing out the activitiy form the question, because this is
 	// currently how I understand the comments and likes functionality
 	// works. 
@@ -38,10 +37,13 @@ class Apptouch_QuestionController
     $actionTable = Engine_Api::_()->getDbtable('actions', 'activity');
 	$actions = $actionTable->getActivity($viewer, $config);
 	$action = $actions[0];
+	$this->view->activity = $actions;
 	
 	$commentParams = array(
 		'subject' => $action,
 		'viewAllLikes' => true);
+	
+	$this->add($this->component()->feed());
 	
 	$h2 = $this->dom()->new_('h2');
 	$h2->text = $question->getTitle();
@@ -52,7 +54,6 @@ class Apptouch_QuestionController
 	$this->add($this->component()->html($p));
 	  // the feed is not quite right here, what we
 	  // actually need is the user and the question title
-	  //->add($this->component()->feed())
 
 	$this
 	  ->add($this->component()->comments($commentParams))
@@ -62,10 +63,39 @@ class Apptouch_QuestionController
   
   public function indexCreateAction()
   {
+	  if( $this->getRequest()->isPost() ) {
+		return;  
+	  }
+	  //"$(this.form).trigger('submit')" an be called onclick
+	  $searchInput = $this->dom()->new_('textarea', array('onclick' => "", 'type' => 'text', 'name' => 'searchText', 'id' => 'searchText'));
+	  $searchSubmit = $this->dom()->new_('input', array('onclick' => "doSearch();", 'type' => 'button', 'name' => 'searchSubmit', 'id' => 'searchSubmit', 'value' => 'search'));
+	  $searchLaunch = $this->dom()->new_('input', array('onclick' => "", 'type' => 'button', 'name' => 'searchLaunch', 'id' => 'searchLaunch', 'value' => 'launch'));
+	  $searchForm = $this->dom()->new_('form', array(
+	    //'action' => $this->view->url(array('module' => 'event', 'controller' => 'widget', 'action' => 'profile-rsvp', 'subject' => 6), 'default', true),
+	    //'method' => 'post',
+	    'data-role' => 'controlgroup',
+	    'data-mini' => true,
+		'onsubmit' => 'javascript:return false;'
+	  ), '', array(
+	    $searchInput,
+		$searchSubmit,
+		$searchLaunch
+	  ));
+
+	  $this
+	    ->add($this->component()->html($searchForm));
 	  // (amay0048) this is where the create question form gets rendered for mobile/touch
       $form = new Question_Form_Create();
+	  $form->setAttrib('class', 'hz-search');
+	  $form->setAttrib('style', 'display:none;');
 	  $this
-		->add($this->component()->form($form))
+		->add($this->component()->form($form));
+	  
+	  $results = $this->dom()->new_('div',array('id' => 'results'));
+	  $this
+	    ->add($this->component()->html($results));
+	  
+	  $this
 	  	->setFormat('create')
 	  	->renderContent();
   }
