@@ -49,6 +49,13 @@ var doSearch = function(){
 	return false;
 }
 
+var findSnap = function(){
+	var text = 'hi';
+	$.get( "https://bombur-us-east-1.searchly.com/api-key/bhnpketpvhfzjqgt3zhlrficenee25zw/wordpress_local/_search?q:" + text, function( data ) {
+		console.log(data);
+	});
+}
+
 
 var addQuestion = function(questionstring){
 	$.ajax("http://hoozoo.azurewebsites.net/hoozoo/api/question.aspx", {
