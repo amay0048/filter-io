@@ -774,7 +774,8 @@
 
 <div id="component-feed">
   <div class="component-feed  ui-bar-a">
-    <a href="javascript:void(0)" class="composeLink icon-edit" style="display: none;"></a>
+    <!-- (amay0048) -->
+    <!--a href="javascript:void(0)" class="composeLink icon-edit" style="display: none;"></a-->
 
     <div class="social-feed">
       <div class="active_hashtags" style="display: none;"></div>
@@ -786,11 +787,12 @@
       <div class="viewMore" data-icon="arrow-d"><a class="show-page-loading-msg"
                                                    data-msgtext="<?php echo $this->translate('Loading...'); ?>"><?php echo $this->translate('View More');?></a>
       </div>
-      <div class="feed-filter" style="display: none;">
+      <!-- (amay0048) -->
+      <!--div class="feed-filter" style="display: none;">
         <select name="" class="feed-filter-select" data-iconpos="bottom" data-icon="caret-down">
           <option value="" <?php if (Engine_Api::_()->getDbTable('settings', 'core')->getSetting('wall.list.user_save', false)){ ?> data-mode="recent" <?php } ?> ><?php echo $this->translate('WALL_RECENT');?></option>
         </select>
-      </div>
+      </div-->
     </div>
   </div>
 </div>

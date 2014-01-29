@@ -63,11 +63,11 @@ class Core_ErrorController extends Core_Controller_Action_Standard
 
   public function notfoundAction()
   {
-	/** (amay0048) added these methods to diagnose the missing function in the controller	
+	/** (amay0048) added these methods to diagnose the missing function in the controller **/
 	$e = $this->_getParam('error_handler');
 	$this->view->message = $e['exception']->getMessage();
 	$this->view->trace = $e['exception']->getTraceAsString();
-	**/
+	
     // 404 error -- controller or action not found
     $this->getResponse()->setRawHeader($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
     $this->view->status = false;
