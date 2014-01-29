@@ -1,6 +1,10 @@
 socialengine/application/settings/database.php
 socialengine/application/settings/general.php
-
-*.css
-
-*.log
+*/*
+*/*/*
+*/*/*/*
+*/*/*/*/*
+*/*/*/*/*/*
+*/*/*/*/*/*/*
+*/*/*/*/*/*/*/*
+*/*/*/*/*/*/*/*/*
