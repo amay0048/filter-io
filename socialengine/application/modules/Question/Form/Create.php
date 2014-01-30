@@ -11,7 +11,7 @@ class Question_Form_Create extends Engine_Form
       // in div with id <elementname>-label
       'label' => 'Title',
       // Descriptions are rendered above the form element by default.
-      'description' => '<em>Ex. "My First Question"</em>',
+      //'description' => '<em>Ex. "My First Question"</em>',
       'required' => true,
       'filters' => array(
         new Engine_Filter_Censor(),
@@ -20,8 +20,24 @@ class Question_Form_Create extends Engine_Form
     ));
     $this->title->getDecorator('description')->setEscape(false);
 
+    $this->addElement('textarea', 'snapshotHtml', array(
+      'label' => 'Snapshot',
+      'filters' => array(
+        new Engine_Filter_Censor()
+        //'StripTags'
+      )
+    ));
+	
     $this->addElement('textarea', 'description', array(
       'label' => 'Description',
+      'filters' => array(
+        new Engine_Filter_Censor()
+        //'StripTags'
+      )
+    ));
+
+    $this->addElement('textarea', 'providersHtml', array(
+      'label' => 'Providers',
       'filters' => array(
         new Engine_Filter_Censor()
         //'StripTags'

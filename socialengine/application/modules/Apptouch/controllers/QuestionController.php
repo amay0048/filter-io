@@ -90,10 +90,14 @@ class Apptouch_QuestionController
 	  $form->setAttrib('style', 'display:none;');
 	  $this
 		->add($this->component()->form($form));
-	  
+		
+	  $snapshot = $this->dom()->new_('div',array('id' => 'snapshot'));
 	  $results = $this->dom()->new_('div',array('id' => 'results'));
+	  $providers = $this->dom()->new_('div',array('id' => 'providers'));
 	  $this
-	    ->add($this->component()->html($results));
+	    ->add($this->component()->html($snapshot))
+	    ->add($this->component()->html($results))
+	    ->add($this->component()->html($providers));
 	  
 	  $this
 	  	->setFormat('create')
