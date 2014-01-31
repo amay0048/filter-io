@@ -33,25 +33,34 @@ class Apptouch_QuestionController
     $attachmentTable = Engine_Api::_()->getDbtable('attachments', 'activity');
     $row = $attachmentTable->fetchRow($attachmentTable->select()->where('id = ?', $question->getIdentity()) );
 	$viewer = Engine_Api::_()->user()->getViewer();
+	
+	// (amay0048) TODO: I think it will be easier to simply render the info than use the 
+	// feed controller for now. This needs to be updated to perform properly however.
 	$config = array('action_id' => (int) $row['action_id']);
     $actionTable = Engine_Api::_()->getDbtable('actions', 'activity');
 	$actions = $actionTable->getActivity($viewer, $config);
 	$action = $actions[0];
-	$this->view->activity = $actions;
-	
 	$commentParams = array(
 		'subject' => $action,
 		'viewAllLikes' => true);
-	
-	$this->add($this->component()->feed());
+	//$this->view->activity = $actions;
+	//$this->add($this->component()->feed());
 	
 	$h2 = $this->dom()->new_('h2');
 	$h2->text = $question->getTitle();
 	$this->add($this->component()->html($h2));
 	
-    $p = $this->dom()->new_('p');
-	$p->text = $question->getDescription();
-	$this->add($this->component()->html($p));
+    $div = $this->dom()->new_('div');
+	$div->text = $question->snapshot;
+	$this->add($this->component()->html($div));
+	
+    $div = $this->dom()->new_('div');
+	$div->text = $question->getDescription();
+	$this->add($this->component()->html($div));
+	
+    $div = $this->dom()->new_('div');
+	$div->text = $question->providers;
+	$this->add($this->component()->html($div));
 	  // the feed is not quite right here, what we
 	  // actually need is the user and the question title
 
@@ -63,13 +72,11 @@ class Apptouch_QuestionController
   
   public function indexCreateAction()
   {
-	  if( $this->getRequest()->isPost() ) {
-		return;  
-	  }
+
 	  //"$(this.form).trigger('submit')" an be called onclick
 	  $searchInput = $this->dom()->new_('textarea', array('onclick' => "", 'type' => 'text', 'name' => 'searchText', 'id' => 'searchText'));
 	  $searchSubmit = $this->dom()->new_('input', array('onclick' => "doSearch();", 'type' => 'button', 'name' => 'searchSubmit', 'id' => 'searchSubmit', 'value' => 'search'));
-	  $searchLaunch = $this->dom()->new_('input', array('onclick' => "", 'type' => 'button', 'name' => 'searchLaunch', 'id' => 'searchLaunch', 'value' => 'launch'));
+	  $searchLaunch = $this->dom()->new_('input', array('onclick' => "$('form.hz-search').submit();", 'type' => 'button', 'name' => 'searchLaunch', 'id' => 'searchLaunch', 'value' => 'launch'));
 	  $searchForm = $this->dom()->new_('form', array(
 	    //'action' => $this->view->url(array('module' => 'event', 'controller' => 'widget', 'action' => 'profile-rsvp', 'subject' => 6), 'default', true),
 	    //'method' => 'post',
@@ -91,9 +98,9 @@ class Apptouch_QuestionController
 	  $this
 		->add($this->component()->form($form));
 		
-	  $snapshot = $this->dom()->new_('div',array('id' => 'snapshot'));
-	  $results = $this->dom()->new_('div',array('id' => 'results'));
-	  $providers = $this->dom()->new_('div',array('id' => 'providers'));
+	  $snapshot = $this->dom()->new_('div',array('id' => 'snapshotResult'));
+	  $results = $this->dom()->new_('div',array('id' => 'descriptionResult'));
+	  $providers = $this->dom()->new_('div',array('id' => 'providersResult'));
 	  $this
 	    ->add($this->component()->html($snapshot))
 	    ->add($this->component()->html($results))
@@ -102,5 +109,85 @@ class Apptouch_QuestionController
 	  $this
 	  	->setFormat('create')
 	  	->renderContent();
+
+	  if( !$this->getRequest()->isPost() ) {
+		return;  
+	  }
+
+	$viewer = Engine_Api::_()->user()->getViewer();
+	
+	$values = $this->getRequest()->getPost();
+
+	$db = Engine_Db_Table::getDefaultAdapter();
+	$db->beginTransaction();
+	
+	try {
+	
+	  $values['user_id'] = $viewer->getIdentity();
+	  $values['owner_type'] = $viewer->getType();
+	  $values['owner_id'] = $viewer->getIdentity();
+	
+	  $subject = $viewer;
+	  $type = 'question';
+	  
+	  $table = Engine_Api::_()->getDbTable('questions', 'question');
+	
+	  $question = $table->createRow();
+	  $question->setFromArray($values);
+	  $question->save();
+	  
+	  
+	  // Privacy
+	  $auth = Engine_Api::_()->authorization()->context;
+	  $roles = array('owner', 'owner_member', 'owner_network', 'everyone');
+	
+	  if( empty($values['auth_view']) ) {
+		$values['auth_view'] = array('everyone');
+	  }
+	  if( empty($values['auth_comment']) ) {
+		$values['auth_comment'] = array('everyone');
+	  }
+	
+	  $viewMax = array_search($values['auth_view'], $roles);
+	  $commentMax = array_search($values['auth_comment'], $roles);
+	
+	  foreach( $roles as $i => $role ) {
+		$auth->setAllowed($question, $role, 'view', ($i <= $viewMax));
+		$auth->setAllowed($question, $role, 'comment', ($i <= $commentMax));
+	  }
+	  
+	  // Add on activity feed
+	  $actionTable = Engine_Api::_()->getDbTable('actions', 'wall');
+	  
+	  // (amay 0048) this needs to be restructured to get it working correctly.
+	  $action = $actionTable->addActivity($viewer, $subject, $type, null, array(
+		'question' => '<a href="/socialengine/question/'.$question->getIdentity().'">'.$question->getTitle().'</a>'
+	  ));
+	
+	  if ($action){
+	
+		$path = Zend_Controller_Front::getInstance()->getControllerDirectory('wall');
+		$path = dirname($path) . '/views/scripts';
+		$this->view->addScriptPath($path);
+	
+	
+		Engine_Api::_()->getDbtable('actions', 'activity')->attachActivity($action, $question);
+		$this->view->body = $this->view->wallActivity($action, array(
+		  'module' => $this->_script_module
+		));
+		$this->view->last_id = $action->getIdentity();
+		$this->view->last_date = $action->date;
+	  }
+	  
+	  $db->commit();
+	
+	  $this->view->result = true;
+	  // (amay0048) TODO: This needs to be tidied up, it's not correct, should go to newly created question
+	  return $this->redirect('/socialengine/');
+	  
+	} catch (Exception $e){
+	  $db->rollBack();
+	  throw $e;
+	}
   }
 } ?>

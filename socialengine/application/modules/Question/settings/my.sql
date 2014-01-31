@@ -4,7 +4,9 @@ DROP TABLE IF EXISTS engine4_question_question;
 CREATE TABLE engine4_question_questions (
     question_id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
     title VARCHAR(128) NOT NULL,
-    description MEDIUMTEXT NOT NULL,
+    description MEDIUMTEXT NULL,
+    snapshot MEDIUMTEXT NULL,
+    providers MEDIUMTEXT NULL,
     owner_id INT(11) UNSIGNED NOT NULL,
     owner_type INT(11) UNSIGNED NOT NULL,
     photo_id INT(11) UNSIGNED NOT NULL,

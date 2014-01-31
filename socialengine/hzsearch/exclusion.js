@@ -299,7 +299,7 @@ var posTagsSearch = function(){
 				}
 
 			}
-			$("#results").html(output);
+			$("#descriptionResult").html(output);
 			$('#title').val($('#searchText').val());
 			$('#description').val(output);
 			/*
@@ -313,17 +313,3 @@ var posTagsSearch = function(){
 		}
 	});
 }
-/*
-$(function(){
-	$('#tags_1').tagsInput({
-		width:'auto',
-		defaultText:'add or remove a keyword',
-		onChange:function(){
-			if(preventSearchOnTagChange == false){
-				posTagsSearch();
-			}
-		},
-		height:'40px'
-	});
-});
-*/

@@ -20,7 +20,7 @@ class Question_Form_Create extends Engine_Form
     ));
     $this->title->getDecorator('description')->setEscape(false);
 
-    $this->addElement('textarea', 'snapshotHtml', array(
+    $this->addElement('textarea', 'snapshot', array(
       'label' => 'Snapshot',
       'filters' => array(
         new Engine_Filter_Censor()
@@ -36,7 +36,7 @@ class Question_Form_Create extends Engine_Form
       )
     ));
 
-    $this->addElement('textarea', 'providersHtml', array(
+    $this->addElement('textarea', 'providers', array(
       'label' => 'Providers',
       'filters' => array(
         new Engine_Filter_Censor()

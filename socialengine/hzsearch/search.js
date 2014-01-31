@@ -16,22 +16,22 @@ var hzSearch = function(text){
 	$.get("https://bombur-us-east-1.searchly.com/api-key/bhnpketpvhfzjqgt3zhlrficenee25zw/wordpress_staging/_search?q=_all:" + searchTags.toString().replace(/,/g , "%20"), function( data ) {
 		var results = data['hits']['hits'];
 		var snapshot = false;
-		$('#providers').html('');
-		$('#snapshot').html('');
+		$('#providersResult').html('');
+		$('#snapshotResult').html('');
 		for(i in results){
 			result = results[i]['_source'];
 			if(result.cats.indexOf('snapshots') > -1 && !snapshot){
 				snapshot = true;
 				console.log('snapshot',result);
 				html = '<h3>'+result.title+'</h3>' + result.content;
-				$('#snapshot').html(html);
-				$('#snapshotHtml').val(html);
+				$('#snapshotResult').html(html);
 			} else if(result.cats.indexOf('providers') > -1){
 				console.log('provider',result);
 				html = result.content + '<h3>'+result.title+'</h3>';
-				$('#providers').append(html);
-				$('#providersHtml').val(html);
+				$('#providersResult').append(html);
 			}
 		}
+		$('#snapshot').val($('#snapshotResult').html());
+		$('#providers').val($('#providersResult').html());
 	});
 }
