@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>Place searches</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+	  .gm-style .gm-style-iw a {
+  		  text-decoration:none;
+		  color:#333;
+	  }
+	  h2, .gm-style .gm-style-iw h2 a {
+		  font-size: 1.5em;
+	  }
+      #autocomplete {
+        width: 99%;
+      }
+    </style>
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=places"></script>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    
+<script>
+	
+// Note: This example requires that you consent to location sharing when
+// prompted by your browser. If you see a blank space instead of the map, this
+// is probably because you have denied permission for location sharing.
+
+var map;
+var thisLocation;
+var bounds = new google.maps.LatLngBounds();
+var markers = [];
+
+function startMarkers(location) {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers = [];
+  map.setCenter(location);
+  bounds = new google.maps.LatLngBounds(location);
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map
+  });
+  markers.push(marker);
+  return marker;
+}
+
+function handleNoGeolocation(errorFlag) {
+  if (errorFlag) {
+    var content = 'Error: The Geolocation service failed.';
+  } else {
+    var content = 'Error: Your browser doesn\'t support geolocation.';
+  }
+
+  var pos = new google.maps.LatLng(-33.8583351, 151.2031121);
+
+  var options = {
+    map: map,
+    position: pos,
+    content: content
+  };
+
+  var infowindow = new google.maps.InfoWindow(options);
+  //map.setCenter(options.position);
+  
+  initPlaceSearch(pos);
+}
+
+function initialize() {
+
+  var mapOptions = {
+    zoom: 14
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
+  infowindow = new google.maps.InfoWindow();
+  
+  // Try HTML5 geolocation
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      pos = new google.maps.LatLng(position.coords.latitude,
+                                       position.coords.longitude);
+
+	initPlaceSearch(pos);
+
+    }, function() {
+      handleNoGeolocation(true);
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleNoGeolocation(false);
+  }
+
+}
+
+function initPlaceSearch(pos) {
+	marker = startMarkers(pos);
+	  
+	google.maps.event.addListener(marker, 'click', function() {
+		var infoWindowContent = '<h3>Your Current Location</h3>'+
+			'<button onclick="focusaddress()">Change</button>'
+			;
+		infowindow.setContent(infoWindowContent);
+		infowindow.open(map, this);
+	});
+	  
+	  var request = {
+	  	keyword: window.location.hash.split("#")[1],
+		types: ['doctor','health','gym','dentist','hospital','pharmacy'],
+		location: pos,
+		radius: 3000
+	  };
+	
+	  //infowindow = new google.maps.InfoWindow();
+	  var service = new google.maps.places.PlacesService(map);
+	  service.nearbySearch(request, callback);
+}
+
+function locationPopup() {
+
+  // Create the autocomplete object, restricting the search
+  // to geographical location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      // @type {HTMLInputElement}
+	  (document.getElementById('autocomplete')),
+      { types: ['geocode'] });
+  // When the user selects an address from the dropdown,
+  // populate the address fields in the form.
+
+  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+    fillInAddress();
+  });
+
+}
+$(function(){
+	locationPopup();
+});
+// The START and END in square brackets define a snippet for our documentation:
+function fillInAddress() {
+  // Get the place details from the autocomplete object.
+  var place = autocomplete.getPlace();
+  initPlaceSearch(place.geometry.location);
+  
+}
+
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = new google.maps.LatLng(
+          position.coords.latitude, position.coords.longitude);
+      autocomplete.setBounds(new google.maps.LatLngBounds(geolocation,
+          geolocation));
+    });
+  }
+}
+
+function callback(results, status) {
+
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+	  bounds.extend(results[i].geometry.location);
+    }
+	map.fitBounds(bounds);
+  }
+
+}
+
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location,
+	icon: new google.maps.MarkerImage(
+		place.icon,
+		null,
+		null,
+		null,
+		new google.maps.Size(30,30)
+	)
+  });
+  
+  markers.push(marker);
+
+  google.maps.event.addListener(marker, 'click', function() {
+	var infoWindowContent = '<h2>'
+		+'<img height=15px src="' 
+		+ place.icon + '" />&nbsp;&nbsp;' 
+		+ place.name
+		+ '</h2>'
+	infowindow.setContent(infoWindowContent);
+	infowindow.open(map, this);
+	//console.log(place);
+	var service = new google.maps.places.PlacesService(map);
+	//console.log(service.getDetails);
+	service.getDetails({
+			reference:place.reference
+		},
+		function(PlaceResult, status){
+			if (status == google.maps.places.PlacesServiceStatus.OK) {
+				console.log(PlaceResult);
+				infoWindowContent += '<p><a href="callto:' + PlaceResult.international_phone_number + '">' + 
+					PlaceResult.formatted_address + 
+					'</a></p>' +
+					'<h2><a href="callto:' + PlaceResult.international_phone_number + '">' + 
+					PlaceResult.formatted_phone_number + '</a></h2>';
+			}
+			infowindow.setContent(infoWindowContent);
+		}
+	);
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+focusaddress = function(){
+	document.getElementById('autocomplete').className = 'show';
+	document.getElementById('autocomplete').focus();
+}
+
+bluraddress = function(){
+	document.getElementById('autocomplete').className = 'hide';
+}
+
+
+</script>
+<link rel="stylesheet" id="zoren-open-sans-css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" type="text/css" media="all">
+    <style>
+		#back a{
+			background-color: #43AC85;
+			padding:20px;
+			color:#FFF;
+			display:block;
+			text-decoration:none;
+			text-transform:uppercase;
+			font-family: 'Open Sans', sans-serif;
+		}
+		.hide{
+			display:none;
+		}
+    </style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
+  </head>
+  <body>
+    <input id="autocomplete" class="hide" placeholder="Enter your address" onfocus="geolocate()" onBlur="bluraddress()" type="text" autocomplete="off"/>
+    <div id="map-canvas" style="width: 100%; float:left"></div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46607714-1', 'azurewebsites.net');
+  ga('send', 'pageview', window.location.hash);
+
+</script>
+
+  </body>
+</html>

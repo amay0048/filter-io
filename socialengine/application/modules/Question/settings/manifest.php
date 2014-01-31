@@ -56,7 +56,18 @@
 		'action' => 'browse',
 	  ),
 	  'reqs' => array(
-		'action' => '(browse|create|list|manage)',
+		'action' => '(browse|create|list|manage|map)',
+	  )
+	),
+	'question_map' => array(
+	  'route' => 'questions/:action/:keyword/*',
+	  'defaults' => array(
+		'module' => 'question',
+		'controller' => 'index',
+		'action' => 'map',
+	  ),
+	  'reqs' => array(
+		'action' => '(map)',
 	  )
 	),
 	'question_specific' => array(

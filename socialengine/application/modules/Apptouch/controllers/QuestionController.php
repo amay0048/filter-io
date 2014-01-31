@@ -190,4 +190,26 @@ class Apptouch_QuestionController
 	  throw $e;
 	}
   }
+  
+  public function indexMapAction()
+  {
+	  $keyword = $this->getRequest()->getParam('keyword');
+	  $searchFrame = $this->dom()->new_('iframe', array(
+	  	'src'=>'/socialengine/hzsearch/index.html#'.$keyword,
+		'class'=>'hz-location-search'
+	  ));
+	  
+	  $style = $this->dom()->new_('style');
+	  $style->text = '.hz-search-container{border:0;height:100%;width:100%;position:relative;}';
+	  $style->text .= '.hz-location-search{border:0;height: calc(100% - 134px);width:100%;}';
+  	  $style->text .= '.ui-page:after {height:0;display:none;}';
+	  
+	  $div = $this->dom()->new_('div',array('class'=>'hz-search-container'));
+	  $div->text = $style;
+	  $div->text .= $searchFrame;
+	  
+  	  $this
+	    ->add($this->component()->html($div))
+		->renderContent();
+  }
 } ?>
