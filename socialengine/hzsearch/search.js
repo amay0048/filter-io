@@ -28,7 +28,7 @@ var hzSearch = function(text){
 			} else if(result.cats.indexOf('providers') > -1){
 				console.log('provider',result);
 				html = result.content + '<h3>'+result.title+'</h3>';
-				$('#providersResult').append(html);
+				$('#providersResult').append('<div>'+html+'</div>');
 			}
 		}
 		$('#snapshot').val($('#snapshotResult').html());

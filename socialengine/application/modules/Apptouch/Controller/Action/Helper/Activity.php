@@ -316,11 +316,18 @@ class Apptouch_Controller_Action_Helper_Activity
 
       if ($attachment->getType() == 'hequestion') { // Fix
         // ...
-      } else if($attachment->getType() == 'question') {
+      } 
+	  else if($attachment->getType() == 'question') {
 		  /** (amay0048) TODO: this looks like some broken code. I'll come back and have a look later
 		  this would be where custom wall content for questions would be set
 		  **/
-	  } else {
+		  $subject = $richContent;
+		  $pattern = '/src="(.*?)"/i';
+		  preg_match($pattern, $subject, $matches, PREG_OFFSET_CAPTURE);
+		  $actionFormat['richContent']['href'] = '';
+		  $actionFormat['richContent']['photo']['full'] = $matches[1][0];
+	  } 
+	  else {
         $prefix = (constant('_ENGINE_SSL') ? 'https://' : 'http://');
 
         $actionFormat['richContent'] = $this->_bridge->subject($attachment, array('short_desc' => true));

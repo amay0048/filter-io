@@ -7,7 +7,7 @@ class Apptouch_QuestionController
 {
   public function indexInit()
   {
-    $this->addPageInfo('contentTheme', 'd');
+    $this->addPageInfo('contentTheme', 'h');
   }
 
   public function profileInit()
@@ -21,7 +21,7 @@ class Apptouch_QuestionController
   {
 	/** this is required for the controller **/
     // Collect params
-    $this->addPageInfo('contentTheme', 'd');
+    $this->addPageInfo('contentTheme', 'h');
     $viewer = Engine_Api::_()->user()->getViewer();
     $question = Engine_Api::_()->getItem('question', $this->_getParam('id'));
     $owner = $question->getOwner();
@@ -50,15 +50,15 @@ class Apptouch_QuestionController
 	$h2->text = $question->getTitle();
 	$this->add($this->component()->html($h2));
 	
-    $div = $this->dom()->new_('div');
+    $div = $this->dom()->new_('div',array('class'=>'snapshotResult'));
 	$div->text = $question->snapshot;
 	$this->add($this->component()->html($div));
 	
-    $div = $this->dom()->new_('div');
+    $div = $this->dom()->new_('div',array('class'=>'descriptionResult'));
 	$div->text = $question->getDescription();
 	$this->add($this->component()->html($div));
 	
-    $div = $this->dom()->new_('div');
+    $div = $this->dom()->new_('div',array('class'=>'providersResult'));
 	$div->text = $question->providers;
 	$this->add($this->component()->html($div));
 	  // the feed is not quite right here, what we
@@ -72,9 +72,9 @@ class Apptouch_QuestionController
   
   public function indexCreateAction()
   {
-
+      $this->addPageInfo('contentTheme', 'h');
 	  //"$(this.form).trigger('submit')" an be called onclick
-	  $searchInput = $this->dom()->new_('textarea', array('onclick' => "", 'type' => 'text', 'name' => 'searchText', 'id' => 'searchText'));
+	  $searchInput = $this->dom()->new_('textarea', array('onclick' => "", 'type' => 'text', 'name' => 'searchText', 'id' => 'searchText','placeholder'=>'Enter Text'));
 	  $searchSubmit = $this->dom()->new_('input', array('onclick' => "doSearch();", 'type' => 'button', 'name' => 'searchSubmit', 'id' => 'searchSubmit', 'value' => 'search'));
 	  $searchLaunch = $this->dom()->new_('input', array('onclick' => "$('form.hz-search').submit();", 'type' => 'button', 'name' => 'searchLaunch', 'id' => 'searchLaunch', 'value' => 'launch'));
 	  $searchForm = $this->dom()->new_('form', array(
@@ -98,9 +98,9 @@ class Apptouch_QuestionController
 	  $this
 		->add($this->component()->form($form));
 		
-	  $snapshot = $this->dom()->new_('div',array('id' => 'snapshotResult'));
-	  $results = $this->dom()->new_('div',array('id' => 'descriptionResult'));
-	  $providers = $this->dom()->new_('div',array('id' => 'providersResult'));
+	  $snapshot = $this->dom()->new_('div',array('id' => 'snapshotResult','class' => 'snapshotResult'));
+	  $results = $this->dom()->new_('div',array('id' => 'descriptionResult','class' => 'descriptionResult'));
+	  $providers = $this->dom()->new_('div',array('id' => 'providersResult','class' => 'providersResult'));
 	  $this
 	    ->add($this->component()->html($snapshot))
 	    ->add($this->component()->html($results))

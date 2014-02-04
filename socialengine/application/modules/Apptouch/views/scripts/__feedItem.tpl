@@ -1,4 +1,4 @@
-.component-feed .feedItem .content.action .attachment_big_photo<?php
+<?php
   $action = $this->action;
   $actionFormat = $this->actionFormat;
   if (!$action || !$actionFormat){
@@ -25,24 +25,15 @@
     <a href="javascript:void(0);" class="btn btn-primary wall-event we-hideMenu" ><?php echo $this->translate('Cancel');?></a>
   </div>
 
-  <div class="content action <?php if (strlen($actionFormat['richContent']['photo']['full'])) : echo 'photo'; endif;?>">
+  <div class="content action">
     <a href="javascript:void(0);" class="feedItemMenu icon-cog ui-link wall-event we-showMenu"></a>
-      
-      <?php if (!empty($actionFormat['richContent'])):?>
-        <div class="attachment_big_photo">
-          <a href="<?php echo $actionFormat['richContent']['href'];?>">
-            <img src="<?php echo $actionFormat['richContent']['photo']['full'];?>" alt=""/>
-          </a>
-          </div>
-      <?php endif;?>
-      
     <div class="thumbnail">
       <a href="<?php echo $actionFormat['subject']['href'];?>">
         <img src="<?php echo $actionFormat['photo']?>" alt=""/>
       </a>
     </div>
 
-    <!--div class="poster">
+    <div class="poster">
       <span class="date">
         <?php echo $actionFormat['creation_date'];?>
         <?php if (!empty($actionFormat['checkin'])):?>
@@ -50,7 +41,7 @@
           <a href="<?php echo $actionFormat['checkin']['href']; ?>"><?php echo $actionFormat['checkin']['title']; ?></a>
         <?php endif;?>
       </span>
-    </div-->
+    </div>
     <div class="body">
 
       <?php echo $actionFormat['title'];?>
@@ -87,8 +78,15 @@
       <?php endif;?>
     </div>
 
-    <!--div style="clear: both;"></div-->
+    <div style="clear: both;"></div>
 
+  <?php if (!empty($actionFormat['richContent'])):?>
+    <div class="attachment_big_photo">
+      <a href="<?php echo $actionFormat['richContent']['href'];?>">
+        <img src="<?php echo $actionFormat['richContent']['photo']['full'];?>" alt=""/>
+      </a>
+      </div>
+  <?php endif;?>
 
   <?php if (!empty($actionFormat['attachments'])):?>
     <?php if (count($actionFormat['attachments']) == 1):?>
@@ -131,18 +129,48 @@
   <?php endif;?>
 
 
-    <!--div style="clear: both;"></div-->
+    <div style="clear: both;"></div>
 
 
-    <?php if (!empty($actionFormat['commentable']) /*&& (!empty($actionFormat['like_count']) || !empty($actionFormat['comment_count']))*/) : ?>
-      <div class="actions">
-        <?php echo $actionFormat['creation_date'];?>
+    <?php if (!empty($actionFormat['commentable']) && (!empty($actionFormat['like_count']) || !empty($actionFormat['comment_count']))) : ?>
+      <div class="left">
         <a href="<?php echo $actionFormat['href'];?>">
+          <?php if (!empty($actionFormat['like_count'])):?>
             <span class="icon icon-thumbs-up"></span> <span class="text"><?php echo $actionFormat['like_count'];?></span>
+          <?php endif;?>
+          <?php if (!empty($actionFormat['comment_count'])):?>
             <span class="icon icon-comments"></span> <span class="text"><?php echo $actionFormat['comment_count'];?></span>
+          <?php endif;?>
         </a>
       </div>
     <?php endif;?>
+    <div class="options">
+      <div class="right">
+        <?php if (!empty($actionFormat['canComment'])):?>
+        <a item-id="<?php echo $actionFormat['id'];?>" item-type="activity_action" href="javascript:void(0)" class="btn wall-event we-showCommentModal "><i class="icon-comment-alt"></i><?php echo $this->translate('Comment');?></a>
+        <?php endif;?>
+        <?php if (!empty($actionFormat['canLike'])):?>
+
+          <a href="javascript:void(0)"
+             class="btn like wall-event we-like"
+             data-url="<?php echo $actionFormat['actionLikeUrl'];?>" <?php if (!empty($actionFormat['liked'])):?>style="display: none;"<?php endif;?>>
+          <i class="icon-thumbs-up"></i><span class="title"><?php echo $this->translate('Like');?></span>
+          </a>
+
+          <a href="javascript:void(0)"
+             class="btn unlike wall-event we-unlike"
+             data-url="<?php echo $actionFormat['actionUnlikeUrl'];?>" <?php if (empty($actionFormat['liked'])):?>style="display: none;"<?php endif;?>>
+          <i class="icon-thumbs-down"></i><span class="title"><?php echo $this->translate('Unlike');?></span>
+
+          </a>
+        <?php endif;?>
+
+        <?php if (!empty($actionFormat['canShare'])): ?>
+        <a post-url="<?php echo $actionFormat['shareUrl'];?>" class="wall-event we-showShareModal btn"><i
+                  class="icon-share-alt"></i><?php echo $this->translate('Share');?></a>
+        <?php endif;?>
+      </div>
+    </div>
 
   </div>
 </li>

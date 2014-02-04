@@ -290,9 +290,13 @@ var posTagsSearch = function(){
 				}
 
 				if(i < 8 && searchResults[displayLink] <= 2) {
-				 output = output + '<h3>' + data['items'][i]['htmlTitle'] + '</h3>';
-				 output = output + '<p>' + data['items'][i]['snippet'] + '&nbsp;&nbsp;';
-				 output = output + '<a href="' + data['items'][i]['link'] + '">Read more...</a>' + '</p>';
+					
+				 output += '<div>';
+				 output += '<h3>' + data['items'][i]['title'] + '</h3>';
+				 output += '<p>' + data['items'][i]['snippet'] + '&nbsp;&nbsp;';
+				 output += '<a href="' + data['items'][i]['link'] + '">Read more...</a>' + '</p>';
+				 output += '</div>';
+				 
 				 ret.push([data['items'][i]['title'],data['items'][i]['link'],i]);
 				} else {
 				  break;
