@@ -1618,8 +1618,20 @@ div.ui-mobile-viewport {
 
 .ui-header {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  position:relative;
+  position:fixed;
   border-bottom: 2px solid #f1f1f1;
+	top: 0;
+	left: 0;
+	height: 40px;
+	display: block;
+	width: 100%;
+	z-index: 100;
+}
+
+.ui-content:before{
+	content:"";
+	display:block;
+	height:44px;
 }
 
 .ui-footer {
@@ -4507,6 +4519,7 @@ span.ui-slider-label-b {
   max-height: 40px;
   max-width: 40px;
   display: block;
+  border-radius:40px;
 }
 
 .component-feed .feedItem .poster {
@@ -4610,7 +4623,7 @@ span.ui-slider-label-b {
   width: 16px;
   position:absolute;
   top:4px;
-  right:4px;
+  right:0;
 }
 
 .component-feed .attachment_photo {
@@ -4660,12 +4673,19 @@ span.ui-slider-label-b {
   padding: 10px 0;
 }
 
-.component-feed .feedItem .menu a {
+.component-feed .feedItem .menu a.ui-link {
   line-height: 20px;
   margin: 4px;
   overflow: hidden;
   text-align: center;
   width: 80%;
+}
+.component-feed .feedItem .menu a.ui-link.wall-event {
+  color:#fff!important;
+}
+
+.component-feed .feedItem .menu {
+	
 }
 
 .component-feed .feed-new-updates {
@@ -4888,7 +4908,7 @@ body .component-itemSearch {
 }
 
 .component-dashboard a.ui-link-inherit .ui-li-icon:before {
-  height: 26px;
+  height: 39px;
   width: 26px;
   display: inline-block;
   font-family: FontAwesome;
@@ -4931,20 +4951,49 @@ body .component-itemSearch {
   border-bottom: none;
 }
 .component-tabs.ui-navbar .tab .tab_icon_map {
-  height: 39px;
-  width: 52px;
+  height: 20px;
+  width: 26px;
   text-align: center;
+  float:left;
+  clear:none;
+  background-width:50%;
 }
-
+.component-tabs .tab .tab_title {
+  clear:none;
+  padding-top:0;
+  text-align:left;
+  margin:0 0 0 30px;
+  width:auto;
+}
+.component-tabs .tab .tab_title span {
+  display:inline-block;
+}
+.component-tabs .profile_tabs>li{
+  width:auto;
+}
+body .ui-navbar li .ui-btn .ui-btn-inner{
+  width:auto;
+  overflow:visible;
+  max-width:auto;
+  white-space: normal;
+}
+.module-user .page-component{
+	clear:none;
+}
+.ui-content.ui-body-d .component-like{
+	margin:0;
+	float:left;
+	padding:0;
+}
 .component-tabs.ui-navbar .tab .tab_icon_map:before {
-  line-height: 45px;
-  width: 52px;
+  /*line-height: 45px;
+  width: 26px;*/
   display: inline-block;
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
-  font-size: 35px;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -5081,7 +5130,7 @@ body .component-itemSearch {
 .component-tabs.ui-navbar .tab.user_tab_likebox .tab_icon_map:before,
 .component-tabs.ui-navbar .tab.event_tab_likebox .tab_icon_map:before {
   content: "\f007\f087";
-  font-size: 29px;
+  font-size: 18px;
 }
 
 .component-tabs.ui-navbar .tab.page_tab_likes .tab_icon_map:before,
@@ -5193,4 +5242,20 @@ body .component-itemSearch {
   background-color: #BBBBBB;
   text-shadow: 0 1px 0 #777777;
   color: #bababa;
+}
+
+/* (amay0048) HooZoo Branding */
+.ui-header .ui-title{
+	text-indent:-10000px;
+	background:url('/socialengine/hzsearch/logo.png') center 3px no-repeat;
+	background-size:auto 30px;
+	margin:0;
+	height:37px;
+}
+.component-subjectPhoto .subject_photo img {
+  margin:0;
+  border-radius:80px;
+}
+.component-subjectPhoto .subject_photo{
+	border-radius:80px;
 }
