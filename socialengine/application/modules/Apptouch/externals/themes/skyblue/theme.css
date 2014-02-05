@@ -4772,7 +4772,7 @@ span.ui-slider-label-b {
 }
 
 .component-feed .feedItem .content.action.photo .actions{
-	position:fixed;
+	position:absolute;
 	width:48%;
 }
 
@@ -5384,6 +5384,7 @@ background: linear-gradient(to bottom, #f9f9f9 0%, #f2f2f2 100%);
 }
 #comment-form .ui-btn .ui-btn-inner{
 	padding:0;
+	margin:0;
 }
 #comment-form .ui-btn .ui-btn-text{
 	white-space:normal;
@@ -5473,15 +5474,15 @@ background: linear-gradient(to bottom, #f9f9f9 0%, #f2f2f2 100%);
 	border-radius:5px;
 	padding:10px;
 }
-
-.ui-content.ui-body-h .ui-btn-inner {
+/* search button */
+#question_index_create_rewrite .ui-content.ui-body-h .ui-btn-inner {
 	height: 30px;
 	background: #fff;
 	margin-top: 10px;
 	border-radius:5px;
 	padding-top:4px;
 }
-.ui-content.ui-body-h .ui-btn-inner .ui-btn-text{
+question_index_create_rewrite .ui-content.ui-body-h .ui-btn-inner .ui-btn-text{
 	font-size:16px;
 	padding-top:3px;
 }
