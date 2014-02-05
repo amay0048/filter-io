@@ -23,7 +23,7 @@ var hzSearch = function(text){
 			if(result.cats.indexOf('snapshots') > -1 && !snapshot){
 				snapshot = true;
 				console.log('snapshot',result);
-				html = '<h3>'+result.title+'</h3>' + result.content;
+				html = '<h3>'+result.title+'</h3>' + '<div>' + result.content + '</div>';
 				$('#snapshotResult').html(html);
 			} else if(result.cats.indexOf('providers') > -1){
 				console.log('provider',result);
