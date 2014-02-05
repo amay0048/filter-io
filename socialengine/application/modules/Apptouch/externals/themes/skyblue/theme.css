@@ -19,6 +19,13 @@ body, div {
   font-family:Open-Sans;
 }
 
+h3 {
+font-weight: 600;
+color: #595959;
+font-size: 15px;
+line-height: 18px;
+}
+
 /* Swatches */
 
 /* A
@@ -546,7 +553,7 @@ body, div {
 .ui-overlay-d {
   border: 1px solid #bbbbbb /*{d-body-border}*/;
   color: #333333 /*{d-body-color}*/;
-  text-shadow: 0 /*{d-body-shadow-x}*/ 1px /*{d-body-shadow-y}*/ 0 /*{d-body-shadow-radius}*/ #bababa /*{d-body-shadow-color}*/;
+  text-shadow: 0 /*{d- body-shadow-x}*/ 1px /*{d-body-shadow-y}*/ 0 /*{d-body-shadow-radius}*/ #bababa /*{d-body-shadow-color}*/;
   background: #c6c6c6 /*{d-body-background-color}*/;
   /*background-image: url(images/pattern-c.png);*/
 }
@@ -1625,7 +1632,7 @@ div.ui-mobile-viewport {
 	height: 40px;
 	display: block;
 	width: 100%;
-	z-index: 100;
+	z-index: 200;
 }
 
 .ui-content:before{
@@ -2560,6 +2567,7 @@ div.ui-mobile-viewport {
 .ui-grid-a .ui-btn, .ui-grid-b .ui-btn, .ui-grid-c .ui-btn, .ui-grid-d .ui-btn, .ui-grid-e .ui-btn, .ui-grid-solo .ui-btn {
   margin-right: 5px;
   margin-left: 5px;
+  background:#fff;
 }
 
 .ui-btn-inner {
@@ -4939,8 +4947,8 @@ body .component-itemSearch {
 }
 
 .component-tabs.ui-navbar li .ui-btn.ui-active-tab:after {
-  background-color: #4B8ED1;
-  box-shadow: 0 -1px 8px #4B8ED1;
+  background-color: #3b55a2;
+  box-shadow: 0 -1px 8px #3b55a2;
   content: " ";
   display: block;
   height: 4px;
@@ -4976,14 +4984,15 @@ body .ui-navbar li .ui-btn .ui-btn-inner{
   overflow:visible;
   max-width:auto;
   white-space: normal;
+  background:#f2f2f2;
 }
 .module-user .page-component{
 	clear:none;
 }
 .ui-content.ui-body-d .component-like{
-	margin:0;
-	float:left;
-	padding:0;
+	position: absolute;
+	top: 94px;
+	left: 4px;
 }
 .component-tabs.ui-navbar .tab .tab_icon_map:before {
   /*line-height: 45px;
@@ -5258,4 +5267,18 @@ body .ui-navbar li .ui-btn .ui-btn-inner{
 }
 .component-subjectPhoto .subject_photo{
 	border-radius:80px;
+}
+.component-subjectPhoto.subject_photo_wrapper{
+	overflow:auto;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f9f9f9), color-stop(100%, #f2f2f2));
+background: -webkit-linear-gradient(top, #f9f9f9 0%, #f2f2f2 100%);
+background: -o-linear-gradient(top, #f9f9f9 0%, #f2f2f2 100%);
+background: -ms-linear-gradient(top, #f9f9f9 0%, #f2f2f2 100%);
+background: linear-gradient(to bottom, #f9f9f9 0%, #f2f2f2 100%);
+	margin: -10px;
+	padding: 10px;
+}
+.component-subjectPhoto .subject_title {
+	text-shadow:none;
+	color: #2bbfca;
 }
