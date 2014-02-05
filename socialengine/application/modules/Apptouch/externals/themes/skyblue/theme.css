@@ -5028,14 +5028,15 @@ body .ui-navbar li .ui-btn .ui-btn-inner{
 	width:100%;
 }
 .component-timelineCover div.cover_photo_wrapper {
-	height:175px;
+	height:163px;
 	overflow:hidden;
 	position: relative;
+	border-bottom:36px #f2f2f2 solid;
 }
 .component-timelineCover div.cover_photo_wrapper:before {
 	content:"";
-	height:175px;
-	margin-bottom:-175px;
+	height:163px;
+	margin-bottom:-163px;
 	opacity:0.3;
 	background:#000;
 	position:absolute;
