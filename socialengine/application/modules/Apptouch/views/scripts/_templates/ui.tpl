@@ -815,8 +815,8 @@
   ?>
   <div class="component-comments">
     <fieldset class="ui-grid-a">
-      <div class="ui-block-a post_comment"><a href="#" data-role="button" data-theme="c"
-                                              data-icon="plus"><?php echo $this->translate('Comments') ?></a></div>
+      <!--div class="ui-block-a post_comment"><a href="#" data-role="button" data-theme="c"
+                                              data-icon="plus"><?php echo $this->translate('Comments') ?></a></div-->
       <div class="ui-block-b like_this"><a href="<?php echo $like_url ?>" data-role="button" data-theme="c"
                                            data-icon="like"><?php echo $this->translate('Like') ?></a></div>
       <div style="display: none;" class="ui-block-b unlike_this"><a href="<?php echo $unlike_url ?>" data-role="button"
@@ -824,7 +824,7 @@
                                                                     data-icon="unlike"><?php echo $this->translate('Unlike') ?></a>
       </div>
     </fieldset>
-    <div class="likers" data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="false" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+    <!--div class="likers" data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="false" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
       <div data-role="collapsible">
         <h2>People Like this</h2>
         <ul data-role="listview">
@@ -832,12 +832,10 @@
         </ul>
       </div>
     </div>
-    <br/>
+    <br/-->
     <ul data-divider-theme="d" class="comments" data-role="listview">
-      <li class="form" style="display: none;">
-      </li>
-      <li class="comment-count" data-role="list-divider"><?php echo $this->translate('Comments') ?><span
-        class="ui-li-count"></span></li>
+      <!--li class="comment-count" data-role="list-divider"><?php echo $this->translate('Comments') ?><span
+        class="ui-li-count"></span></li-->
       <li class="comment"><a class="comment-author-href" href="">
         <img src="<?php echo $this->layout()->staticBaseUrl ?>application/modules/Apptouch/externals/images/fake.gif"/>
 
@@ -868,6 +866,8 @@
             class="ui-btn-text"><?php echo $this->translate('unlike') ?></span><span
             class="ui-icon ui-icon-unlike ui-icon-shadow"></span></span></a>
         </div>
+      </li>
+      <li id="comment-form" class="form" style="display: none;">
       </li>
     </ul>
   </div>

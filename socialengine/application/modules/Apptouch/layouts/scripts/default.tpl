@@ -223,7 +223,7 @@ if (Engine_Api::_()->getDbTable('modules', 'core')->isModuleEnabled('checkin')){
 		position:relative;
 	}
 	#hz-footer .profile img{
-		width:56px;
+		height:56px;
 		width:56px;
 		border-radius:56px;
 		display:block;
