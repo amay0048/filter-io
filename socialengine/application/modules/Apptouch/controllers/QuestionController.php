@@ -183,7 +183,7 @@ class Apptouch_QuestionController
 	
 	  $this->view->result = true;
 	  // (amay0048) TODO: This needs to be tidied up, it's not correct, should go to newly created question
-	  return $this->redirect('/socialengine/');
+	  return $this->redirect(Zend_Registry::get('StaticBaseUrl'));
 	  
 	} catch (Exception $e){
 	  $db->rollBack();
@@ -201,7 +201,7 @@ class Apptouch_QuestionController
 	  
 	  $style = $this->dom()->new_('style');
 	  $style->text = '.hz-search-container{border:0;height:100%;width:100%;position:relative;}';
-	  $style->text .= '.hz-location-search{border:0;height: calc(100% - 134px);width:100%;}';
+	  $style->text .= '.hz-location-search{border:0;height: calc(100% - 96px);width:100%;}';
   	  $style->text .= '.ui-page:after {height:0;display:none;}';
 	  
 	  $div = $this->dom()->new_('div',array('class'=>'hz-search-container'));
@@ -210,6 +210,13 @@ class Apptouch_QuestionController
 	  
   	  $this
 	    ->add($this->component()->html($div))
+		->renderContent();
+  }
+  
+  public function indexTagAction()
+  {
+	$this
+		->add($this->component()->feed(array('mode'=>'hello')))
 		->renderContent();
   }
 } ?>

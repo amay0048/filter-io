@@ -45,7 +45,6 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
   }
   echo $this->headMeta()->toString()."\n";
   ?>
-<!-- (amay0048) not the correct place for this, but it will work for testing -->
 
 </head>
 <?php
@@ -230,16 +229,17 @@ if (Engine_Api::_()->getDbTable('modules', 'core')->isModuleEnabled('checkin')){
 		display:block;
 	}
 </style>
+<?php $baseurl = Zend_Registry::get('StaticBaseUrl'); ?>
 <div id="hz-footer">
-	<a class="med" href="#">Medical</a>
-	<a class="food" href="#">Food</a>
+	<a class="med" href="<?php echo $baseurl . 'questions/tag/medical';?>">Medical</a>
+	<a class="food" href="<?php echo $baseurl . 'questions/tag/food';?>">Food</a>
     <div class="profile-container">
         <a class="profile" href="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["href"]; ?>">
             <img src="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["photo"]; ?>"/>
         </a>
     </div>
-	<a class="fit" href="#">Fitness</a>
-	<a class="search" href="#">Search</a>
+	<a class="fit" href="<?php echo $baseurl . 'questions/tag/fitness';?>">Fitness</a>
+	<a class="search" href="<?php echo $baseurl . 'questions/create';?>">Search</a>
 </div>
 </body>
 </html>

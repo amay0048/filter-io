@@ -25,7 +25,7 @@
     <a href="javascript:void(0);" class="btn btn-primary wall-event we-hideMenu" ><?php echo $this->translate('Cancel');?></a>
   </div>
 
-  <div class="content action <?php if (strlen($actionFormat['richContent']['photo']['full'])) : echo 'photo'; endif;?>">
+  <div class="content action <?php if (strlen($actionFormat['richContent']['photo']['full']) || !empty($actionFormat['attachments']) && count($actionFormat['attachments'] === 1)) : echo 'photo'; endif;?>">
     <a href="javascript:void(0);" class="feedItemMenu icon-cog ui-link wall-event we-showMenu"></a>
       
       <?php if (!empty($actionFormat['richContent'])):?>
@@ -35,6 +35,14 @@
           </a>
           </div>
       <?php endif;?>
+      
+   <?php if (!empty($actionFormat['attachments'])): ?>
+    <div class="attachment_big_photo">
+      <a href="<?php echo $actionFormat['attachments'][0]['subject']['href'];?>">
+        <img src="<?php echo $actionFormat['attachments'][0]['photo']['normal']?>" alt=""/>
+      </a>
+    </div>
+    <?php endif;?>
       
     <div class="thumbnail">
       <a href="<?php echo $actionFormat['subject']['href'];?>">
@@ -95,13 +103,13 @@
       <?php
       $attachment  = $actionFormat['attachments'][0];
       ?>
-      <div class="attachment_small_photo">
+      <!--div class="attachment_small_photo">
         <?php if (!empty($attachment['photo'])):?>
           <a href="<?php echo $attachment['href'];?>">
             <img src="<?php echo $attachment['photo']['full'];?>" alt=""/>
           </a>
         <?php endif;?>
-      </div>
+      </div-->
     <?php else :?>
       <?php $imgCount = count($actionFormat['attachments']) ?>
       <div class="<?php if($imgCount < 6){ ?>thumbs_container<?php }?>">
