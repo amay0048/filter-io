@@ -83,14 +83,14 @@
           <?php
           $attachment  = $actionFormat['attachments'][0];
           ?>
-          <div class="attachment_photo">
+          <!--div class="attachment_photo"-->
             <?php if (!empty($attachment['title'])):?>
               <div class="title"><a href="<?php echo $attachment['href'];?>"><?php echo $attachment['title'];?></a></div>
             <?php endif;?>
             <?php if (!empty($attachment['description'])):?>
-              <div class="description"><?php echo $attachment['description'];?></div>
+              <!--div class="description"><?php echo $attachment['description'];?></div-->
             <?php endif;?>
-          </div>
+          <!-- /div -->
         <?php endif;?>
       <?php endif;?>
     </div>
