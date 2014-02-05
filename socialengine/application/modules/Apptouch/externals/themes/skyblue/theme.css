@@ -2570,6 +2570,7 @@ div.ui-mobile-viewport {
   margin-right: 5px;
   margin-left: 5px;
   background:#fff;
+  z-index:2;
 }
 
 .ui-btn-inner {
@@ -4857,7 +4858,7 @@ body .component-itemSearch {
 }
 
 .component-subjectPhoto .subject_photo_cover {
-  margin: -15px -10px 0 !important;
+  margin: 0;
 }
 .component-itemSearch .global_form_box.filter_form.ui-body.ui-body-a.ui-listview-filter{
   background: none;
@@ -4992,10 +4993,57 @@ body .ui-navbar li .ui-btn .ui-btn-inner{
 	clear:none;
 }
 .ui-content.ui-body-d .component-like{
-	position: absolute;
-	top: 94px;
-	left: 4px;
+	padding:2px 6px 6px!important;
+	margin:0 -10px;
+	background:#f2f2f2;
 }
+.component-timelineCover .subject_photo{
+	float:none;
+	margin:0;
+	background:transparent;
+}
+.component-timelineCover .subject_photo a {
+	margin:0 auto;
+	padding:0;
+	height:80px;
+	width:80px;
+	border-radius:80px;
+}
+.component-timelineCover .subject_photo img {
+	height:80px;
+	width:80px;
+}
+.component-timelineCover h3.subject_title {
+	float:none;
+	margin:0!important;
+	text-align:center;
+	padding-top:4px;
+	position:relative;
+	z-index:2;
+	color:#fff;
+	text-shadow:none;
+}
+.component-timelineCover .subject_photo_cover{
+	position:absolute;
+	width:100%;
+}
+.component-timelineCover div.cover_photo_wrapper {
+	height:175px;
+	overflow:hidden;
+	position: relative;
+}
+.component-timelineCover div.cover_photo_wrapper:before {
+	content:"";
+	height:175px;
+	margin-bottom:-175px;
+	opacity:0.3;
+	background:#000;
+	position:absolute;
+	z-index:1;
+	width:100%;
+	display:block;
+}
+
 .component-tabs.ui-navbar .tab .tab_icon_map:before {
   /*line-height: 45px;
   width: 26px;*/
@@ -5266,9 +5314,13 @@ body .ui-navbar li .ui-btn .ui-btn-inner{
 .component-subjectPhoto .subject_photo img {
   margin:0;
   border-radius:80px;
+  margin:0 auto;
 }
 .component-subjectPhoto .subject_photo{
 	border-radius:80px;
+	float:none;
+	margin:0 auto;
+	width:80px;
 }
 .component-subjectPhoto.subject_photo_wrapper{
 	overflow:auto;
@@ -5280,7 +5332,15 @@ background: linear-gradient(to bottom, #f9f9f9 0%, #f2f2f2 100%);
 	margin: -10px;
 	padding: 10px;
 }
+.component-subjectPhoto .subject_photo_cover div {
+	min-height:0;
+}
 .component-subjectPhoto .subject_title {
 	text-shadow:none;
 	color: #2bbfca;
+	margin:0;
+	text-align:center;
+}
+.wall.feedList .ui-header{
+	display:none;
 }
