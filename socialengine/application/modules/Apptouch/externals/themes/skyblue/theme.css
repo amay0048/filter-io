@@ -5445,3 +5445,54 @@ background: linear-gradient(to bottom, #f9f9f9 0%, #f2f2f2 100%);
 	margin:0 10px;
 	border-radius:5px;
 }
+.module-store .component-navigation.ui-navbar,
+.module-store .profile_tabs_wrapper,
+.module-store .component-gallery,
+.module-store .component-html > br,
+.module-store .component-html > span,
+.module-store .component-html > a {
+	display:none;
+}
+.module-store .component-html > span.store-price {
+	display:inline;
+}
+.module-store .component-html > a.ui-btn {
+	display:block;
+	background:#fff;
+}
+
+.module-store .component-html{
+	margin-top:20px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(1%, #f5f5f5), color-stop(100%, #ededed));
+	background: -webkit-linear-gradient(top, #f7f7f7 0%, #f5f5f5 1%, #ededed 100%);
+	background: -o-linear-gradient(top, #f7f7f7 0%, #f5f5f5 1%, #ededed 100%);
+	background: -ms-linear-gradient(top, #f7f7f7 0%, #f5f5f5 1%, #ededed 100%);
+	background: linear-gradient(to bottom, #f7f7f7 0%, #f5f5f5 1%, #ededed 100%);
+	-webkit-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius:5px;
+	padding:10px;
+}
+
+.ui-content.ui-body-h .ui-btn-inner {
+	height: 30px;
+	background: #fff;
+	margin-top: 10px;
+	border-radius:5px;
+	padding-top:4px;
+}
+.ui-content.ui-body-h .ui-btn-inner .ui-btn-text{
+	font-size:16px;
+	padding-top:3px;
+}
+.hz-search-header{
+	display:block;
+	margin:0 auto;
+	position:relative;
+}
+.hz-search-image-container{
+	background:#f8f8f8;
+	margin-top:-10px;
+	padding-top:10px;
+	padding-bottom:30px;
+}

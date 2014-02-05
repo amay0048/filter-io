@@ -73,6 +73,12 @@ class Apptouch_QuestionController
   public function indexCreateAction()
   {
       $this->addPageInfo('contentTheme', 'h');
+	  
+		$img = $this->dom()->new_('img',array('src'=>'/socialengine/hzsearch/hz-search-bg.png','class'=>'hz-search-header'));
+		$div = $this->dom()->new_('div',array('class'=>'hz-search-image-container'));
+		$div->append($img);
+		$this->add($this->component()->html($div));
+	  
 	  //"$(this.form).trigger('submit')" an be called onclick
 	  $searchInput = $this->dom()->new_('textarea', array('onclick' => "", 'type' => 'text', 'name' => 'searchText', 'id' => 'searchText','placeholder'=>'Enter Text'));
 	  $searchSubmit = $this->dom()->new_('input', array('onclick' => "doSearch();", 'type' => 'button', 'name' => 'searchSubmit', 'id' => 'searchSubmit', 'value' => 'search'));
