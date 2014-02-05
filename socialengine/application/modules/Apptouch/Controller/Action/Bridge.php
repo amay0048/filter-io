@@ -111,7 +111,7 @@ abstract class Apptouch_Controller_Action_Bridge extends Core_Controller_Action_
 	// The issue with this is that it is rendered on every single layout, including menus.
 	// This needs to be updated to only dispaly in the page tab.
 	// Also, seems to work great in the tablet layout...?
-	$this->add($this->component()->footerMenu(Engine_Api::_()->getApi('menus', 'apptouch')->getNavigation('core_footer')), null, 'footer');
+	//$this->add($this->component()->footerMenu(Engine_Api::_()->getApi('menus', 'apptouch')->getNavigation('core_footer')), null, 'footer');
 
     $method = $this->getInitFunctionName();
     if (method_exists($this, $method)) {

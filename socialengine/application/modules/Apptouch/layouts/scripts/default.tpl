@@ -149,6 +149,97 @@ if (Engine_Api::_()->getDbTable('modules', 'core')->isModuleEnabled('checkin')){
   });
   core.setBaseUrl('<?php echo $this->url(array(), 'default', true) ?>');
 </script>
-
+<!-- (amay0048) hardcoded footer for the time being -->
+<style>
+	#hz-footer{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		z-index: 300;
+		height:51px;
+		background:#fff;
+	}
+	#hz-footer a{
+		width:24%;
+		text-indent:-10000px;
+		display:block;
+		height:31px;
+		width:31px;
+		background:green;
+		position:absolute;
+		top:10px;
+		z-index:900;
+	}
+	#hz-footer a.fit,
+	#hz-footer a.food,
+	#hz-footer a.med,
+	#hz-footer a.search{
+		background:url('/socialengine/hzsearch/sprite.png') no-repeat 0 0;
+		background-size: 50px 850px;
+	}
+	
+	#hz-footer a.med{
+		left:23px;
+		background-position: 0 -150px;
+	}
+	#hz-footer a.food{
+		left:78px;
+		background-position: 0 -188px;
+	}
+	#hz-footer a.fit{
+		right:83px;
+		width:25px;
+		background-position: 0 -228px;
+	}
+	#hz-footer a.search{
+		right:23px;
+		width:35px;
+		background-position: 0 -268px;
+	}
+	#hz-footer .profile-container{
+		position:absolute;
+		top:-34px;
+		left:0;
+		width:100%;
+		text-align:center;
+	}
+	#hz-footer .profile{
+		-webkit-box-shadow: inset 0 0 2px 1px rgba(0,0,0,0.3);
+		box-shadow: inset 0 0 2px 1px rgba(0,0,0,0.3);
+		background: -moz-linear-gradient(top, #2bbeca 0%, #3a54a4 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2bbeca), color-stop(100%, #3a54a4));
+		background: -webkit-linear-gradient(top, #2bbeca 0%, #3a54a4 100%);
+		background: -o-linear-gradient(top, #2bbeca 0%, #3a54a4 100%);
+		background: -ms-linear-gradient(top, #2bbeca 0%, #3a54a4 100%);
+		background: linear-gradient(to bottom, #2bbeca 0%, #3a54a4 100%);
+		display:block;
+		margin:0 auto;
+		height:56px;
+		width:56px;
+		padding:6px;
+		border-radius:78px;
+		float:none;
+		position:relative;
+	}
+	#hz-footer .profile img{
+		width:56px;
+		width:56px;
+		border-radius:56px;
+		display:block;
+	}
+</style>
+<div id="hz-footer">
+	<a class="med" href="#">Medical</a>
+	<a class="food" href="#">Food</a>
+    <div class="profile-container">
+        <a class="profile" href="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["href"]; ?>">
+            <img src="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["photo"]; ?>"/>
+        </a>
+    </div>
+	<a class="fit" href="#">Fitness</a>
+	<a class="search" href="#">Search</a>
+</div>
 </body>
 </html>
