@@ -1,2 +1,7 @@
-
 socialengine/temporary/log/main.log
+wordpress/wp-content/uploads/*
+wordpress/wp-content/uploads/*/*
+wordpress/wp-content/uploads/*/*/*
+wordpress/wp-content/uploads/*/*/*/*
+wordpress/wp-content/uploads/*/*/*/*/*
+wordpress/wp-content/uploads/*/*/*/*/*/*
