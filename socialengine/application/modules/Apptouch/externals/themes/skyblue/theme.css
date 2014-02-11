@@ -4782,7 +4782,6 @@ span.ui-slider-label-b {
   text-align: center;
   width:40%;
   float:right;
-  margin:10px 10px 10px 0;
 }
 /*
 .component-feed .feedItem:nth-child(odd) .content.action.photo .attachment_big_photo{
@@ -4813,6 +4812,9 @@ span.ui-slider-label-b {
 .component-feed .feedItem .photo .body{
   margin-right:40%;
   padding: 10px;
+}
+.component-feed .feedItem .attachment_big_photo > *{
+	padding:10px 10px 10px 0;
 }
 /**
 * Wall Composer
