@@ -11,9 +11,19 @@
 <script type="text/javascript" src="<?php echo $baseurl . 'hzsearch/POS/POSTagger.js';?>"></script>
 <script type="text/javascript" src="<?php echo $baseurl . 'hzsearch/search.js';?>" ></script>
 <script type="text/javascript" src="<?php echo $baseurl . 'hzsearch/exclusion.js';?>" ></script>
+<style>
+.wallFeed .wall-stream-header {
+	display:none;
+}
+.wallComposer .inputBox {
+	display:none;
+}
+</style>
 
 <?php echo $this->searchform->render($this); ?>
-<?php echo $this->form->render($this); ?>
+<div style="display:none;">
+	<?php echo $this->form->render($this); ?>
+</div>
 <div id ='snapshotResult' class='snapshotResult'></div>
 <div id ='descriptionResult' class='descriptionResult'></div>
 <div id ='providersResult' class='providersResult'></div>
