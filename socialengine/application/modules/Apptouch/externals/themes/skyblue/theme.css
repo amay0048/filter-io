@@ -4813,7 +4813,7 @@ span.ui-slider-label-b {
   margin-right:40%;
   padding: 10px;
 }
-.component-feed .feedItem .attachment_big_photo .ui-link{
+.component-feed .feedItem .attachment_big_photo > a{
 	padding:10px 10px 10px 0;
 }
 /**
