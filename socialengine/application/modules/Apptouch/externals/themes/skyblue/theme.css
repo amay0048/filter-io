@@ -4632,8 +4632,8 @@ span.ui-slider-label-b {
   text-decoration: none;
   width: 16px;
   position:absolute;
-  top:4px;
-  right:0;
+  top:10px;
+  right:6px;
 }
 
 .component-feed .attachment_photo {
@@ -4773,16 +4773,17 @@ span.ui-slider-label-b {
 
 .component-feed .feedItem .content.action.photo .actions{
 	position:absolute;
-	width:48%;
+	width:58%;
+	left:0;
 }
 
 .component-feed .attachment_big_photo {
   /*margin: 5px;*/
   text-align: center;
-  width:50%;
-  float:left;
+  width:40%;
+  float:right;
 }
-
+/*
 .component-feed .feedItem:nth-child(odd) .content.action.photo .attachment_big_photo{
 	float:right;
 }
@@ -4800,17 +4801,20 @@ span.ui-slider-label-b {
 	bottom:0;
 	left:0;
 }
-
+*/
 .component-feed .attachment_big_photo img {
   /*border: #CCC 1px solid;*/
   width:100%;
   display:block;
-  border-radius: 5px 0 0 5px;
+  /*border-radius: 5px 0 0 5px;*/
 }
 
 .component-feed .feedItem .photo .body{
-  margin-left:50%;
+  margin-right:40%;
   padding: 10px;
+}
+.component-feed .feedItem .attachment_big_photo .ui-link{
+	padding:10px 10px 10px 0;
 }
 /**
 * Wall Composer
