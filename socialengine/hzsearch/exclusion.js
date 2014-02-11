@@ -2,8 +2,6 @@ var preventSearchOnTagChange = true;
 
 var linguisticTags = function(string, callback){
 	
-	//console.log('hello');
-	
 	var words = new Lexer().lex(string);
 	var posTags = new POSTagger().tag(words);
 	var ret = [];
@@ -260,17 +258,17 @@ var linguisticTags = function(string, callback){
 }
 
 var updateTags = function(tagArray){
-	for (i in tagArray){
+	for (var i = 0;i < tagArray.length;i++){
 		searchTags.push(tagArray[i]);
 	}
-	hzSearch();
+	//hzSearch();
 	posTagsSearch();
 }
 
 var posTagsSearch = function(){
 
 	var url = 'https://www.googleapis.com/customsearch/v1?key=AIzaSyCMGfdDaSfjqv5zYoS0mTJnOT3e9MURWkU&cx=008033386019488104181:r3ynnevaasg&googlehost=google.com.au&filter=1&q=' + searchTags.toString().replace(/,/g , "%20");
-	$.ajax({
+	jQuery.ajax({
 	'url': url,
 	'success': function(data, textStats, XMLHttpRequest) {
 		var output = '';
@@ -279,7 +277,7 @@ var posTagsSearch = function(){
 		var ret = [];
 		console.log(data);
 
-			for(i in data['items']){
+			for(var i = 0;i < data['items'].length;i++){
 				displayLink = data['items'][i]['displayLink'];
 				searchResults[displayLink];
 				
@@ -303,14 +301,14 @@ var posTagsSearch = function(){
 				}
 
 			}
-			$("#descriptionResult").html(output);
-			$('#title').val($('#searchText').val());
-			$('#description').val(output);
+			jQuery("#descriptionResult").html(output);
+			jQuery('#title').val(jQuery('#searchText').val());
+			jQuery('#description').val(output);
 			/*
 			if(ga) {
 				var date = new Date();
-				ga('send', 'event', $('#text').val(), $('#tags').val(), ret.toString(),Number(date.getTime()));
-				ga('send', 'event', $('#text').val(), 'providers', providers.toString());
+				ga('send', 'event', jQuery('#text').val(), jQuery('#tags').val(), ret.toString(),Number(date.getTime()));
+				ga('send', 'event', jQuery('#text').val(), 'providers', providers.toString());
 			}
 			*/
 			preventSearchOnTagChange = false;

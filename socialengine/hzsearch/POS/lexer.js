@@ -20,7 +20,7 @@ function LexerNode(string, regex, regexs){
 	if (regexs.length > 0) {
         var nextRegex = regexs[0];
 		var nextRegexes = regexs.slice(1);
-		for (var i in childElements) {
+		for (var i = 0;i < childElements.length;i++) {
 			this.children.push(new LexerNode(childElements[i], nextRegex, nextRegexes));
         }
     }
@@ -30,7 +30,7 @@ function LexerNode(string, regex, regexs){
 }
 
 LexerNode.prototype.fillArray = function(array){
-    for (var i in this.children) {
+    for (var i = 0;i < this.children.length;i++) {
         var child = this.children[i];
         if (child.fillArray) 
             child.fillArray(array);
@@ -62,5 +62,5 @@ Lexer.prototype.lex = function(string){
     return array;
 }
 
-//var lexer = new Lexer();
-//print(lexer.lex("I made $5.60 today in 1 hour of work.  The E.M.T.'s were on time, but only barely.").toString());
+/*var lexer = new Lexer();
+console.log(lexer.lex("I made $5.60 today in 1 hour of work.  The E.M.T.'s were on time, but only barely."));*/

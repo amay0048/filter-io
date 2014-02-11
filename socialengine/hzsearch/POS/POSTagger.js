@@ -103,14 +103,14 @@ POSTagger.prototype.tag = function(words){
             ret[i] = "VBG";
     }
 	var result = new Array();
-	for (i in words) {
+	for (var i = 0;i < words.length;i++) {
 		result[i] = [words[i], ret[i]];
 	}
     return result;
 }
 
 POSTagger.prototype.prettyPrint = function(taggedWords) {
-	for (i in taggedWords) {
+	for (var i = 0;i < taggedWords.length;i++) {
         print(taggedWords[i][0] + "(" + taggedWords[i][1] + ")");
     }
 }

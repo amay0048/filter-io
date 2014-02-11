@@ -72,6 +72,11 @@ class Apptouch_QuestionController
   
   public function indexCreateAction()
   {
+	  /**
+	   * (amay0048) I've added a custom form component so that the search query is abstracted and 
+	   * lives in a centralised place. This action needs to be updated so that these two views
+	   * are both using the same components
+	   **/
       $this->addPageInfo('contentTheme', 'h');
 	  
 		$img = $this->dom()->new_('img',array('src'=>'/socialengine/hzsearch/hz-search-bg.png','class'=>'hz-search-header'));
