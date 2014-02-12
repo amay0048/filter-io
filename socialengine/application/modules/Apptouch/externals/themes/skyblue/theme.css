@@ -5502,3 +5502,29 @@ question_index_create_rewrite .ui-content.ui-body-h .ui-btn-inner .ui-btn-text{
 	padding-top:10px;
 	padding-bottom:30px;
 }
+
+/**
+ * (amay0048) TODO: I need to come back and fix up the selectors in this CSS
+ **/
+.component-feed .feedItem div h2 {
+    font-size: 18px;
+    margin: 0;
+}
+.component-feed .feedItem div h2 a {
+    font-size: -webkit-xxx-large;
+}
+.component-feed .feedItem div h2 .ui-link {
+    font-size: 15px;
+    line-height: 20px;
+    /* color: #444!important; */
+}
+.component-feed .feedItem div p {
+    position: absolute;
+    bottom: -1px;
+    left: 59px;
+    color: #fefefe;
+    width: 30px;
+}
+.component-feed .feedItem div p a {
+    color: #aaaaaa!important;
+}
