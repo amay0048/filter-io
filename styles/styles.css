@@ -1,0 +1,306 @@
+/*
+GENERAL STYLES
+*/
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+::-moz-selection {
+    color: #ecf0f1;
+    background: #16a085;
+}
+::selection {
+    color: #ecf0f1;
+    background: #16a085;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    color: #ecf0f1;
+    background: #1abc9c;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+}
+.heading {
+    margin-bottom: 48px;
+    font-size: 3em;
+    margin-top: 0;
+}
+a {
+    transition: .25s;
+    color: #1abc9c;
+}
+a:hover {
+    color: #16a085;
+    text-decoration: none;
+}
+a:focus {
+    outline: none;
+}
+.tooltip-inner {
+    background: #e74c3c;
+}
+.tooltip.left .tooltip-arrow {
+    border-left-color: #e74c3c;
+}
+.tooltip.top .tooltip-arrow {
+    border-top-color: #e74c3c;
+}
+.ketchup-error ul {
+    color: #ecf0f1;
+    background: #e74c3c;
+}
+.ketchup-error span {
+    border-top-color: #e74c3c;
+}
+#top, #updates-link, #about-link, #contact-link {
+    position: relative;
+    top: -80px;
+}
+.alert {
+    box-shadow: none;
+    border: none;
+    font-weight: bold;
+}
+.alert-danger {
+    background: #e74c3c;
+    color: #c0392b;
+}
+.alert-success {
+    background: #40d47e;
+    color: #27ae60;
+}
+#newsletter-success, #newsletter-error, #contact-success, #contact-error {
+	display: none;
+    margin-top: 24px;
+}
+
+/*
+FORMS
+*/
+.form-control {
+    box-shadow: none;
+    border: none;
+    background: #ecf0f1;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+.input-group-addon {
+    box-shadow: none;
+    border: none;
+    background: #1abc9c;
+    color: #16a085;
+}
+.btn {
+    border: none;
+    box-shadow: none;
+    background: #e74c3c;
+    color: #ecf0f1;
+    transition: .25s;
+}
+.btn:hover {
+    background: #c0392b;
+    color: #ecf0f1;
+}
+.btn:focus {
+    outline: none;
+    color: #ecf0f1;
+}
+
+/*
+HEADER
+*/
+.header {
+    margin-bottom: 80px;
+}
+.navbar-default {
+    border: none;
+    background: #333333;
+}
+.navbar-nav>li>a {
+    line-height: 50px;
+    font-size: 1.2em;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #ecf0f1;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color: #1abc9c;
+}
+.navbar-brand {
+    transition: .25s;
+}
+.navbar-brand:hover {
+    opacity: .8;
+}
+.navbar-collapse {
+    border: none;
+}
+.navbar-toggle {
+    border: none;
+    background: #1abc9c;
+    color: #ecf0f1;
+    line-height: 50px;
+    width: 68px;
+    font-size: 3em;
+    transition: .25s;
+}
+.navbar-default .navbar-toggle:focus {
+    outline: none;
+    background: #1abc9c;
+}
+.navbar-default .navbar-toggle:hover {
+    background: #16a085;
+}
+
+/*
+MAIN AREA
+*/
+.main {
+    padding: 96px 12px;
+    text-align: center;
+}
+.main-heading {
+    font-size: 4em;
+    margin-top: 0;
+    margin-bottom: 72px;
+}
+.time {
+    display: inline-block;
+    width: 125px;
+    height: 125px;
+    background: #e74c3c;
+    border-radius: 100%;
+    margin: 0 18px;
+    margin-top: 72px;
+    transition: .25s;
+}
+.time span {
+    line-height: 115px;
+    font-size: 4em;
+    font-family: 'Oswald', sans-serif;
+}
+.time p {
+    margin-top: -30px;
+}
+.time:hover {
+    background: #c0392b;
+}
+
+/*
+UPDATES
+*/
+.updates {
+    background: #34495e;
+    padding: 48px 12px;
+    text-align: center;
+}
+#newsletter-form {
+    display: inline-block;
+    width: 50%;
+}
+
+/*
+ABOUT
+*/
+.about {
+    padding: 48px 12px;
+    padding-bottom: 24px;
+    text-align: center;
+}
+.about .lead {
+    margin-bottom: 48px;
+}
+.about-item {
+    margin-bottom: 24px;
+}
+.about-icon {
+    display: inline-block;
+    line-height: 100px;
+    font-size: 4em;
+    background: #16a085;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    transition: .5s;
+}
+.about-item:hover .about-icon {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+/*
+CONTACT
+*/
+.contact {
+    background: #34495e;
+    padding: 48px 12px;
+    text-align: center;
+}
+.contact-info {
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+.address {
+    font-size: 1.2em;
+    margin-bottom: 12px;
+}
+.address i {
+    margin-right: 6px;
+}
+.contact .col-sm-6 {
+    text-align: left;
+}
+.contact .input-group {
+    margin-bottom: 24px;
+}
+
+/*
+FOOTER
+*/
+.footer {
+    background: #333333;
+    padding: 48px 12px;
+}
+.footer-middle {
+    text-align: center;
+}
+.footer-last {
+    text-align: right;
+}
+.copyright {
+    font-size: 1.2em;
+    line-height: 40px;
+}
+.footer .nav-link {
+    font-size: 3em;
+    line-height: 40px;
+}
+.social-icon {
+    font-size: 2em;
+    margin-left: 12px;
+    line-height: 40px;
+}
+
+/*
+MEDIA QUERIES
+*/
+@media all and (max-width: 1000px) {
+    #newsletter-form {
+        width: 75%;
+    }
+}
+@media all and (max-width: 768px) {
+    .footer, .footer-last {
+        text-align: center;
+    }
+    .footer-middle {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    #newsletter-form {
+        width: 100%;
+    }
+}

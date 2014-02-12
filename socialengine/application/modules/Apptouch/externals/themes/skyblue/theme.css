@@ -4516,8 +4516,10 @@ span.ui-slider-label-b {
 }
 
 .component-feed .feedItem .thumbnail {
-  float: left;
-  padding: 10px 10px 0;
+  position:absolute;
+  bottom:0;
+  left:0;
+  padding: 10px;
 }
 
 .component-feed .feedItem .thumbnail a {
@@ -4546,7 +4548,7 @@ span.ui-slider-label-b {
 
 .component-feed .feedItem .body {
   font-size: 12px;
-  padding: 10px 5px 0;
+  padding: 10px 14px 20px;
 }
 
 .component-feed .feedItem .options {
