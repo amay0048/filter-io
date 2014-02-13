@@ -8,6 +8,8 @@
  * @license    http://www.hire-experts.com
  */
 ?>
+<?php $baseurl = Zend_Registry::get('StaticBaseUrl'); ?>
+
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN">
 
 <?php
@@ -24,6 +26,100 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
   <meta content="<?php echo APPLICATION_ENV ?>" name="app_env">
   <meta content="<?php echo $this->isMaintenanceMode(); ?>" name="is_maintenance">
   <base href="<?php echo rtrim((constant('_ENGINE_SSL') ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $this->baseUrl(), '/') . '/' ?>"/>
+
+	<!-- (amay0048) -->
+	<style>
+        #hz-footer{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            z-index: 300;
+            height:51px;
+            background:#fff;
+        }
+        #hz-footer a{
+            width:24%;
+            text-indent:-10000px;
+            display:block;
+            height:31px;
+            width:31px;
+            background:green;
+            position:absolute;
+            top:10px;
+            z-index:900;
+        }
+        #hz-footer a.fit,
+        #hz-footer a.food,
+        #hz-footer a.med,
+        #hz-footer a.search{
+            background:url('/socialengine/hzsearch/sprite.png') no-repeat 0 0;
+            background-size: 50px 850px;
+        }
+        
+        #hz-footer a.med{
+            left:23px;
+            background-position: 0 -150px;
+        }
+        #hz-footer a.food{
+            left:78px;
+            background-position: 0 -188px;
+        }
+        #hz-footer a.fit{
+            right:83px;
+            width:25px;
+            background-position: 0 -228px;
+        }
+        #hz-footer a.search{
+            right:23px;
+            width:35px;
+            background-position: 0 -268px;
+        }
+        #hz-footer .profile-container{
+            position:absolute;
+            top:-34px;
+            left:0;
+            width:100%;
+            text-align:center;
+        }
+        #hz-footer .profile{
+            -webkit-box-shadow: inset 0 0 2px 1px rgba(0,0,0,0.3);
+            box-shadow: inset 0 0 2px 1px rgba(0,0,0,0.3);
+            background: -moz-linear-gradient(top, #2bbeca 0%, #3a54a4 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2bbeca), color-stop(100%, #3a54a4));
+            background: -webkit-linear-gradient(top, #2bbeca 0%, #3a54a4 100%);
+            background: -o-linear-gradient(top, #2bbeca 0%, #3a54a4 100%);
+            background: -ms-linear-gradient(top, #2bbeca 0%, #3a54a4 100%);
+            background: linear-gradient(to bottom, #2bbeca 0%, #3a54a4 100%);
+            display:block;
+            margin:0 auto;
+            height:56px;
+            width:56px;
+            padding:6px;
+            border-radius:78px;
+            float:none;
+            position:relative;
+        }
+        #hz-footer .profile img{
+            height:56px;
+            width:56px;
+            border-radius:56px;
+            display:block;
+        }
+        #header-logo{
+            position:absolute;
+            top:3px;
+            left:50%;
+            z-index:201;
+            display:block;
+            margin-left:-48px;
+        }
+        #header-logo img{
+            height:32px;
+            width:95px;
+        }
+    </style>
 
   <?php // LINK/STYLES ?>
   <?php
@@ -54,6 +150,9 @@ $request = Zend_Controller_Front::getInstance()->getRequest();
 <body
   id="global_page_<?php echo $request->getModuleName() . '-' . $request->getControllerName() . '-' . $request->getActionName() ?>"
   class="apptouch-body <?php if (Engine_Api::_()->apptouch()->isTabletMode()){ ?>tablet<?php } else { ?> phone <?php } ?>">
+<a id="header-logo" href="<?php echo $baseurl . 'members/home';?>">
+<img src="<?php echo $baseurl . 'hzsearch/logo.png';?>" />
+</a>
 <?php echo $this->localeFormats()->render();
 $baseUrl = $this->baseUrl();
 ?>
@@ -149,87 +248,6 @@ if (Engine_Api::_()->getDbTable('modules', 'core')->isModuleEnabled('checkin')){
   core.setBaseUrl('<?php echo $this->url(array(), 'default', true) ?>');
 </script>
 <!-- (amay0048) hardcoded footer for the time being -->
-<style>
-	#hz-footer{
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		display: block;
-		width: 100%;
-		z-index: 300;
-		height:51px;
-		background:#fff;
-	}
-	#hz-footer a{
-		width:24%;
-		text-indent:-10000px;
-		display:block;
-		height:31px;
-		width:31px;
-		background:green;
-		position:absolute;
-		top:10px;
-		z-index:900;
-	}
-	#hz-footer a.fit,
-	#hz-footer a.food,
-	#hz-footer a.med,
-	#hz-footer a.search{
-		background:url('/socialengine/hzsearch/sprite.png') no-repeat 0 0;
-		background-size: 50px 850px;
-	}
-	
-	#hz-footer a.med{
-		left:23px;
-		background-position: 0 -150px;
-	}
-	#hz-footer a.food{
-		left:78px;
-		background-position: 0 -188px;
-	}
-	#hz-footer a.fit{
-		right:83px;
-		width:25px;
-		background-position: 0 -228px;
-	}
-	#hz-footer a.search{
-		right:23px;
-		width:35px;
-		background-position: 0 -268px;
-	}
-	#hz-footer .profile-container{
-		position:absolute;
-		top:-34px;
-		left:0;
-		width:100%;
-		text-align:center;
-	}
-	#hz-footer .profile{
-		-webkit-box-shadow: inset 0 0 2px 1px rgba(0,0,0,0.3);
-		box-shadow: inset 0 0 2px 1px rgba(0,0,0,0.3);
-		background: -moz-linear-gradient(top, #2bbeca 0%, #3a54a4 100%);
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2bbeca), color-stop(100%, #3a54a4));
-		background: -webkit-linear-gradient(top, #2bbeca 0%, #3a54a4 100%);
-		background: -o-linear-gradient(top, #2bbeca 0%, #3a54a4 100%);
-		background: -ms-linear-gradient(top, #2bbeca 0%, #3a54a4 100%);
-		background: linear-gradient(to bottom, #2bbeca 0%, #3a54a4 100%);
-		display:block;
-		margin:0 auto;
-		height:56px;
-		width:56px;
-		padding:6px;
-		border-radius:78px;
-		float:none;
-		position:relative;
-	}
-	#hz-footer .profile img{
-		height:56px;
-		width:56px;
-		border-radius:56px;
-		display:block;
-	}
-</style>
-<?php $baseurl = Zend_Registry::get('StaticBaseUrl'); ?>
 <div id="hz-footer">
 	<a class="med" href="<?php echo $baseurl . 'members/home';?>">Medical</a>
 	<a class="food" href="<?php echo $baseurl . 'members/home';?>">Food</a>

@@ -5314,10 +5314,10 @@ body .ui-navbar li .ui-btn .ui-btn-inner{
 /* (amay0048) HooZoo Branding */
 .ui-header .ui-title{
 	text-indent:-10000px;
-	background:url('/socialengine/hzsearch/logo.png') center 3px no-repeat;
+	/*background:url('/socialengine/hzsearch/logo.png') center 3px no-repeat;
 	background-size:auto 30px;
 	margin:0;
-	height:37px;
+	height:37px;*/
 }
 .component-subjectPhoto .subject_photo img {
   margin:0;
