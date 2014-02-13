@@ -3,9 +3,7 @@ var hash = window.location.hash;
 var searchTags = new Array();
 
 var doSearch = function(){
-	preventSearchOnTagChange = true;
 	var text = demo_text = jQuery('#searchText').val();
-	//displayProviders();
 	text = text.replace(/[^a-z0-9\s]/gi, '');
 	searchTags = [];
 	linguisticTags(text,updateTags);

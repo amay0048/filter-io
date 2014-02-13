@@ -261,7 +261,7 @@ var updateTags = function(tagArray){
 	for (var i = 0;i < tagArray.length;i++){
 		searchTags.push(tagArray[i]);
 	}
-	//hzSearch();
+	hzSearch();
 	posTagsSearch();
 }
 
