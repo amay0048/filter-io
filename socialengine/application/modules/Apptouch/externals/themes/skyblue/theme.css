@@ -5513,11 +5513,12 @@ question_index_create_rewrite .ui-content.ui-body-h .ui-btn-inner .ui-btn-text{
     font-size: 18px;
     margin: 0;
 }
-.component-feed .feedItem div h2 a {
-    font-size: -webkit-xxx-large;
+.component-feed .feedItem div h2 a,
+.component-feed .feedItem div h2 a:link,
+.component-feed .feedItem div h2 a:visited {
+    font-size: 12px;
 }
 .component-feed .feedItem div h2 .ui-link {
-    font-size: 15px;
     line-height: 20px;
     /* color: #444!important; */
 }
