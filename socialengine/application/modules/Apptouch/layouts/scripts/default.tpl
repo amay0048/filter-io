@@ -239,7 +239,7 @@ if (Engine_Api::_()->getDbTable('modules', 'core')->isModuleEnabled('checkin')){
         </a>
     </div>
 	<a class="fit" href="<?php echo $baseurl . 'members/home';?>">Fitness</a>
-	<a class="search" href="<?php echo $baseurl . 'members/home';?>">Search</a>
+	<a class="search" href="<?php echo $baseurl . 'questions/create';?>">Search</a>
 </div>
 </body>
 </html>

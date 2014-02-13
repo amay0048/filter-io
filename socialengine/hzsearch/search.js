@@ -13,10 +13,11 @@ var doSearch = function(){
 var hzSearch = function(text){
 	jQuery.get("https://bombur-us-east-1.searchly.com/api-key/bhnpketpvhfzjqgt3zhlrficenee25zw/wordpress_staging/_search?q=_all:" + searchTags.toString().replace(/,/g , "%20"), function( data ) {
 		var results = data['hits']['hits'];
+		console.log(results);
 		var snapshot = false;
 		jQuery('#providersResult').html('');
 		jQuery('#snapshotResult').html('');
-		for(i in results){
+		for(var i = 0; i < results.length;i++){
 			result = results[i]['_source'];
 			if(result.cats.indexOf('snapshots') > -1 && !snapshot){
 				snapshot = true;
