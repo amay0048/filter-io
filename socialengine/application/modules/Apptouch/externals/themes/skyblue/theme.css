@@ -5510,13 +5510,14 @@ question_index_create_rewrite .ui-content.ui-body-h .ui-btn-inner .ui-btn-text{
  * (amay0048) TODO: I need to come back and fix up the selectors in this CSS
  **/
 .component-feed .feedItem div h2 {
-    font-size: 18px;
+    font-size: 13px;
     margin: 0;
 }
 .component-feed .feedItem div h2 a,
 .component-feed .feedItem div h2 a:link,
 .component-feed .feedItem div h2 a:visited {
-    font-size: 12px;
+    font-size: 13px;
+	line-height:1.3;
 }
 .component-feed .feedItem div h2 .ui-link {
     line-height: 20px;
