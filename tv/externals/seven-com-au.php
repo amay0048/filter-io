@@ -34,7 +34,7 @@ function updatenews($url) {
 			  'post_name'     => sanitize_title($node->nodeValue),
 			  'post_status'   => 'publish',
 			  'post_author'   => 1,
-			  'post_category' => array()
+			  'post_category' => array(8)
 			);
 			
 			// Create lookup params to see if the post exists

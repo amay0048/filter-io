@@ -33,7 +33,7 @@ function updatenews($url) {
 		  'post_name'     => sanitize_title($result->title),
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
-		  'post_category' => array()
+		  'post_category' => array(9)
 		);
 		
 		// Create lookup params to see if the post exists
