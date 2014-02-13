@@ -4,8 +4,7 @@
 require( '../wp-load.php' );
 
 $urls = array(
-"http://www.sbs.com.au/api/video_feed/f/Bgtm9B/sbs-section-sbstv?form=json&byCategories=News+and+Current+Affairs%7CSport%7CSpecial+Events%2CSection%2FClips%7CSection%2FPrograms&range=21-40",
-"http://www.sbs.com.au/api/video_feed/f/Bgtm9B/sbs-section-sbstv?form=json&byCategories=News+and+Current+Affairs%7CSport%7CSpecial+Events%2CSection%2FClips%7CSection%2FPrograms&range=1-20"
+"http://www.abc.net.au/news/feed/54768/rss.xml"
 );
 
 foreach ($urls as $url) {
@@ -15,21 +14,18 @@ foreach ($urls as $url) {
 function updatenews($url) {
 
 	// Get the json from the URL
-	$json = file_get_contents($url);
-	// Parse the json
-	$data = json_decode($json);
+	$data = simplexml_load_file($url);
 
 	// look for the results withint the json
-	$results = $data->entries;
+	$results = $data->channel->item;
 	foreach (array_reverse($results) as $result) {
 		
-		$videoId = array_pop(explode('/',$result->id));
-		$link = '<h2><a href="http://www.sbs.com.au/ondemand/video/'.$videoId.'">view</a></h2>';
+		$link = '<h2><a href="'.$result->link.'">view</a></h2>';
 
 		// Create post object from json
 		$my_post = array(
 		  'post_title'    => $result->title,
-		  'post_content'  => '<p>'.$result->description.'</p>'.$link,
+		  'post_content'  => $link,
 		  'post_name'     => sanitize_title($result->title),
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,

@@ -33,7 +33,7 @@ function updatenews($url) {
 	$data = json_decode($json);
 	// look for the results withint the json
 	$results = $data->results;
-	foreach ($results as $result) {
+	foreach (array_reverse($results) as $result) {
 		
 		//echo '<div>';
 		//echo '<h2><a href="http://www.news.com.au/video/news/id-'.$result->ooyalaId.'">'.$result->title.'</a></h2>';
