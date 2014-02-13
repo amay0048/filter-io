@@ -39,11 +39,12 @@ function updatenews($url) {
 		//echo '<h2><a href="http://www.news.com.au/video/news/id-'.$result->ooyalaId.'">'.$result->title.'</a></h2>';
 		//echo '<p><a href="http://www.news.com.au/video/news/id-'.$result->ooyalaId.'">'.$result->description.'</a></p>';
 		//echo '</div>';
+		$link = '<h2><a href="http://www.news.com.au/video/news/id-'.$result->ooyalaId.'">view</a></h2>';
 		
 		// Create post object from json
 		$my_post = array(
 		  'post_title'    => $result->title,
-		  'post_content'  => $result->description,
+		  'post_content'  => '<p>'.$result->description.'</p>'.$link,
 		  'post_name'     => sanitize_title($result->title),
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
