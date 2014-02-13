@@ -4520,6 +4520,7 @@ span.ui-slider-label-b {
   bottom:0;
   left:0;
   padding: 10px;
+  z-index:3;
 }
 
 .component-feed .feedItem .thumbnail a {
@@ -5526,6 +5527,7 @@ question_index_create_rewrite .ui-content.ui-body-h .ui-btn-inner .ui-btn-text{
     left: 59px;
     color: #fefefe;
     width: 30px;
+	z-index:3;
 }
 .component-feed .feedItem div p a {
     color: #aaaaaa!important;
