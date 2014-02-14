@@ -45,6 +45,20 @@ return array(
     ),
   ),
   array(
+    'title' => 'Shopfront Members',
+    'description' => 'Displays the list of shopfront members.',
+    'category' => 'User',
+    'type' => 'widget',
+    'name' => 'user.list-shops',
+    'isPaginated' => true,
+    'defaultParams' => array(
+      'title' => 'Shopfront Members',
+    ),
+    'requirements' => array(
+      'no-subject',
+    ),
+  ),
+  array(
     'title' => 'Popular Members',
     'description' => 'Displays the list of most popular members.',
     'category' => 'User',
