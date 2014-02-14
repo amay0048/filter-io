@@ -249,14 +249,14 @@ if (Engine_Api::_()->getDbTable('modules', 'core')->isModuleEnabled('checkin')){
 </script>
 <!-- (amay0048) hardcoded footer for the time being -->
 <div id="hz-footer">
-	<a class="med" href="<?php echo $baseurl . 'members/home';?>">Medical</a>
-	<a class="food" href="<?php echo $baseurl . 'members/home';?>">Food</a>
+	<a class="med" href="<?php echo $baseurl . 'members/home';?>">Information</a>
+	<a class="food" href="<?php echo $baseurl . 'store';?>">Shop</a>
     <div class="profile-container">
         <a class="profile" href="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["href"]; ?>">
             <img src="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["photo"]; ?>"/>
         </a>
     </div>
-	<a class="fit" href="<?php echo $baseurl . 'members/home';?>">Fitness</a>
+	<a class="fit" href="<?php echo $baseurl . 'questions/map/gp';?>">Locations</a>
 	<a class="search" href="<?php echo $baseurl . 'questions/create';?>">Search</a>
 </div>
 </body>
