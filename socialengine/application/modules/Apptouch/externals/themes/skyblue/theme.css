@@ -5485,14 +5485,15 @@ background: linear-gradient(to bottom, #f9f9f9 0%, #f2f2f2 100%);
 /* search button */
 #question_index_create_rewrite .ui-content.ui-body-h .ui-btn-inner {
 	height: 30px;
-	background: #fff;
+	background: #ade2e6;
 	margin-top: 10px;
 	border-radius:5px;
 	padding-top:4px;
 }
-question_index_create_rewrite .ui-content.ui-body-h .ui-btn-inner .ui-btn-text{
+#question_index_create_rewrite .ui-content.ui-body-h .ui-btn-inner .ui-btn-text{
 	font-size:16px;
 	padding-top:3px;
+	color:#666;
 }
 .hz-search-header{
 	display:block;

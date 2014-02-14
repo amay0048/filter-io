@@ -108,7 +108,7 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
             display:block;
         }
         #header-logo{
-            position:absolute;
+            position:fixed;
             top:3px;
             left:50%;
             z-index:201;
@@ -119,6 +119,11 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
             height:32px;
             width:95px;
         }
+		#mobile-search .ui-btn{
+			width:45%;
+			float:left;
+			margin-right:5%;
+		}
     </style>
 
   <?php // LINK/STYLES ?>

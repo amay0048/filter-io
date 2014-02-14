@@ -85,15 +85,16 @@ class Apptouch_QuestionController
 		$this->add($this->component()->html($div));*/
 	  
 	  //"$(this.form).trigger('submit')" an be called onclick
-	  $searchInput = $this->dom()->new_('textarea', array('onclick' => "", 'type' => 'text', 'name' => 'searchText', 'id' => 'searchText','placeholder'=>'Enter Text'));
-	  $searchSubmit = $this->dom()->new_('input', array('onclick' => "doSearch();", 'type' => 'button', 'name' => 'searchSubmit', 'id' => 'searchSubmit', 'value' => 'search'));
-	  $searchLaunch = $this->dom()->new_('input', array('onclick' => "$('form.hz-search').submit();", 'type' => 'button', 'name' => 'searchLaunch', 'id' => 'searchLaunch', 'value' => 'launch'));
+	  $searchInput = $this->dom()->new_('textarea', array('onclick' => "", 'type' => 'text', 'name' => 'searchText', 'id' => 'searchText','placeholder'=>'Start search here...'));
+	  $searchSubmit = $this->dom()->new_('input', array('onclick' => "doSearch();", 'type' => 'button', 'name' => 'searchSubmit', 'id' => 'searchSubmit', 'value' => 'Search'));
+	  $searchLaunch = $this->dom()->new_('input', array('onclick' => "$('form.hz-search').submit();", 'type' => 'button', 'name' => 'searchLaunch', 'id' => 'searchLaunch', 'value' => 'Ask the crowd'));
 	  $searchForm = $this->dom()->new_('form', array(
 	    //'action' => $this->view->url(array('module' => 'event', 'controller' => 'widget', 'action' => 'profile-rsvp', 'subject' => 6), 'default', true),
 	    //'method' => 'post',
 	    'data-role' => 'controlgroup',
 	    'data-mini' => true,
-		'onsubmit' => 'javascript:return false;'
+		'onsubmit' => 'javascript:return false;',
+		'id' => 'mobile-search'
 	  ), '', array(
 	    $searchInput,
 		$searchSubmit,
