@@ -63,11 +63,11 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
             background-position: 0 -150px;
         }
         #hz-footer a.food{
-            left:78px;
+            left:72px;
             background-position: 0 -188px;
         }
         #hz-footer a.fit{
-            right:83px;
+            right:77px;
             width:25px;
             background-position: 0 -228px;
         }
