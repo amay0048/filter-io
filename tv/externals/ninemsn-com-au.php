@@ -43,7 +43,7 @@ function updatenews($url) {
 		$args = array(
 		  'name' => sanitize_title($result->name),
 		  'post_type' => 'post',
-		  'post_status' => 'publish',
+		  //'post_status' => 'publish',
 		  'numberposts' => 1
 		);
 		
