@@ -13,7 +13,7 @@ foreach ($urls as $url) {
 
 function updatenews($url) {
 	//look for the category by slug	
-	$idObj = get_category_by_slug('abc-com-au');
+	$idObj = get_category_by_slug('abc');
 
 	// Get the json from the URL
 	$data = simplexml_load_file($url);
