@@ -4,8 +4,10 @@
 require( '../wp-load.php' );
 
 $urls = array(
-"http://www.sbs.com.au/api/video_feed/f/Bgtm9B/sbs-section-sbstv?form=json&byCategories=News+and+Current+Affairs%7CSport%7CSpecial+Events%2CSection%2FClips%7CSection%2FPrograms&range=21-40",
-"http://www.sbs.com.au/api/video_feed/f/Bgtm9B/sbs-section-sbstv?form=json&byCategories=News+and+Current+Affairs%7CSport%7CSpecial+Events%2CSection%2FClips%7CSection%2FPrograms&range=1-20"
+"http://www.sbs.com.au/api/video_feed/f/Bgtm9B/sbs-section-sbstv?form=json&byCategories=News+and+Current+Affairs%7CSport%7CSpecial+Events%2CSection%2FClips%7CSection%2FPrograms&range=21-40",//news
+"http://www.sbs.com.au/api/video_feed/f/Bgtm9B/sbs-section-sbstv?form=json&byCategories=News+and+Current+Affairs%7CSport%7CSpecial+Events%2CSection%2FClips%7CSection%2FPrograms&range=1-20",//news
+"http://www.sbs.com.au/api/video_feed/f/Bgtm9B/sbs-section-sbstv?form=json&byCategories=Arts%7CDrama%7CEducation%7CFactual%7CFood%7COpera%7CComedy%7CDocumentary%2CSection%2FClips%7CSection%2FPrograms&range=1-20",//shows
+"http://www.sbs.com.au/api/video_feed/f/Bgtm9B/sbs-section-sbstv?form=json&byCategories=Arts%7CDrama%7CEducation%7CFactual%7CFood%7COpera%7CComedy%7CDocumentary%2CSection%2FClips%7CSection%2FPrograms&range=21-40"//shows
 );
 
 foreach ($urls as $url) {
