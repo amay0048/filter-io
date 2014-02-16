@@ -8,6 +8,8 @@ $urls = array(
 "http://au.news.yahoo.com/data/video/archive-mp/aunews_seven_news/1/"
 );
 
+$idObj = get_category_by_slug('seven');
+
 foreach ($urls as $url) {
 	updatenews($url);
 }
@@ -20,7 +22,7 @@ function updatenews($url) {
 	$doc = DOMDocument::loadHTML($html);
 	$results = $doc->getElementsByTagName('li');
 
-	// look for the results withint the json
+	// look for the results withint the html snip
 	foreach ($results as $result) {
 		$node = $result->getElementsByTagName('a')->item(1);
 		if(!is_null($node)){
@@ -34,7 +36,7 @@ function updatenews($url) {
 			  'post_name'     => sanitize_title($node->nodeValue),
 			  'post_status'   => 'publish',
 			  'post_author'   => 1,
-			  'post_category' => array(8)
+			  'post_category' => array($idObj->term_id)
 			);
 			
 			// Create lookup params to see if the post exists
