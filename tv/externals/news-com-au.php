@@ -17,6 +17,9 @@ $urls = array(
 "http://www.news.com.au/remote/jsonp-proxy.esi?format=json&includeRelated=true&includeBodies=false&pageSize=14&offset=0&api_key=c38u6s4wrgterpd5kjxvzccu&type=video&category=/video/video.news.com.au/news/tasmania&url=http://mashery.news.com.au/content/v1/&callback=_"
 );
 
+//look for the category by slug	
+$idObj = get_category_by_slug('news-com-au');
+
 foreach ($urls as $url) {
 	updatenews($url);
 }
@@ -48,7 +51,7 @@ function updatenews($url) {
 		  'post_name'     => sanitize_title($result->title),
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
-		  'post_category' => array(11)
+		  'post_category' => array($idObj->term_id)
 		);
 		
 		// Create lookup params to see if the post exists

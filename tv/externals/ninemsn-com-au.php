@@ -7,6 +7,9 @@ $urls = array(
 "http://api.brightcove.com/services/library?command=search_videos&all=segment:AUnationalninenews&page_size=12&page_number=0&sort_by=START_DATE:DESC&token=Vb3fqavTKFDDZbnnGGtbhKxam7uHduOnob-2MJlpHmUnzSMWbDe5bg..&video_fields=id,referenceId,version,name,shortDescription,publishedDate,startDate,endDate,length,itemState,thumbnailURL,videoStillURL,playsTotal&custom_fields=genre,network,provider,series,season,episode,originalairdate,classification&get_item_count=true&callback=_"
 );
 
+//look for the category by slug	
+$idObj = get_category_by_slug('nine');
+
 foreach ($urls as $url) {
 	updatenews($url);
 }
@@ -19,7 +22,7 @@ function updatenews($url) {
 	$json = substr(trim($jsonp),2,-2);
 	// Parse the json
 	$data = json_decode($json);
-
+	
 	// look for the results withint the json
 	$results = $data->items;
 	foreach (array_reverse($results) as $result) {
@@ -36,7 +39,7 @@ function updatenews($url) {
 		  'post_name'     => sanitize_title($result->name),
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
-		  'post_category' => array(7)
+		  'post_category' => array($idObj->term_id)
 		);
 		
 		// Create lookup params to see if the post exists

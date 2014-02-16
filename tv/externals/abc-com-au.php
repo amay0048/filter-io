@@ -7,6 +7,9 @@ $urls = array(
 "http://www.abc.net.au/news/feed/54768/rss.xml"
 );
 
+//look for the category by slug	
+$idObj = get_category_by_slug('abc-com-au');
+
 foreach ($urls as $url) {
 	updatenews($url);
 }
@@ -21,7 +24,7 @@ function updatenews($url) {
 	foreach (array_reverse($results) as $result) {
 		
 		$link = '<h2><a href="'.$result->link.'">view</a></h2>';
-
+		
 		// Create post object from json
 		$my_post = array(
 		  'post_title'    => $result->title,
@@ -29,7 +32,7 @@ function updatenews($url) {
 		  'post_name'     => sanitize_title($result->title),
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
-		  'post_category' => array(10)
+		  'post_category' => array($idObj->term_id)
 		);
 		
 		// Create lookup params to see if the post exists
