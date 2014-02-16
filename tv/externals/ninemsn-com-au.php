@@ -7,14 +7,13 @@ $urls = array(
 "http://api.brightcove.com/services/library?command=search_videos&all=segment:AUnationalninenews&page_size=12&page_number=0&sort_by=START_DATE:DESC&token=Vb3fqavTKFDDZbnnGGtbhKxam7uHduOnob-2MJlpHmUnzSMWbDe5bg..&video_fields=id,referenceId,version,name,shortDescription,publishedDate,startDate,endDate,length,itemState,thumbnailURL,videoStillURL,playsTotal&custom_fields=genre,network,provider,series,season,episode,originalairdate,classification&get_item_count=true&callback=_"
 );
 
-//look for the category by slug	
-$idObj = get_category_by_slug('nine');
-
 foreach ($urls as $url) {
 	updatenews($url);
 }
 
 function updatenews($url) {
+	//look for the category by slug	
+	$idObj = get_category_by_slug('nine');
 	
 	// Get the json from the URL
 	$jsonp = file_get_contents($url);

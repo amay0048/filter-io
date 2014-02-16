@@ -8,15 +8,14 @@ $urls = array(
 "http://www.sbs.com.au/api/video_feed/f/Bgtm9B/sbs-section-sbstv?form=json&byCategories=News+and+Current+Affairs%7CSport%7CSpecial+Events%2CSection%2FClips%7CSection%2FPrograms&range=1-20"
 );
 
-//look for the category by slug	
-$idObj = get_category_by_slug('sbs');
-
 foreach ($urls as $url) {
 	updatenews($url);
 }
 
 function updatenews($url) {
-
+	//look for the category by slug	
+	$idObj = get_category_by_slug('sbs');
+	
 	// Get the json from the URL
 	$json = file_get_contents($url);
 	// Parse the json

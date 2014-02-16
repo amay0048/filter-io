@@ -7,14 +7,13 @@ $urls = array(
 "http://www.abc.net.au/news/feed/54768/rss.xml"
 );
 
-//look for the category by slug	
-$idObj = get_category_by_slug('abc-com-au');
-
 foreach ($urls as $url) {
 	updatenews($url);
 }
 
 function updatenews($url) {
+	//look for the category by slug	
+	$idObj = get_category_by_slug('abc-com-au');
 
 	// Get the json from the URL
 	$data = simplexml_load_file($url);

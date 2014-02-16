@@ -8,14 +8,14 @@ $urls = array(
 "http://au.news.yahoo.com/data/video/archive-mp/aunews_seven_news/1/"
 );
 
-$idObj = get_category_by_slug('seven');
-
 foreach ($urls as $url) {
 	updatenews($url);
 }
 
 function updatenews($url) {
-
+	
+	$idObj = get_category_by_slug('seven');
+	
 	// Get the json from the URL
 	$html = file_get_contents($url);
 	// Parse the json
@@ -25,6 +25,7 @@ function updatenews($url) {
 	// look for the results withint the html snip
 	foreach ($results as $result) {
 		$node = $result->getElementsByTagName('a')->item(1);
+		
 		if(!is_null($node)){
 
 			$link = '<h2><a href="http://au.news.yahoo.com'.$node->getAttribute('href').'">view</a></h2>';
