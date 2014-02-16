@@ -40,7 +40,7 @@ function updatenews($url) {
 		$args = array(
 		  'name' => sanitize_title($result->title),
 		  'post_type' => 'post',
-		  //'post_status' => 'publish',
+		  'post_status' => 'any',
 		  'numberposts' => 1
 		);
 		
