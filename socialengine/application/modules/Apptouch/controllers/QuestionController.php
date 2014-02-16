@@ -205,6 +205,7 @@ class Apptouch_QuestionController
   
   public function indexMapAction()
   {
+	  //First we build the map
 	  $keyword = $this->getRequest()->getParam('keyword');
 	  $searchFrame = $this->dom()->new_('iframe', array(
 	  	'src'=>'/socialengine/hzsearch/index.html#'.$keyword,
@@ -212,13 +213,43 @@ class Apptouch_QuestionController
 	  ));
 	  
 	  $style = $this->dom()->new_('style');
-	  $style->text = '.hz-search-container{border:0;height:100%;width:100%;position:relative;}';
-	  $style->text .= '.hz-location-search{border:0;height: calc(100% - 96px);width:100%;}';
+	  $style->text = '.hz-search-container{border:0;height:60%;width:100%;position:relative;}';
+	  $style->text .= '.hz-location-search{border:0;height: calc(60% - 96px);width:100%;}';
   	  $style->text .= '.ui-page:after {height:0;display:none;}';
 	  
 	  $div = $this->dom()->new_('div',array('class'=>'hz-search-container'));
 	  $div->text = $style;
 	  $div->text .= $searchFrame;
+	  
+	  //Next we get the popular members
+	  
+		$table = Engine_Api::_()->getDbtable('users', 'user');
+		$select = $table->select()
+		  ->where('search = ?', 1)
+		  ->where('enabled = ?', 1)
+		  ->where('level_id = ?', 6)
+		  ->order('view_count DESC')
+		  ;	  
+	  
+		$paginator = Zend_Paginator::factory($select);
+	
+		// Set item count per page and current page number
+		$paginator->setItemCountPerPage($this->_getParam('itemCountPerPage', 4));
+		$paginator->setCurrentPageNumber($this->_getParam('page', 1));
+	  
+      $table = Engine_Api::_()->getDbTable('user_settings', 'hecore');
+	  
+	  foreach( $paginator as $user ):
+	      $userdiv = $this->dom()->new_('div',array('class'=>'user-search-result'));
+		  $userdiv->text = $this->view->htmlLink($user->getHref(), $this->view->itemPhoto($user, 'thumb.icon'), array('class' => 'popularmembers_thumb'));
+		  $userdiv->text .= $this->view->htmlLink($user->getHref(), $user->getTitle());
+		  $friends = Engine_Api::_()->hecore()->getMutualFriends($user, $viewer);
+    	  $friends->setItemCountPerPage(2);
+		  foreach($friends as $friend):
+      		  $userdiv->text .= $this->view->htmlLink($friend->getHref(), $this->view->itemPhoto($friend, 'thumb.icon'), array('class' => 'mutualmembers_thumb'));
+		  endforeach;
+		  $div->text .= $userdiv;
+	  endforeach;
 	  
   	  $this
 	    ->add($this->component()->html($div))
