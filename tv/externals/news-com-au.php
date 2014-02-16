@@ -17,16 +17,14 @@ $urls = array(
 "http://www.news.com.au/remote/jsonp-proxy.esi?format=json&includeRelated=true&includeBodies=false&pageSize=14&offset=0&api_key=c38u6s4wrgterpd5kjxvzccu&type=video&category=/video/video.news.com.au/news/tasmania&url=http://mashery.news.com.au/content/v1/&callback=_"
 );
 
-//look for the category by slug	
-$idObj = get_category_by_slug('news-com-au');
-
 foreach ($urls as $url) {
 	updatenews($url);
 }
 
-echo 'SUCCESS';
-
 function updatenews($url) {
+	
+	//look for the category by slug	
+	$idObj = get_category_by_slug('news-com-au');
 	
 	// Get the json from the URL
 	$jsonp = file_get_contents($url);
@@ -66,7 +64,7 @@ function updatenews($url) {
 		
 		// If we find a post with this slug, don't create it
 		if( $my_posts ) {
-			log('ID on the first post found '.$my_posts[0]->ID);
+			//log('ID on the first post found '.$my_posts[0]->ID);
 		} else {
 			// Else, insert the post into the database
 			wp_insert_post($my_post);

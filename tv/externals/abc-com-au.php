@@ -21,7 +21,7 @@ function updatenews($url) {
 
 	// look for the results withint the json
 	$results = $data->channel->item;
-	foreach (array_reverse($results) as $result) {
+	foreach ($results as $result) {
 		
 		$link = '<h2><a href="'.$result->link.'">view</a></h2>';
 		
