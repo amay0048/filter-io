@@ -3787,11 +3787,10 @@ ol.ui-listview, ol.ui-listview .ui-li-divider {
   overflow: visible;
   text-align: left;
   border-width: 0;
-  margin-bottom:8px;
+  margin-bottom:10px;
 }
 
 .ui-li.ui-btn {
-  margin: 0;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(1%, #f5f5f5), color-stop(100%, #ededed));
 	background: -webkit-linear-gradient(top, #f7f7f7 0%, #f5f5f5 1%, #ededed 100%);
 	background: -o-linear-gradient(top, #f7f7f7 0%, #f5f5f5 1%, #ededed 100%);
@@ -3969,7 +3968,7 @@ ol.ui-listview .ui-li-jsnumbering:before {
 }
 
 .ui-li-has-alt .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-alt {
-  padding-right: 122px;
+  padding-right: 129px;
 }
 
 .ui-li-has-alt.ui-li-has-count .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-alt.ui-li-has-count {
