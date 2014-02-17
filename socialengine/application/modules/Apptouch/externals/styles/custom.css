@@ -39,10 +39,10 @@ a.add-to-cart span {
     padding-top: 3px;
     display: inline-block;
     text-decoration: none;
-  color: #000000 !important;
+  color: #aaaaaa !important;
 }
 .price-block .icon-tag {
-  color: olive;
+  color: #717171;
   text-shadow: 0 0 1px white;
 }
 
@@ -186,8 +186,8 @@ a.pageevent_status + a.pageevent_status {
 }
 .store-price
 {
-  color: #AF3706;
-  font-weight: bold;
+  color: #71717171;
+  font-weight: normal;
   /*font-size: 16px;*/
 }
 
