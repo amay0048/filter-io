@@ -134,10 +134,13 @@ line-height: 18px;
   background-image: -o-linear-gradient(#ff0fNaN /*{a-bup-background-start}*/, #ff0fNaN /*{a-bup-background-end}*/); /* Opera 11.10+ */
   background-image: linear-gradient(#ff0fNaN /*{a-bup-background-start}*/, #ff0fNaN /*{a-bup-background-end}*/);
 }
+.ui-grid-a .ui-btn{
+	border:0;
+}
 
 .ui-btn-up-a:visited,
 .ui-btn-up-a a.ui-link-inherit {
-  color: #bababa /*{a-bup-color}*/;
+  color: #717171 /*{a-bup-color}*/;
 }
 
 .ui-btn-hover-a {
@@ -2739,6 +2742,11 @@ div.ui-mobile-viewport {
   bottom: 5px;
 }
 
+.ui-mini.ui-btn-icon-left .ui-icon,
+.ui-btn-text{
+	color:#525252;
+}
+
 /*hiding native button,inputs */
 .ui-btn-hidden {
   position: absolute;
@@ -3765,6 +3773,18 @@ ol.ui-listview, ol.ui-listview .ui-li-divider {
   text-align: left;
   border-width: 0;
   margin-bottom:10px;
+}
+
+.ui-li.ui-btn-up-a, 
+.ui-li.ui-btn-up-a .ui-btn-inner,
+.ui-li.ui-btn-hover-a, 
+.ui-li.ui-btn-hover-a .ui-btn-inner,
+.ui-li.ui-bar-a {
+	margin-bottom:0;
+	border-radius:0!important;
+}
+.component-dashboard .ui-li.ui-bar-a {
+	background:#fff;
 }
 
 .ui-li.ui-btn {
@@ -4890,7 +4910,7 @@ body .component-itemSearch {
   left: 0.85em;
   max-height: none;
   max-width: none;
-  top: 0.5em;
+  top: 0.2em;
   width: 26px;
   margin-top: 0;
 }
