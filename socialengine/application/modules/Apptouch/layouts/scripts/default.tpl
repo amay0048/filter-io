@@ -124,6 +124,18 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
 			float:left;
 			margin-right:5%;
 		}
+		
+		.user-search-result {
+			padding: 0;
+			overflow: auto;
+			margin-bottom: 10px;
+			background: #fff;
+			position: relative;
+			background: linear-gradient(to bottom, #f7f7f7 0%, #f5f5f5 1%, #ededed 100%);
+			-webkit-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
+			box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+		}
     </style>
 
   <?php // LINK/STYLES ?>
@@ -255,7 +267,7 @@ if (Engine_Api::_()->getDbTable('modules', 'core')->isModuleEnabled('checkin')){
 <!-- (amay0048) hardcoded footer for the time being -->
 <div id="hz-footer">
 	<a class="med" href="<?php echo $baseurl . 'members/home';?>">Information</a>
-	<a class="food" href="<?php echo $baseurl . 'store';?>">Shop</a>
+	<a data-nocache="true" data-transition="fade" data-rel="dialog" data-ajax="true" class="food" href="<?php echo $baseurl . 'store';?>">Shop</a>
     <div class="profile-container">
         <a class="profile" href="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["href"]; ?>">
             <img src="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["photo"]; ?>"/>

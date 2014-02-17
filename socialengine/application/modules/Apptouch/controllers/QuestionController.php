@@ -243,6 +243,7 @@ class Apptouch_QuestionController
 	      $userdiv = $this->dom()->new_('div',array('class'=>'user-search-result'));
 		  $userdiv->text = $this->view->htmlLink($user->getHref(), $this->view->itemPhoto($user, 'thumb.icon'), array('class' => 'popularmembers_thumb'));
 		  $userdiv->text .= $this->view->htmlLink($user->getHref(), $user->getTitle());
+		  $userdiv->text .= $this->view->translate(array('%s friend', '%s friends', $user->member_count),$this->view->locale()->toNumber($user->member_count));
 		  $friends = Engine_Api::_()->hecore()->getMutualFriends($user, $viewer);
     	  $friends->setItemCountPerPage(2);
 		  foreach($friends as $friend):
