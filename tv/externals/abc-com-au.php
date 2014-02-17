@@ -4,7 +4,8 @@
 require( '../wp-load.php' );
 
 $urls = array(
-"http://www.abc.net.au/news/feed/54768/rss.xml"
+"http://www.abc.net.au/news/feed/54768/rss.xml",
+"http://tviview.abc.net.au/iview/rss/recent.xml"
 );
 
 foreach ($urls as $url) {
