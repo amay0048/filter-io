@@ -242,12 +242,12 @@ class Apptouch_QuestionController
 	  foreach( $paginator as $user ):
 	      $userdiv = $this->dom()->new_('div',array('class'=>'user-search-result'));
 		  $userdiv->text = $this->view->htmlLink($user->getHref(), $this->view->itemPhoto($user, 'thumb.icon'), array('class' => 'object_thumb'));
-		  $userdiv->text .= $this->view->htmlLink($user->getHref(), $user->getTitle());
 		  $friends = Engine_Api::_()->hecore()->getMutualFriends($user, $viewer);
     	  $friends->setItemCountPerPage(2);
 		  foreach($friends as $friend):
       		  $userdiv->text .= $this->view->htmlLink($friend->getHref(), $this->view->itemPhoto($friend, 'thumb.icon'), array('class' => 'mutualmembers_thumb'));
 		  endforeach;
+		  $userdiv->text .= $this->view->htmlLink($user->getHref(), $user->getTitle());
 		  $usercount = $this->dom()->new_('span',array('class'=>'friends-count'));
 		  $usercount->text = $this->view->translate(array('%s friend', '%s friends', $user->member_count),$this->view->locale()->toNumber($user->member_count));
 		  $userdiv->text .= $usercount;

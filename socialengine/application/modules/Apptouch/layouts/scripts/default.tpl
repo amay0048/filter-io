@@ -144,6 +144,10 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
 			float:right;
 			margin-left:8px;
 		}
+		.user-search-result .object_thumb img,
+		.user-search-result .mutualmembers_thumb img{
+			border-radius:48px;
+		}
 		.user-search-result .friends-count {
 			display:block;
 		}
