@@ -29,15 +29,23 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
 
 	<!-- (amay0048) -->
 	<style>
+		#hz-footer-wrapper{
+			position:fixed;
+			left:0;
+			top:100%;
+			width:100%;
+			z-index:300;
+		}
         #hz-footer{
-            position: fixed;
-            bottom: 0;
+            position: absolute;
+            top: 100%;
             left: 0;
             display: block;
             width: 100%;
             z-index: 300;
             height:51px;
             background:#fff;
+			margin-top:-51px;
         }
         #hz-footer a{
             width:24%;
@@ -258,16 +266,18 @@ if (Engine_Api::_()->getDbTable('modules', 'core')->isModuleEnabled('checkin')){
     (amay0048) hardcoded footer for the time being 
     data-nocache="true" data-transition="fade" data-rel="dialog" data-ajax="true" 
 -->
-<div id="hz-footer">
-	<a class="med" href="<?php echo $baseurl . 'members/home';?>">Information</a>
-	<a class="food" href="<?php echo $baseurl . 'store';?>">Shop</a>
-    <div class="profile-container">
-        <a class="profile" href="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["href"]; ?>">
-            <img src="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["photo"]; ?>"/>
-        </a>
+<div id="hz-footer-wrapper">
+    <div id="hz-footer">
+        <a class="med" href="<?php echo $baseurl . 'members/home';?>">Information</a>
+        <a class="food" href="<?php echo $baseurl . 'store';?>">Shop</a>
+        <div class="profile-container">
+            <a class="profile" href="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["href"]; ?>">
+                <img src="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["photo"]; ?>"/>
+            </a>
+        </div>
+        <a class="fit" href="<?php echo $baseurl . 'questions/map/gp';?>">Locations</a>
+        <a class="search" href="<?php echo $baseurl . 'questions/create';?>">Search</a>
     </div>
-	<a class="fit" href="<?php echo $baseurl . 'questions/map/gp';?>">Locations</a>
-	<a class="search" href="<?php echo $baseurl . 'questions/create';?>">Search</a>
 </div>
 </body>
 </html>
