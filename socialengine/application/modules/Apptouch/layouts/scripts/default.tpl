@@ -126,33 +126,6 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
 		#mobile-search .ui-btn:last-of-type{
 			float:right;
 		}
-		
-		.user-search-result {
-			padding: 10px;
-			overflow: auto;
-			margin: 10px;
-			background: #fff;
-			position: relative;
-			background: linear-gradient(to bottom, #f7f7f7 0%, #f5f5f5 1%, #ededed 100%);
-			-webkit-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
-			box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
-			border-radius: 5px;
-		}
-		.user-search-result .object_thumb{
-			float:left;
-			margin-right:8px;
-		}
-		.user-search-result .mutualmembers_thumb{
-			float:right;
-			margin-left:8px;
-		}
-		.user-search-result .object_thumb img,
-		.user-search-result .mutualmembers_thumb img{
-			border-radius:48px;
-		}
-		.user-search-result .friends-count {
-			display:block;
-		}
     </style>
 
   <?php // LINK/STYLES ?>
