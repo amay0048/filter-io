@@ -321,11 +321,16 @@ class Apptouch_Controller_Action_Helper_Activity
 		  /** (amay0048) TODO: this looks like some broken code. I'll come back and have a look later
 		  this would be where custom wall content for questions would be set
 		  **/
+	      $router = Zend_Controller_Front::getInstance()->getRouter();
+
 		  $subject = $richContent;
 		  $pattern = '/src="(.*?)"/i';
 		  preg_match($pattern, $subject, $matches, PREG_OFFSET_CAPTURE);
-		  $actionFormat['richContent']['href'] = '';
 		  $actionFormat['richContent']['photo']['full'] = $matches[1][0];
+		  
+		  $pattern = '/href="(.*?)"/i';
+		  preg_match($pattern, $subject, $matches, PREG_OFFSET_CAPTURE);
+		  $actionFormat['richContent']['href'] = $matches[1][0];
 	  } 
 	  else {
         $prefix = (constant('_ENGINE_SSL') ? 'https://' : 'http://');

@@ -10,9 +10,13 @@ class Question_Model_Question extends Core_Model_Item_Abstract
 		  $subject = $this->snapshot;
 		  $pattern = '/(<img.*?>)/i';
 		  preg_match($pattern, $subject, $matches, PREG_OFFSET_CAPTURE);
-		  return $matches[1][0];
+		  return '<a href="'.$this->getHref().'">'.$matches[1][0].'</a>';
 		}
 		return ' ';
+	}
+	
+	public function getHref(){
+		return Zend_Registry::get('StaticBaseUrl').'question/'.$this->getIdentity();
 	}
 	
 	public function comments()
