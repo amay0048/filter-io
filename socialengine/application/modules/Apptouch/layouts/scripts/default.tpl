@@ -21,7 +21,7 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
   >
 <head>
   <title><?php echo @$this->page['info']['title'] ?></title>
-  <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" name="viewport">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
   <?php if($this->homeScreen()) echo $this->homeScreen()->render(); ?>
   <meta content="<?php echo APPLICATION_ENV ?>" name="app_env">
   <meta content="<?php echo $this->isMaintenanceMode(); ?>" name="is_maintenance">
@@ -29,23 +29,16 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
 
 	<!-- (amay0048) -->
 	<style>
-		#hz-footer-wrapper{
-			position:fixed;
-			left:0;
-			top:100%;
-			width:100%;
-			z-index:300;
-		}
         #hz-footer{
-            position: absolute;
+            position: fixed;
             top: 100%;
             left: 0;
+			bottom:0;
             display: block;
             width: 100%;
             z-index: 300;
             height:51px;
             background:#fff;
-			margin-top:-51px;
         }
         #hz-footer a{
             width:24%;
@@ -266,18 +259,17 @@ if (Engine_Api::_()->getDbTable('modules', 'core')->isModuleEnabled('checkin')){
     (amay0048) hardcoded footer for the time being 
     data-nocache="true" data-transition="fade" data-rel="dialog" data-ajax="true" 
 -->
-<div id="hz-footer-wrapper">
-    <div id="hz-footer">
-        <a class="med" href="<?php echo $baseurl . 'members/home';?>">Information</a>
-        <a class="food" href="<?php echo $baseurl . 'store';?>">Shop</a>
-        <div class="profile-container">
-            <a class="profile" href="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["href"]; ?>">
-                <img src="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["photo"]; ?>"/>
-            </a>
-        </div>
-        <a class="fit" href="<?php echo $baseurl . 'questions/map/gp';?>">Locations</a>
-        <a class="search" href="<?php echo $baseurl . 'questions/create';?>">Search</a>
+
+<div id="hz-footer">
+    <a class="med" href="<?php echo $baseurl . 'members/home';?>">Information</a>
+    <a class="food" href="<?php echo $baseurl . 'store';?>">Shop</a>
+    <div class="profile-container">
+        <a class="profile" href="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["href"]; ?>">
+            <img src="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["photo"]; ?>"/>
+        </a>
     </div>
+    <a class="fit" href="<?php echo $baseurl . 'questions/map/gp';?>">Locations</a>
+    <a class="search" href="<?php echo $baseurl . 'questions/create';?>">Search</a>
 </div>
 </body>
 </html>
