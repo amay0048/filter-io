@@ -31,7 +31,6 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
 	<style>
         #hz-footer{
             position: fixed;
-            top: 100%;
             left: 0;
 			bottom:0;
             display: block;
