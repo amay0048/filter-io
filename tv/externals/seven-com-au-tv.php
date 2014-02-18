@@ -4,7 +4,7 @@
 require( '../wp-load.php' );
 
 $urls = array(
-"http://tenplay.com.au/Handlers/GenericUserControlRenderer.ashx?path=~/UserControls/Content/C01/C01%20Listing.ascx&props=DataSourceID,{C8F9B9DC-7421-45C3-8543-E1725FD44059}|StartIndex,1|EndIndex,30" //TV
+"http://au.tv.yahoo.com/plus7/latest/"
 );
 
 foreach ($urls as $url) {
@@ -13,31 +13,37 @@ foreach ($urls as $url) {
 
 function updatenews($url) {
 	
-	$idObj = get_category_by_slug('ten');
+	$idObj = get_category_by_slug('seven');
 	
 	// Get the json from the URL
 	$html = file_get_contents($url);
-
-	// Parse the json
+	// Parse the HTML
 	$doc = DOMDocument::loadHTML($html);
-	$results = $doc->getElementsByTagName('li');
+	// Grab the parent container
+	$container = $doc->getElementById('bd');
+	// Grab the results
+	$results = $container->getElementsByTagName('li');
 
-	// look for the results withint the html snip
 	foreach ($results as $result) {
 
 		$node = $result->getElementsByTagName('a')->item(0);
 		
 		if(!is_null($node)){
-
-			$link = '<h2><a href="http://tenplay.com.au'.$node->getAttribute('href').'">view</a></h2>';
-			$imgdata = $node->getElementsByTagName('img')->item(0);
-			$title = $imgdata->getAttribute('alt');
-			$img = '<a href="http://tenplay.com.au"'.$node->getAttribute('href').'><img src="'.$imgdata->getAttribute('data-src').'"/></a>';
+			
+			$href = 'http://www.jump-in.com.au'.$node->getAttribute('href');
+			$src = $node->getElementsByTagName('img')->item(0)->getAttribute('src');
+			
+			$title = $result->getElementsByTagName('a')->item(1)->nodeValue;
+			$description = $result->getElementsByTagName('p')->item(0)->nodeValue;
+			
+			$content = '<p><a href="'.$href.'"><img src="'.$src.'"/></a></p>';
+			$content .= '<p>'.$description.'</p>';
+			$content .= '<h2><a href="'.$href.'">view</a></h2>';
 			
 			// Create post object from json
 			$my_post = array(
 			  'post_title'    => $title,
-			  'post_content'  => $img.$link,
+			  'post_content'  => $content,
 			  'post_name'     => sanitize_title($title),
 			  'post_status'   => 'publish',
 			  'post_author'   => 1,

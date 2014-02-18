@@ -4,7 +4,7 @@
 require( '../wp-load.php' );
 
 $urls = array(
-"http://api.brightcove.com/services/library?command=search_videos&all=segment:AUnationalninenews&page_size=12&page_number=0&sort_by=START_DATE:DESC&token=Vb3fqavTKFDDZbnnGGtbhKxam7uHduOnob-2MJlpHmUnzSMWbDe5bg..&video_fields=id,referenceId,version,name,shortDescription,publishedDate,startDate,endDate,length,itemState,thumbnailURL,videoStillURL,playsTotal&custom_fields=genre,network,provider,series,season,episode,originalairdate,classification&get_item_count=true&callback=_"
+"http://api.brightcove.com/services/library?command=search_videos&all=segment:AUnationalninenews&page_size=12&page_number=0&sort_by=START_DATE:DESC&token=Vb3fqavTKFDDZbnnGGtbhKxam7uHduOnob-2MJlpHmUnzSMWbDe5bg..&video_fields=id,referenceId,version,name,shortDescription,publishedDate,startDate,endDate,length,itemState,thumbnailURL,videoStillURL,playsTotal&custom_fields=genre,network,provider,series,season,episode,originalairdate,classification&get_item_count=true&callback=_" //NEWS
 );
 
 foreach ($urls as $url) {
