@@ -17,19 +17,26 @@ function updatenews($url) {
 	$idObj = get_category_by_slug('abc');
 
 	// Get the json from the URL
-	$data = simplexml_load_file($url);
+	$data = file_get_contents($url);
+
+	$dom = DOMDocument::loadXML($data);
 
 	// look for the results withint the json
-	$results = $data->channel->item;
+	$results = $dom->getElementsByTagName('item');
+	
 	foreach ($results as $result) {
 		
-		$link = '<h2><a href="'.$result->link.'">view</a></h2>';
+		$src = $result->getElementsByTagName('thumbnail')->item(0)->getAttribute('url');
+		$title = $result->getElementsByTagName('title')->item(0)->nodeValue;
+		$href = $result->getElementsByTagName('link')->item(0)->nodeValue;
+		
+		$content = '<p><a href="'.$href.'"><img src="'.$src.'"/></a></p><h2><a href="'.$href.'">view</a></h2>';
 		
 		// Create post object from json
 		$my_post = array(
-		  'post_title'    => $result->title,
-		  'post_content'  => $link,
-		  'post_name'     => sanitize_title($result->title),
+		  'post_title'    => $title,
+		  'post_content'  => $content,
+		  'post_name'     => sanitize_title($title),
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
 		  'post_category' => array($idObj->term_id)
@@ -37,7 +44,7 @@ function updatenews($url) {
 		
 		// Create lookup params to see if the post exists
 		$args = array(
-		  'name' => sanitize_title($result->title),
+		  'name' => sanitize_title($title),
 		  'post_type' => 'post',
 		  'post_status' => 'any',
 		  'numberposts' => 1
