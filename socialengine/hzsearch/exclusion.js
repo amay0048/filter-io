@@ -290,9 +290,8 @@ var posTagsSearch = function(){
 				if(i < 8 && searchResults[displayLink] <= 2) {
 					
 				 output += '<div>';
-				 output += '<h3>' + data['items'][i]['title'] + '</h3>';
-				 output += '<p>' + data['items'][i]['snippet'] + '&nbsp;&nbsp;';
-				 output += '<a href="' + data['items'][i]['link'] + '">Read more...</a>' + '</p>';
+				 output += '<h3><a href="/socialengine/questions/link/popup/?q=' + encodeURIComponent(data['items'][i]['link']) + '">' + data['items'][i]['title'] + '</a></h3>';
+				 output += '<p><a href="/socialengine/questions/link/popup/?q=' + encodeURIComponent(data['items'][i]['link']) + '">' + data['items'][i]['snippet'].substring(0,70) + '...</a></p>';
 				 output += '</div>';
 				 
 				 ret.push([data['items'][i]['title'],data['items'][i]['link'],i]);
@@ -304,13 +303,7 @@ var posTagsSearch = function(){
 			jQuery("#descriptionResult").html(output);
 			jQuery('#title').val(jQuery('#searchText').val());
 			jQuery('#description').val(output);
-			/*
-			if(ga) {
-				var date = new Date();
-				ga('send', 'event', jQuery('#text').val(), jQuery('#tags').val(), ret.toString(),Number(date.getTime()));
-				ga('send', 'event', jQuery('#text').val(), 'providers', providers.toString());
-			}
-			*/
+			
 			preventSearchOnTagChange = false;
 		}
 	});

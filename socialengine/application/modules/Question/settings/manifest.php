@@ -67,7 +67,7 @@
 		'action' => 'map',
 	  ),
 	  'reqs' => array(
-		'action' => '(map|tag)',
+		'action' => '(map|link)',
 	  )
 	),
 	'question_specific' => array(

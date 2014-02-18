@@ -120,9 +120,11 @@ $locale = $this->locale()->getLocale()->__toString(); $orientation = ($this->lay
             width:95px;
         }
 		#mobile-search .ui-btn{
-			width:45%;
+			width:48%;
 			float:left;
-			margin-right:5%;
+		}
+		#mobile-search .ui-btn:last-of-type{
+			float:right;
 		}
 		
 		.user-search-result {
@@ -285,7 +287,7 @@ if (Engine_Api::_()->getDbTable('modules', 'core')->isModuleEnabled('checkin')){
 -->
 <div id="hz-footer">
 	<a class="med" href="<?php echo $baseurl . 'members/home';?>">Information</a>
-	<a class="food" href="<?php echo $baseurl . 'store';?>">Shop</a>
+	<a data-nocache="true" data-transition="fade" data-rel="dialog" data-ajax="true" class="food" href="<?php echo $baseurl . 'store';?>">Shop</a>
     <div class="profile-container">
         <a class="profile" href="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["href"]; ?>">
             <img src="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["photo"]; ?>"/>

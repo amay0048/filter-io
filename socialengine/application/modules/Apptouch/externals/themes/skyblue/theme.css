@@ -879,15 +879,20 @@ background: linear-gradient(to bottom, #ade2e6 0%, #abe1e5 100%);
 	box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.3);
 	font-size: 13px;
 }
-.ui-content.ui-body-h .descriptionResult h3{
+.ui-content.ui-body-h .descriptionResult h3,
+.ui-content.ui-body-h .descriptionResult h3 a{
 	margin-bottom:3px;
 	font-weight:600;
 	color: #2bbfca;
+	text-decoration:none;
 }
-.ui-content.ui-body-h .descriptionResult p{
+.ui-content.ui-body-h .descriptionResult p,
+.ui-content.ui-body-h .descriptionResult p a{
 	color:#777;
 	font-size: 11px;
 	line-height: 13px;
+	text-decoration:none;
+	font-weight:normal;
 }
 
 .ui-content.ui-body-h .providersResult{
@@ -1347,6 +1352,7 @@ a.ui-link-inherit {
   box-shadow: 0px 0px 12px rgba(0, 0, 0, .6);
 }
 
+#question_index_create_rewrite .ui-content.ui-body-h .ui-btn-inner,
 .ui-shadow {
   -moz-box-shadow: 0px 1px 2px /*{global-box-shadow-size}*/ rgba(0, 0, 0, 0.25) /*{global-box-shadow-color}*/;
   -webkit-box-shadow: 0px 1px 2px /*{global-box-shadow-size}*/ rgba(0, 0, 0, 0.25) /*{global-box-shadow-color}*/;
@@ -2649,7 +2655,7 @@ div.ui-mobile-viewport {
 .ui-footer .ui-btn-icon-left .ui-btn-inner,
 .ui-mini.ui-btn-icon-left .ui-btn-inner,
 .ui-mini .ui-btn-icon-left .ui-btn-inner {
-  padding-left: 30px;
+  padding-left: 20px;
 }
 
 .ui-header .ui-btn-icon-right .ui-btn-inner,
@@ -3611,10 +3617,11 @@ input.ui-input-text, textarea.ui-input-text {
   padding: .4em;
   margin: .5em 0;
   line-height: 1.4em;
-  font-size: 16px;
+  font-size: 16px!important;
   display: block;
   width: 100%;
   outline: 0;
+  border:0;
 }
 
 input.ui-input-text.ui-mini, textarea.ui-input-text.ui-mini {
@@ -5476,7 +5483,7 @@ background: linear-gradient(to bottom, #f9f9f9 0%, #f2f2f2 100%);
 #question_index_create_rewrite .ui-content.ui-body-h .ui-btn-inner {
 	height: 30px;
 	background: #ade2e6;
-	margin-top: 10px;
+	margin-top: 4px;
 	border-radius:5px;
 	padding-top:4px;
 }
@@ -5493,8 +5500,8 @@ background: linear-gradient(to bottom, #f9f9f9 0%, #f2f2f2 100%);
 .hz-search-image-container{
 	background:#f8f8f8;
 	margin-top:-10px;
-	padding-top:10px;
-	padding-bottom:30px;
+	padding-top:20px;
+	padding-bottom:20px;
 }
 
 /**

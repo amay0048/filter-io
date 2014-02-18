@@ -3,11 +3,17 @@ var hash = window.location.hash;
 var searchTags = new Array();
 
 var doSearch = function(){
+	jQuery('.hz-search-image-container').slideUp();
 	var text = demo_text = jQuery('#searchText').val();
 	text = text.replace(/[^a-z0-9\s]/gi, '');
 	searchTags = [];
 	linguisticTags(text,updateTags);
 	return false;
+}
+
+var askCrowd = function(){
+	jQuery('#title').val($('#searchText').val());
+	jQuery('form.hz-search').submit();
 }
 
 var hzSearch = function(text){

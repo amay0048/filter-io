@@ -79,15 +79,16 @@ class Apptouch_QuestionController
 	   **/
       $this->addPageInfo('contentTheme', 'h');
 	  
-		/*$img = $this->dom()->new_('img',array('src'=>'/socialengine/hzsearch/hz-search-bg.png','class'=>'hz-search-header'));
+		$img = $this->dom()->new_('img',array('src'=>Zend_Registry::get('StaticBaseUrl').'hzsearch/hz-search-bg.png','class'=>'hz-search-header'));
 		$div = $this->dom()->new_('div',array('class'=>'hz-search-image-container'));
 		$div->append($img);
-		$this->add($this->component()->html($div));*/
+		$this->add($this->component()->html($div));
 	  
 	  //"$(this.form).trigger('submit')" an be called onclick
-	  $searchInput = $this->dom()->new_('textarea', array('onclick' => "", 'type' => 'text', 'name' => 'searchText', 'id' => 'searchText','placeholder'=>'Start search here...'));
+	  
+	  $searchInput = $this->dom()->new_('input', array('onclick' => "", 'type' => 'text', 'name' => 'searchText', 'id' => 'searchText','placeholder'=>'Start search here...'));
 	  $searchSubmit = $this->dom()->new_('input', array('onclick' => "doSearch();", 'type' => 'button', 'name' => 'searchSubmit', 'id' => 'searchSubmit', 'value' => 'Search'));
-	  $searchLaunch = $this->dom()->new_('input', array('onclick' => "$('form.hz-search').submit();", 'type' => 'button', 'name' => 'searchLaunch', 'id' => 'searchLaunch', 'value' => 'Ask the crowd'));
+	  $searchLaunch = $this->dom()->new_('input', array('onclick' => "askCrowd();", 'type' => 'button', 'name' => 'searchLaunch', 'id' => 'searchLaunch', 'value' => 'Ask the crowd'));
 	  $searchForm = $this->dom()->new_('form', array(
 	    //'action' => $this->view->url(array('module' => 'event', 'controller' => 'widget', 'action' => 'profile-rsvp', 'subject' => 6), 'default', true),
 	    //'method' => 'post',
@@ -259,10 +260,25 @@ class Apptouch_QuestionController
 		->renderContent();
   }
   
-  public function indexTagAction()
+  public function indexLinkAction()
   {
+    $q = $this->_getParam('q');
+	$searchFrame = $this->dom()->new_('iframe', array(
+	   'src'=>$q,
+	   'class'=>'hz-website-frame'
+	));
+	
+	  $style = $this->dom()->new_('style');
+	  $style->text = '.hz-website-frame-container{border:0;height:10%;width:100%;position:relative;}';
+	  $style->text .= '.hz-website-frame{border:0;height: calc(100% - 96px);width:100%;}';
+	  $style->text .= '.ui-page:after {height:0;display:none;}';
+	  
+	  $div = $this->dom()->new_('div',array('class'=>'hz-website-frame-container'));
+	  $div->text = $style;
+	  $div->text .= $searchFrame;
+	  
 	$this
-		->add($this->component()->feed(array('mode'=>'hello')))
+		->add($this->component()->html($div))
 		->renderContent();
   }
 } ?>
