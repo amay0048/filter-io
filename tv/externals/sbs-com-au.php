@@ -25,16 +25,25 @@ function updatenews($url) {
 
 	// look for the results withint the json
 	$results = $data->entries;
+	
 	foreach (array_reverse($results) as $result) {
-		
+		$aResult = (array)$result;
+		$aThumb = (array)$aResult['media$thumbnails'][1];
 		$videoId = array_pop(explode('/',$result->id));
-		$link = '<h2><a href="http://www.sbs.com.au/ondemand/video/'.$videoId.'">view</a></h2>';
+		
+		$src = $aThumb['plfile$downloadUrl'];
+		$href = 'http://www.sbs.com.au/ondemand/video/'.$videoId;
+		
+		$title = $result->title;
+		$content = '<p><a href="'.$href.'"><img src="'.$src.'"/></a></p>';
+		$content .= '<p>'.$result->description.'</p>';
+		$content .= '<h2><a href="'.$href.'">view</a></h2>';
 
 		// Create post object from json
 		$my_post = array(
-		  'post_title'    => $result->title,
-		  'post_content'  => '<p>'.$result->description.'</p>'.$link,
-		  'post_name'     => sanitize_title($result->title),
+		  'post_title'    => $title,
+		  'post_content'  => $content,
+		  'post_name'     => sanitize_title($title),
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
 		  'post_category' => array($idObj->term_id)
@@ -42,7 +51,7 @@ function updatenews($url) {
 		
 		// Create lookup params to see if the post exists
 		$args = array(
-		  'name' => sanitize_title($result->title),
+		  'name' => sanitize_title($title),
 		  'post_type' => 'post',
 		  'post_status' => 'any',
 		  'numberposts' => 1
