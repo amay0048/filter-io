@@ -878,6 +878,7 @@ background: linear-gradient(to bottom, #ade2e6 0%, #abe1e5 100%);
 	-webkit-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.3);
 	box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.3);
 	font-size: 13px;
+	overflow:auto;
 }
 .ui-content.ui-body-h .descriptionResult h3,
 .ui-content.ui-body-h .descriptionResult h3 a{
@@ -885,6 +886,7 @@ background: linear-gradient(to bottom, #ade2e6 0%, #abe1e5 100%);
 	font-weight:600;
 	color: #2bbfca;
 	text-decoration:none;
+	display:block;
 }
 .ui-content.ui-body-h .descriptionResult p,
 .ui-content.ui-body-h .descriptionResult p a{
@@ -893,6 +895,21 @@ background: linear-gradient(to bottom, #ade2e6 0%, #abe1e5 100%);
 	line-height: 13px;
 	text-decoration:none;
 	font-weight:normal;
+	display:block;
+}
+.ui-content.ui-body-h .descriptionResult div:nth-of-type(1) p:before,
+.ui-content.ui-body-h .descriptionResult div:nth-of-type(2) p:before{
+	content:'';
+	float:right;
+	display:block;
+	height:48px;
+	width:48px;
+	background-image:url('../../../../../../hzsearch/endorsed.jpeg');
+	border-radius:48px;
+	margin:4px 0 0 4px;
+}
+.ui-content.ui-body-h .descriptionResult div:nth-of-type(2) p:before{
+	background-position:bottom left;
 }
 
 .ui-content.ui-body-h .providersResult{
