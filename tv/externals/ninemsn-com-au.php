@@ -25,17 +25,17 @@ function updatenews($url) {
 	// look for the results withint the json
 	$results = $data->items;
 	foreach (array_reverse($results) as $result) {
-		//echo '<div>';
-		//echo '<h2><a href="http://www.news.com.au/video/news/id-'.$result->ooyalaId.'">'.$result->title.'</a></h2>';
-		//echo '<p><a href="http://www.news.com.au/video/news/id-'.$result->ooyalaId.'">'.$result->description.'</a></p>';
-		//echo '</div>';
-		$link = '<h2><a href="http://video.news.ninemsn.com.au/?videoid='.$result->id.'">view</a></h2>';
+
+		$title = $result->name;
+		$content = '<p><a href="http://video.news.ninemsn.com.au/?videoid='.$result->id.'"><img src="'.$result->thumbnailURL.'"/></a></p>';
+		$content .= '<p>'.$result->shortDescription.'</p>';
+		$content .= '<h2><a href="http://video.news.ninemsn.com.au/?videoid='.$result->id.'">view</a></h2>';
 		
 		// Create post object from json
 		$my_post = array(
-		  'post_title'    => $result->name,
-		  'post_content'  => '<p>'.$result->shortDescription.'</p>'.$link,
-		  'post_name'     => sanitize_title($result->name),
+		  'post_title'    => $title,
+		  'post_content'  => $content,
+		  'post_name'     => sanitize_title($title),
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
 		  'post_category' => array($idObj->term_id)
@@ -43,7 +43,7 @@ function updatenews($url) {
 		
 		// Create lookup params to see if the post exists
 		$args = array(
-		  'name' => sanitize_title($result->name),
+		  'name' => sanitize_title($title),
 		  'post_type' => 'post',
 		  'post_status' => 'any',
 		  'numberposts' => 1
