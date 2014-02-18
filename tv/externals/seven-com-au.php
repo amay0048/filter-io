@@ -24,17 +24,25 @@ function updatenews($url) {
 
 	// look for the results withint the html snip
 	foreach ($results as $result) {
-		$node = $result->getElementsByTagName('a')->item(1);
+		$node = $result->getElementsByTagName('a')->item(0);
 		
 		if(!is_null($node)){
-
-			$link = '<h2><a href="http://au.news.yahoo.com'.$node->getAttribute('href').'">view</a></h2>';
+			
+			$href = 'http://au.news.yahoo.com'.$node->getAttribute('href');
+			$src = $node->getElementsByTagName('img')->item(0)->getAttribute('src');
+			
+			$title = $result->getElementsByTagName('a')->item(1)->nodeValue;
+			$description = $result->getElementsByTagName('p')->item(0)->nodeValue;
+			
+			$content = '<p><a href="'.$href.'"><img src="'.$src.'"/></a></p>';
+			$content .= '<p>'.$description.'</p>';
+			$content .= '<h2><a href="'.$href.'">view</a></h2>';
 			
 			// Create post object from json
 			$my_post = array(
-			  'post_title'    => $node->nodeValue,
-			  'post_content'  => $link,
-			  'post_name'     => sanitize_title($node->nodeValue),
+			  'post_title'    => $title,
+			  'post_content'  => $content,
+			  'post_name'     => sanitize_title($title),
 			  'post_status'   => 'publish',
 			  'post_author'   => 1,
 			  'post_category' => array($idObj->term_id)
@@ -42,7 +50,7 @@ function updatenews($url) {
 			
 			// Create lookup params to see if the post exists
 			$args = array(
-			  'name' => sanitize_title($node->nodeValue),
+			  'name' => sanitize_title($title),
 			  'post_type' => 'post',
 			  'post_status' => 'any',
 			  'numberposts' => 1

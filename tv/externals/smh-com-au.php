@@ -28,7 +28,7 @@ function updatenews($url) {
 		
 		//Get link and preview image
 		$link = '<h2><a href="http://www.smh.com.au/tv/'.$result->encodeTitle.'">view</a></h2>';
-		$img = '<a href="http://www.smh.com.au/tv/'.$result->encodeTitle.'"><img src="'.$result->thumbnail.'"/></a>';
+		$img = '<p><a href="http://www.smh.com.au/tv/'.$result->encodeTitle.'"><img src="'.$result->thumbnail.'"/></a></p>';
 		
 		// Create post object from json
 		$my_post = array(
