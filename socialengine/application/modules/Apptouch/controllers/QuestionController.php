@@ -270,7 +270,7 @@ class Apptouch_QuestionController
 	
 	  $style = $this->dom()->new_('style');
 	  $style->text = '.hz-website-frame-container{border:0;height:10%;width:100%;position:relative;}';
-	  $style->text .= '.hz-website-frame{border:0;height: calc(100% - 96px);width:100%;}';
+	  $style->text .= '.hz-website-frame{border:0;height: calc(100% - 96px);width:100%;overflow:scroll;}';
 	  $style->text .= '.ui-page:after {height:0;display:none;}';
 	  
 	  $div = $this->dom()->new_('div',array('class'=>'hz-website-frame-container'));

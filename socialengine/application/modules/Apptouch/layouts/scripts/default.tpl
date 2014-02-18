@@ -287,7 +287,7 @@ if (Engine_Api::_()->getDbTable('modules', 'core')->isModuleEnabled('checkin')){
 -->
 <div id="hz-footer">
 	<a class="med" href="<?php echo $baseurl . 'members/home';?>">Information</a>
-	<a data-nocache="true" data-transition="fade" data-rel="dialog" data-ajax="true" class="food" href="<?php echo $baseurl . 'store';?>">Shop</a>
+	<a class="food" href="<?php echo $baseurl . 'store';?>">Shop</a>
     <div class="profile-container">
         <a class="profile" href="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["href"]; ?>">
             <img src="<?php echo Engine_Api::_()->user()->getViewer()->toRemoteArray()["photo"]; ?>"/>
