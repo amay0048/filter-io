@@ -31,8 +31,12 @@ function updatenews($url) {
 
 			$link = '<h2><a href="http://tenplay.com.au'.$node->getAttribute('href').'">view</a></h2>';
 			$imgdata = $node->getElementsByTagName('img')->item(0);
+			$src = $imgdata->getAttribute('data-src');
+			if(!strlen(trim($src))){
+				$src = $imgdata->getAttribute('src');
+			}
 			$title = $imgdata->getAttribute('alt');
-			$img = '<a href="http://tenplay.com.au"'.$node->getAttribute('href').'><img src="'.$imgdata->getAttribute('data-src').'"/></a>';
+			$img = '<a href="http://tenplay.com.au"'.$node->getAttribute('href').'><img src="'.$src.'"/></a>';
 			
 			// Create post object from json
 			$my_post = array(

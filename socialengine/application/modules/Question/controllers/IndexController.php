@@ -105,4 +105,9 @@ class Question_IndexController extends Core_Controller_Action_Standard
   public function manageAction()
   {
   }
+  
+  public function twitterAction()
+  {
+	  
+  }
 }
