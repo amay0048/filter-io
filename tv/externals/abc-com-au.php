@@ -4,15 +4,15 @@
 require( '../wp-load.php' );
 
 $urls = array(
-"http://www.abc.net.au/news/feed/54768/rss.xml", //NEWS
-"http://tviview.abc.net.au/iview/rss/recent.xml" //TV
+array("url"=>"http://www.abc.net.au/news/feed/54768/rss.xml", "type"=>"news"),//NEWS
+array("url"=>"http://tviview.abc.net.au/iview/rss/recent.xml", "type"=>"tv")//TV
 );
 
 foreach ($urls as $url) {
-	updatenews($url);
+	updatenews($url["url"],$url["type"]);
 }
 
-function updatenews($url) {
+function updatenews($url,$type) {
 	//look for the category by slug	
 	$idObj = get_category_by_slug('abc');
 
@@ -39,7 +39,8 @@ function updatenews($url) {
 		  'post_name'     => sanitize_title($title),
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
-		  'post_category' => array($idObj->term_id)
+		  'post_category' => array($idObj->term_id),
+		  'tags_input'	  => $type
 		);
 		
 		// Create lookup params to see if the post exists

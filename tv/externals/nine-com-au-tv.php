@@ -4,14 +4,14 @@
 require( '../wp-load.php' );
 
 $urls = array(
-"http://www.jump-in.com.au/watch-now/"
+array("url"=>"http://www.jump-in.com.au/watch-now/","type"=>"tv")
 );
 
 foreach ($urls as $url) {
-	updatenews($url);
+	updatenews($url["url"],$url["type"]);
 }
 
-function updatenews($url) {
+function updatenews($url,$type) {
 	
 	$idObj = get_category_by_slug('seven');
 	
@@ -51,7 +51,8 @@ function updatenews($url) {
 			  'post_name'     => sanitize_title($title),
 			  'post_status'   => 'publish',
 			  'post_author'   => 1,
-			  'post_category' => array($idObj->term_id)
+			  'post_category' => array($idObj->term_id),
+			  'tags_input'	  => $type
 			);
 			
 			// Create lookup params to see if the post exists

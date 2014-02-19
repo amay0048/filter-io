@@ -4,14 +4,14 @@
 require( '../wp-load.php' );
 
 $urls = array(
-"http://tenplay.com.au/Handlers/GenericUserControlRenderer.ashx?path=~/UserControls/Content/C01/C01%20Listing.ascx&props=DataSourceID,{C8F9B9DC-7421-45C3-8543-E1725FD44059}|StartIndex,1|EndIndex,30" //TV
+array("url"=>"http://tenplay.com.au/Handlers/GenericUserControlRenderer.ashx?path=~/UserControls/Content/C01/C01%20Listing.ascx&props=DataSourceID,{C8F9B9DC-7421-45C3-8543-E1725FD44059}|StartIndex,1|EndIndex,30","type"=>"tv") //TV
 );
 
 foreach ($urls as $url) {
-	updatenews($url);
+	updatenews($url["url"],$url["type"]);
 }
 
-function updatenews($url) {
+function updatenews($url,$type) {
 	
 	$idObj = get_category_by_slug('ten');
 	
@@ -45,7 +45,8 @@ function updatenews($url) {
 			  'post_name'     => sanitize_title($title),
 			  'post_status'   => 'publish',
 			  'post_author'   => 1,
-			  'post_category' => array($idObj->term_id)
+			  'post_category' => array($idObj->term_id),
+			  'tags_input'	  => $type
 			);
 			
 			// Create lookup params to see if the post exists

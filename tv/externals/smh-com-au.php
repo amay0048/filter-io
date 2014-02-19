@@ -4,14 +4,14 @@
 require( '../wp-load.php' );
 
 $urls = array(
-"http://www.smh.com.au/tv/browse/json_recently/0"
+array("url"=>"http://www.smh.com.au/tv/browse/json_recently/0","type"=>"tv")
 );
 
 foreach ($urls as $url) {
-	updatenews($url);
+	updatenews($url["url"],$url["type"]);
 }
 
-function updatenews($url) {
+function updatenews($url,$type) {
 	
 	//look for the category by slug	
 	$idObj = get_category_by_slug('smh');
@@ -37,7 +37,8 @@ function updatenews($url) {
 		  'post_name'     => sanitize_title($result->title),
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
-		  'post_category' => array($idObj->term_id)
+		  'post_category' => array($idObj->term_id),
+		  'tags_input'	  => $type
 		);
 		
 		// Create lookup params to see if the post exists
