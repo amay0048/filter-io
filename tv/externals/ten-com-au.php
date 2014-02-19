@@ -35,6 +35,8 @@ function updatenews($url,$type) {
 			if(!strlen(trim($src))){
 				$src = $imgdata->getAttribute('src');
 			}
+			
+			$series = $result->getElementsByTagName('h2')->item(0)->nodeValue;
 			$title = $imgdata->getAttribute('alt');
 			$img = '<a href="http://tenplay.com.au"'.$node->getAttribute('href').'><img src="'.$src.'"/></a>';
 			
@@ -46,7 +48,7 @@ function updatenews($url,$type) {
 			  'post_status'   => 'publish',
 			  'post_author'   => 1,
 			  'post_category' => array($idObj->term_id),
-			  'tags_input'	  => $type
+			  'tags_input'	  => array($type,$series)
 			);
 			
 			// Create lookup params to see if the post exists

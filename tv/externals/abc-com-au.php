@@ -4,7 +4,7 @@
 require( '../wp-load.php' );
 
 $urls = array(
-array("url"=>"http://www.abc.net.au/news/feed/54768/rss.xml", "type"=>"news"),//NEWS
+//array("url"=>"http://www.abc.net.au/news/feed/54768/rss.xml", "type"=>"news"),//NEWS
 array("url"=>"http://tviview.abc.net.au/iview/rss/recent.xml", "type"=>"tv")//TV
 );
 
@@ -29,7 +29,13 @@ function updatenews($url,$type) {
 		$src = $result->getElementsByTagName('thumbnail')->item(0)->getAttribute('url');
 		$title = $result->getElementsByTagName('title')->item(0)->nodeValue;
 		$href = $result->getElementsByTagName('link')->item(0)->nodeValue;
-		
+		$categoryNodes = $result->getElementsByTagName('category');
+		$categories = array();
+		$categories[] = $type;
+		foreach($categoryNodes as $categoryNode){
+			$categories[] = $categoryNode->nodeValue;
+		}
+				
 		$content = '<p><a href="'.$href.'"><img src="'.$src.'"/></a></p><h2><a href="'.$href.'">view</a></h2>';
 		
 		// Create post object from json
@@ -40,7 +46,7 @@ function updatenews($url,$type) {
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
 		  'post_category' => array($idObj->term_id),
-		  'tags_input'	  => $type
+		  'tags_input'	  => $categories
 		);
 		
 		// Create lookup params to see if the post exists

@@ -30,9 +30,10 @@ function updatenews($url,$type) {
 		
 		if(!is_null($node)){
 			
-			$href = 'http://www.jump-in.com.au'.$node->getAttribute('href');
+			$href = 'http://au.tv.yahoo.com'.$node->getAttribute('href');
 			$src = $node->getElementsByTagName('img')->item(0)->getAttribute('src');
 			
+			$series = $result->getElementsByTagName('a')->item(1)->childNodes->item(1)->nodeValue;
 			$title = $result->getElementsByTagName('a')->item(1)->nodeValue;
 			$description = $result->getElementsByTagName('p')->item(0)->nodeValue;
 			
@@ -48,7 +49,7 @@ function updatenews($url,$type) {
 			  'post_status'   => 'publish',
 			  'post_author'   => 1,
 			  'post_category' => array($idObj->term_id),
-			  'tags_input'	  => $type
+			  'tags_input'	  => array($type,$series)
 			);
 			
 			// Create lookup params to see if the post exists

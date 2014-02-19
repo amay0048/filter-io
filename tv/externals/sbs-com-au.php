@@ -27,6 +27,9 @@ function updatenews($url,$type) {
 	$results = $data->entries;
 	
 	foreach (array_reverse($results) as $result) {
+		$categories = array();
+		$categories[] = $type;
+		
 		$aResult = (array)$result;
 		$aThumb = (array)$aResult['media$thumbnails'][1];
 		$videoId = array_pop(explode('/',$result->id));
@@ -34,7 +37,18 @@ function updatenews($url,$type) {
 		$src = $aThumb['plfile$downloadUrl'];
 		$href = 'http://www.sbs.com.au/ondemand/video/'.$videoId;
 		
+		$series = $aResult['pl1$programName'];
+		$categories[] = $series;
+		
 		$title = $result->title;
+		
+		foreach($aResult['media$categories'] as $categoryNode){
+			$aCategory = (array)$categoryNode;
+			if($aCategory['media$scheme'] == 'Genre'){
+				$categories[] = $aCategory['media$name'];
+			}
+		}
+		
 		$content = '<p><a href="'.$href.'"><img src="'.$src.'"/></a></p>';
 		$content .= '<p>'.$result->description.'</p>';
 		$content .= '<h2><a href="'.$href.'">view</a></h2>';
@@ -47,7 +61,7 @@ function updatenews($url,$type) {
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
 		  'post_category' => array($idObj->term_id),
-		  'tags_input'	  => $type
+		  'tags_input'	  => $categories
 		);
 		
 		// Create lookup params to see if the post exists

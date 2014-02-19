@@ -13,7 +13,7 @@ foreach ($urls as $url) {
 
 function updatenews($url,$type) {
 	
-	$idObj = get_category_by_slug('seven');
+	$idObj = get_category_by_slug('nine');
 	
 	// Get the json from the URL
 	$html = file_get_contents($url);
@@ -33,12 +33,13 @@ function updatenews($url,$type) {
 		$node = $result->getElementsByTagName('a')->item(0);
 		
 		if(!is_null($node)){
-			
-			$href = 'http://au.tv.yahoo.com'.$node->getAttribute('href');
+
+			$href = 'http://www.jump-in.com.au'.$node->getAttribute('href');
 			$src = $node->getElementsByTagName('img')->item(0)->getAttribute('src');
 			
-			$title = $result->getElementsByTagName('a')->item(1)->nodeValue;
-			$description = $result->getElementsByTagName('p')->item(0)->nodeValue;
+			$series = $result->getElementsByTagName('a')->item(1)->nodeValue;
+			$title = $series.' '.$result->getElementsByTagName('p')->item(0)->nodeValue;
+			$description = $result->getElementsByTagName('p')->item(1)->nodeValue;
 			
 			$content = '<p><a href="'.$href.'"><img src="'.$src.'"/></a></p>';
 			$content .= '<p>'.$description.'</p>';
@@ -52,7 +53,7 @@ function updatenews($url,$type) {
 			  'post_status'   => 'publish',
 			  'post_author'   => 1,
 			  'post_category' => array($idObj->term_id),
-			  'tags_input'	  => $type
+			  'tags_input'	  => array($type,$series)
 			);
 			
 			// Create lookup params to see if the post exists
