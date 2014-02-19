@@ -18,7 +18,7 @@ array("url"=>"http://www.news.com.au/remote/jsonp-proxy.esi?format=json&includeR
 );
 
 foreach ($urls as $url) {
-	updatenews($url->url,$url->type);
+	updatenews($url["url"],$url["type"]);
 }
 
 function updatenews($url,$type) {
