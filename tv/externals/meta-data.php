@@ -17,7 +17,6 @@ function get_meta_data($show,$idObj){
 	// Create a lookup array, the custom type has been previously 
 	// created using the types plugin
 	$args = array(
-	  //'name' => sanitize_title($show),
 	  'name' => sanitize_title($show),
 	  'post_type' => 'show',
 	  'post_status' => 'any',
@@ -42,7 +41,7 @@ function get_meta_data($show,$idObj){
 			  'post_type' => 'show',
 			  'post_status'   => 'publish',
 			  'post_author'   => 1,
-			  //'post_category' => array($idObj->term_id),
+			  'post_category' => array($idObj->term_id),
 			  'tags_input'	  => $result->genres
 			);
 			$post_id = wp_insert_post($my_post);
