@@ -2,6 +2,7 @@
 
 //require the wordpress codex
 require( '../wp-load.php' );
+require( './meta-data.php' );
 
 $urls = array(
 array("url"=>"http://www.sbs.com.au/api/video_feed/f/Bgtm9B/sbs-section-sbstv?form=json&byCategories=News+and+Current+Affairs%7CSport%7CSpecial+Events%2CSection%2FClips%7CSection%2FPrograms&range=21-40","type"=>"news"),//NEWS
@@ -37,8 +38,11 @@ function updatenews($url,$type) {
 		$src = $aThumb['plfile$downloadUrl'];
 		$href = 'http://www.sbs.com.au/ondemand/video/'.$videoId;
 		
-		$series = $aResult['pl1$programName'];
-		$categories[] = $series;
+		$show = $aResult['pl1$programName'];
+		$categories[] = $show;
+		if($type == 'tv'){
+			$show_id = get_meta_data($show,$idObj);
+		}
 		
 		$title = $result->title;
 		
@@ -63,6 +67,9 @@ function updatenews($url,$type) {
 		  'post_category' => array($idObj->term_id),
 		  'tags_input'	  => $categories
 		);
+		if($show_id && $type == 'tv'){
+			$my_post['post_parent'] = $show_id;
+		}
 		
 		// Create lookup params to see if the post exists
 		$args = array(

@@ -2,9 +2,10 @@
 
 //require the wordpress codex
 require( '../wp-load.php' );
+require( './meta-data.php' );
 
 $urls = array(
-//array("url"=>"http://www.abc.net.au/news/feed/54768/rss.xml", "type"=>"news"),//NEWS
+array("url"=>"http://www.abc.net.au/news/feed/54768/rss.xml", "type"=>"news"),//NEWS
 array("url"=>"http://tviview.abc.net.au/iview/rss/recent.xml", "type"=>"tv")//TV
 );
 

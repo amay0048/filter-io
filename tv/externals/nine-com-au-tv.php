@@ -2,6 +2,7 @@
 
 //require the wordpress codex
 require( '../wp-load.php' );
+require( './meta-data.php' );
 
 $urls = array(
 array("url"=>"http://www.jump-in.com.au/watch-now/","type"=>"tv")
@@ -37,8 +38,10 @@ function updatenews($url,$type) {
 			$href = 'http://www.jump-in.com.au'.$node->getAttribute('href');
 			$src = $node->getElementsByTagName('img')->item(0)->getAttribute('src');
 			
-			$series = $result->getElementsByTagName('a')->item(1)->nodeValue;
-			$title = $series.' '.$result->getElementsByTagName('p')->item(0)->nodeValue;
+			$show = $result->getElementsByTagName('a')->item(1)->nodeValue;
+			$show_id = get_meta_data($show,$idObj);
+			
+			$title = $show.' '.$result->getElementsByTagName('p')->item(0)->nodeValue;
 			$description = $result->getElementsByTagName('p')->item(1)->nodeValue;
 			
 			$content = '<p><a href="'.$href.'"><img src="'.$src.'"/></a></p>';
@@ -53,8 +56,11 @@ function updatenews($url,$type) {
 			  'post_status'   => 'publish',
 			  'post_author'   => 1,
 			  'post_category' => array($idObj->term_id),
-			  'tags_input'	  => array($type,$series)
+			  'tags_input'	  => array($type,$show)
 			);
+			if($show_id){
+				$my_post['post_parent'] = $show_id;
+			}
 			
 			// Create lookup params to see if the post exists
 			$args = array(
