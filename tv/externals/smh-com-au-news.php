@@ -3,6 +3,7 @@
 //require the wordpress codex
 require( '../wp-load.php' );
 require( './meta-data.php' );
+require('./featured-image.php');
 
 $urls = array(
 array("url"=>"http://media.smh.com.au/","type"=>"news")
@@ -70,7 +71,8 @@ function updatenews($url,$type) {
 				//log('ID on the first post found '.$my_posts[0]->ID);
 			} else {
 				// Else, insert the post into the database
-				wp_insert_post($my_post);
+				$postid = wp_insert_post($my_post);
+				featured_image($postid,$src);
 			}
 		}//endif
 	}

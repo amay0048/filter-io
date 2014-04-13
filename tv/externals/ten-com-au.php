@@ -3,6 +3,7 @@
 //require the wordpress codex
 require( '../wp-load.php' );
 require( './meta-data.php' );
+require('./featured-image.php');
 
 $urls = array(
 array("url"=>"http://tenplay.com.au/Handlers/GenericUserControlRenderer.ashx?path=~/UserControls/Content/C01/C01%20Listing.ascx&props=DataSourceID,{C8F9B9DC-7421-45C3-8543-E1725FD44059}|StartIndex,1|EndIndex,30","type"=>"tv") //TV
@@ -75,7 +76,8 @@ function updatenews($url,$type) {
 				//log('ID on the first post found '.$my_posts[0]->ID);
 			} else {
 				// Else, insert the post into the database
-				wp_insert_post($my_post);
+				$postid = wp_insert_post($my_post);
+				featured_image($postid,$src);
 			}
 		}//endif
 	}

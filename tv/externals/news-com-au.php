@@ -68,6 +68,17 @@ function updatenews($url,$type) {
 			//log('ID on the first post found '.$my_posts[0]->ID);
 		} else {
 			// Else, insert the post into the database
+			
+			// First tho, we need to create a request with the correct mashape headers
+			$context = stream_context_create(array(
+				'http' => array(
+					'method' => 'GET',
+					'header' => "Host: www.example.com\r\n" .
+								"Cookie: foo=bar\r\n"
+				)
+			));
+			$data = file_get_contents("http://www.example.com/", false, $context);
+			
 			wp_insert_post($my_post);
 		}
 	}

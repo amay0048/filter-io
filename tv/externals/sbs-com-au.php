@@ -3,6 +3,7 @@
 //require the wordpress codex
 require( '../wp-load.php' );
 require( './meta-data.php' );
+require('./featured-image.php');
 
 $urls = array(
 array("url"=>"http://www.sbs.com.au/api/video_feed/f/Bgtm9B/sbs-section-sbstv?form=json&byCategories=News+and+Current+Affairs%7CSport%7CSpecial+Events%2CSection%2FClips%7CSection%2FPrograms&range=21-40","type"=>"news"),//NEWS
@@ -86,7 +87,8 @@ function updatenews($url,$type) {
 			//log('ID on the first post found '.$my_posts[0]->ID);
 		} else {
 			// Else, insert the post into the database
-			wp_insert_post($my_post);
+			$postid = wp_insert_post($my_post);
+			featured_image($postid,$src);
 		}
 	}
 

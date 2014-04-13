@@ -2,6 +2,7 @@
 
 //require the wordpress codex
 require( '../wp-load.php' );
+require('./featured-image.php');
 
 $urls = array(
 array("url"=>"http://www.smh.com.au/tv/browse/json_recently/0","type"=>"tv")
@@ -29,6 +30,7 @@ function updatenews($url,$type) {
 		//Get link and preview image
 		$link = '<h2><a href="http://www.smh.com.au/tv/'.$result->encodeTitle.'">view</a></h2>';
 		$img = '<p><a href="http://www.smh.com.au/tv/'.$result->encodeTitle.'"><img src="'.$result->thumbnail.'"/></a></p>';
+		$src = $result->thumbnail;
 		
 		// Create post object from json
 		$my_post = array(
@@ -56,7 +58,8 @@ function updatenews($url,$type) {
 			//log('ID on the first post found '.$my_posts[0]->ID);
 		} else {
 			// Else, insert the post into the database
-			wp_insert_post($my_post);
+			$postid = wp_insert_post($my_post);
+			featured_image($postid,$src);
 		}
 	}
 

@@ -2,6 +2,7 @@
 
 //require the wordpress codex
 require( '../wp-load.php' );
+require('./featured-image.php');
 
 $urls = array(
 array("url"=>"http://api.brightcove.com/services/library?command=search_videos&all=segment:AUnationalninenews&page_size=12&page_number=0&sort_by=START_DATE:DESC&token=Vb3fqavTKFDDZbnnGGtbhKxam7uHduOnob-2MJlpHmUnzSMWbDe5bg..&video_fields=id,referenceId,version,name,shortDescription,publishedDate,startDate,endDate,length,itemState,thumbnailURL,videoStillURL,playsTotal&custom_fields=genre,network,provider,series,season,episode,originalairdate,classification&get_item_count=true&callback=_","type"=>"news") //NEWS
@@ -28,6 +29,7 @@ function updatenews($url,$type) {
 
 		$title = $result->name;
 		$content = '<p><a href="http://video.news.ninemsn.com.au/?videoid='.$result->id.'"><img src="'.$result->thumbnailURL.'"/></a></p>';
+		$src = $result->thumbnailURL;
 		$content .= '<p>'.$result->shortDescription.'</p>';
 		$content .= '<h2><a href="http://video.news.ninemsn.com.au/?videoid='.$result->id.'">view</a></h2>';
 		
@@ -57,7 +59,8 @@ function updatenews($url,$type) {
 			//log('ID on the first post found '.$my_posts[0]->ID);
 		} else {
 			// Else, insert the post into the database
-			wp_insert_post($my_post);
+			$postid = wp_insert_post($my_post);
+			featured_image($postid,$src);
 		}
 	}
 
