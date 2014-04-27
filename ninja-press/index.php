@@ -1,7 +1,23 @@
 <?php
-
+	
+	/**
+	 *  Replacement classes
+	 *   'wp-the-loop'
+	 *    'wp-the-post'
+	 *      'wp-the-title'
+	 *      'wp-the-excerpt'
+	 *      'wp-the-time' // The format for this is in: variables.php
+	 *    'wp-the-loop-pagination'
+	 *  'wp-widget'
+	 *    'wp-widget-editable'
+	 *  'wp-sidebar'
+	 *  'wp-header'
+	 *  'wp-footer'
+	 **/
+	
 	// Includes
 	require_once 'externals.php';
+	require_once 'variables.php';
 	
 	// Settings
 	mb_internal_encoding("UTF-8");
@@ -19,6 +35,7 @@
 	
 	// Nuke the functions file first
 	file_put_contents("./wordpress/functions.php","");
+	extract_children($doc,"wp-the-loop");
 	extract_children($doc,"wp-widget");
 	extract_children($doc,"wp-sidebar");
 	extract_children($doc,"wp-header");
@@ -67,6 +84,8 @@
 			//$fragment = $parent->removeChild($node);
 			//$contents = $doc->saveHTML($node);
 			create_sidebar($node);
+		} else if($class == 'wp-the-loop') {
+			create_the_loop($node);
 		} else {
 			$wpname = substr($class, 3);
 			$newnode = $doc->createProcessingInstruction('php','get_'.$wpname.'();?');
@@ -76,6 +95,54 @@
 			file_put_contents("./wordpress/".substr($filename,3),$contents);
 		}
 		
+	}
+	
+	function create_the_loop($node){
+		$doc = $node->ownerDocument;
+		embed_pagination($doc,$node);
+		$class = 'wp-the-post';
+		$nodes = find_nodes_by_class($doc,$class,$node);
+		for($i = 1 ; $i < $nodes->length ; $i++){
+			$node->removeChild($nodes->item($i));
+		}
+		$item = $nodes->item(0);
+		embed_the_function($doc,$item,'wp-the-title','the_title();');
+		embed_the_function($doc,$item,'wp-the-excerpt','the_excerpt();');
+		global $dateformat;
+		embed_the_function($doc,$item,'wp-the-time',"the_time('$dateformat');");
+		$oldnode = $node->childNodes->item(0);
+		$newnode = $doc->createProcessingInstruction('php','if ( have_posts() ) : while ( have_posts() ) : the_post();?');
+		$node->insertBefore($newnode,$oldnode);
+		$newnode = $doc->createProcessingInstruction('php','endwhile;endif;?');
+		$node->appendChild($newnode);
+	}
+	
+	function embed_pagination($doc,$node){
+		$class = 'wp-the-loop-pagination';
+		$nodes = find_nodes_by_class($doc,$class,$node);
+		for($i = 0 ; $i<$nodes->length ; $i++){
+			$item = $nodes->item($i);
+			remove_children($item);
+			$newnode = $doc->createProcessingInstruction('php','get_template_part( \'pagination\' );?');
+			$item->appendChild($newnode);
+		}
+	}
+	
+	function remove_children($node){
+		$doc = $node->ownerDocument;
+		for($i = 0 ; $i < $node->childNodes->length ; $i++){
+			$node->removeChild($node->childNodes->item(0));
+		}
+	}
+	
+	function embed_the_function($doc,$node,$class,$function){
+		$nodes = find_nodes_by_class($doc,$class,$node);
+		$newnode = $doc->createProcessingInstruction('php',$function.'?');
+		if(!$nodes->length){
+			
+		}
+		$oldnode = $nodes->item(0)->childNodes->item(0);
+		$nodes->item(0)->replaceChild($newnode,$oldnode);
 	}
 	
 	function create_widget($node){
@@ -306,7 +373,7 @@ EOD;
 			$parent = $image->parentNode;
 			$parent->replaceChild($newnode,$image);
 		}
-			
+		
 	}
 
 ?>
