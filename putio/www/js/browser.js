@@ -7580,7 +7580,12 @@ var PutIO = function(token){
 		options.method = method;
 		options.path += url.format({'query': query});
 
-		$.get(options.href,function(){callback(arguments[0])});
+		$(function(){
+            $.ajax({
+              url: options.href,
+              success: function(){callback(arguments[0])},
+            });
+        });
 
 		/*
 		http.request(options, function(res){
