@@ -224,7 +224,7 @@ movielookup = function(item){
 		try{
 			var mdb = res.results[0];
 			if(typeof mdb !== 'undefined') {
-				item.set({trkt:trkt[0]});
+				item.set({mdb:mdb});
 			}
 		} catch(e){
 			console.log(options);
