@@ -1,4 +1,5 @@
 socialengine/temporary/log/main.log
 wordpress/wp-content/uploads/**
+tv/wp-content/uploads/**
 
 putio/node/node_modules/**
