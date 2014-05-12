@@ -3,14 +3,15 @@
 	/**
 	 *  Replacement classes
 	 *   'wp-the-loop'
+	 *    'wp-the-loop-pagination'
 	 *    'wp-the-post'
 	 *      'wp-the-title'
 	 *      'wp-the-excerpt'
 	 *      'wp-the-time' // The format for this is in: variables.php
-	 *    'wp-the-loop-pagination'
-	 *  'wp-widget'
-	 *    'wp-widget-editable'
 	 *  'wp-sidebar'
+	 *    'wp-widget'
+	 *      'wp-widget-editable'
+	 *      'wp-widget-editable wp-widget-bg-image'
 	 *  'wp-header'
 	 *  'wp-footer'
 	 **/
@@ -26,7 +27,8 @@
 	$html = file_get_contents($htmlFile,true);
 	$doc = new DOMDocument();
 	libxml_use_internal_errors(true);
-	$doc->loadHTML($html);
+	$doc->loadHTML($html);ze\
+	
 	libxml_clear_errors();
 	
 	create_css($doc);
@@ -62,9 +64,11 @@
 	
 	function find_nodes_by_class($doc,$class,$context){
 		$finder = new DomXPath($doc);
+		//return $finder->query(".//*[contains(@class, '$class')]",$context);
+		//var_dump($doc->getElementsByTagName('img'));
 		$finder->registerPhpFunctions('preg_match');
 		$finder->registerNamespace('php', 'http://php.net/xpath');
-		$regex = '@^'.$class.'$|^'.$class.'\s|\s'.$class.'$@';
+		$regex = '@^'.$class.'$|^'.$class.'\s|\s'.$class.'$|\s'.$class.'\s@';
 		return $finder->query(".//*[ php:functionString('preg_match', '$regex', @class) > 0 ]",$context);
 	}
 	
@@ -197,6 +201,8 @@ EOT;
 		$str = 'public function form( $instance ) {';
 		for($i = 0 ; $i < $nodes->length ; $i++){
 			$str .= get_wp_form_field($nodes->item($i),$i);
+			//var_dump($nodes->item($i)->nodeName);
+			//TODO: for some reason, this isn't returning when there are '/'s in attribute paths.
 		}
 		$str .= '}';
 
@@ -255,6 +261,8 @@ EOT;
 		$doc = $nodes->item(0)->ownerDocument;
 		for($i = 0 ; $i < $nodes->length ; $i++){
 			$newnode = $doc->createProcessingInstruction('php','echo apply_filters( "widget_title", $instance["wp-widget-editable-'.$i.'"] );?');
+			// TODO: this throws a spaz when you make something that doesn't have children editable.
+			// should be catching this earlier, but I'll see how we go.
 			$oldnode = $nodes->item($i)->childNodes->item(0);
 			$nodes->item($i)->replaceChild($newnode,$oldnode);
 		}
@@ -367,11 +375,12 @@ EOD;
 			make_path('./wordpress/'.$src,true);
 			copy('./html/'.$src, './wordpress/'.$src);
 			
-			$frag = $doc->saveHTML($image);
-			$frag = addslashes(preg_replace('/src="(.*?)"/','src="\$ss_uri/$1"',$frag));
-			$newnode = $doc->createProcessingInstruction('php',"echo \"$frag\";?");
-			$parent = $image->parentNode;
-			$parent->replaceChild($newnode,$image);
+			$image->setAttribute('src','<?php echo $hello; ?>');
+			//$frag = $doc->saveHTML($image);
+			//$frag = addslashes(preg_replace('/src="(.*?)"/','src="\$ss_uri/$1"',$frag));
+			//$newnode = $doc->createProcessingInstruction('php',"echo \"$frag\";?");
+			//$parent = $image->parentNode;
+			//$parent->replaceChild($newnode,$image);
 		}
 		
 	}
