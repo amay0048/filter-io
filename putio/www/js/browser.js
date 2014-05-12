@@ -213,7 +213,7 @@ movielookup = function(item){
 	};
 	var uri = 'http://'+options.hostname+options.path;
 	
-	mdb.searchMovie({query: encodeURI(name) }, function(err, res){
+	MovieDB.searchMovie({query: encodeURI(name) }, function(err, res){
   	console.log(res);
 	});
 
