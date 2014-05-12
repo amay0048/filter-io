@@ -7619,7 +7619,7 @@ var PutIO = function(token){
 	this.files.listVideo = function(parent_id, callback){
 		parent_id = def(parent_id, 0);
 		
-		get('/files/search/from:me%20type:video/page/-1', {}, callback);
+		get('files/search/from:me%20type:video/page/-1', {}, callback);
 	};
 	this.files.search = function(query, page, callback,response){
 		need(query);
