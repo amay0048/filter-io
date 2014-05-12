@@ -24,14 +24,14 @@ Backbone.LocalStorage = require("backbone.localstorage");
 
 window.Video = Video = Backbone.Model.extend({
     defaults: {
-        name: 'filename',
-        title: 'n/a',
-		show: 'n/a',
-		season: 'n/a',
-		episode: 'n/a',
-        img_src: '',
-        overview: 'n/a',
-		path: 'n/a'
+	    name: 'filename',
+	    title: 'n/a',
+			show: 'n/a',
+			season: 'n/a',
+			episode: 'n/a',
+	    img_src: '',
+	    overview: 'n/a',
+			path: 'n/a'
     },
 });
 window.VideoCollection = VideoCollection = Backbone.Collection.extend({
@@ -151,6 +151,12 @@ tvlookup = function(mask,item,callback){
 		method: 'GET'
 	};
 	var uri = 'http://'+options.hostname+options.path;
+
+	tvdb.findTvShow("Mad Men", function(err, tvShows) {
+	  if (err) return;
+	  // Handle tvShows.
+	  console.log(tvShows);
+	});
 	
 	request({uri:uri,json:true},function(e, response, body){
 
