@@ -2,7 +2,7 @@ var global = {};
 global.token = 'IK4Q6CE2';
 global.tvdb_key = "F686E194A86D510C";
 
-var logfmt = require("logfmt");
+//var logfmt = require("logfmt");
 var request = require("browser-request");
 var parseString = require('xml2js').parseString;
 
