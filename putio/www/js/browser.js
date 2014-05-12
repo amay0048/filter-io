@@ -74,7 +74,7 @@ Videos.on("change", function(item) {
 
 window.load.start();
 
-api.files.listVideo(0, function(data){
+window.files = function(data){
 
 	async.each(data.files, function(item, callback){
 
@@ -87,7 +87,7 @@ api.files.listVideo(0, function(data){
 		//console.log(output);
 	});
 
-});
+};
 
 add_local = function(item,callback){
 	var uri;

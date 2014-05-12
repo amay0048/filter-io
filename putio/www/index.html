@@ -40,7 +40,9 @@
             $(function(){
                 $.ajax({
                   url: 'https://api.put.io/v2/files/search/from:me%20type:video/page/-1?oauth_token=IK4Q6CE2',
-                  success: function(){console.log(arguments)},
+                  success: function(){
+                    window.files(arguments[0])
+                  },
                 });
                 app_init();
             });
