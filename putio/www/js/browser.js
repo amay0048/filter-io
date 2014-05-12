@@ -215,13 +215,10 @@ movielookup = function(item){
 	
 	MovieDB.searchMovie({query: encodeURI(name) }, function(err, res){
   	console.log(res);
-	});
-
-	request(uri,function(e, request, body){
 
 		try{
-			var trkt = body;
-			if(typeof trkt !== 'undefined') {
+			var mdb = res.results[0];
+			if(typeof mdb !== 'undefined') {
 				item.set({trkt:trkt[0]});
 			}
 		} catch(e){
@@ -231,6 +228,9 @@ movielookup = function(item){
 		} finally {
 			return item;
 		}
+	});
+
+	request(uri,function(e, request, body){
 	});
 }
 },{"async":2,"backbone":7,"backbone.localstorage":3,"browser-request":9,"moviedb":10,"put.io-v2":16,"tvdb":17,"xml2js":22}],2:[function(require,module,exports){
