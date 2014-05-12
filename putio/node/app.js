@@ -96,6 +96,7 @@ add_local = function(item,callback){
 		uri = 'https://put.io/v2/files/'+item.id+'/mp4/stream?'+'token='+global.token;
 	}
 
+	/*
 	request({uri:uri,method:'HEAD',Origin:'http://filter.io/'},function(e, request, body){
 		if(request.statusCode < 400){
 			if(typeof Videos.findWhere({id:item.id}) === 'undefined'){
@@ -104,6 +105,9 @@ add_local = function(item,callback){
 		}
 		callback(null);
 	});
+	*/
+	Videos.add([item]);
+	callback(null);
 }
 
 add_meta = function(item){
