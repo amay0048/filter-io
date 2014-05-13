@@ -64,6 +64,12 @@
           scope.addSerial(result[0]);
         });
       }
+      var traktCB2 = function(result){
+        var scope = getScope();
+        scope.$apply(function(){
+          scope.addEpisodes(result);
+        });
+      }
       var putioCB = function(result){
         var scope = getScope();
         scope.$apply(function(){

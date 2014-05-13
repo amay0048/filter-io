@@ -2,5 +2,10 @@
 <div>
 	<div ng-repeat="video in videos">
 		<h2>{{ video.name }}</h2>
+		<h3>{{ video.meta.title }}</h3>
+		<h4>Season: {{ video.season }}</h4>
+		<h4>Episode: {{ video.episode }}</h4>
+		<img ng-src="{{ video.meta.screen }}">
+		<p>{{ video.meta.overview }}</p>
 	</div>
 </div>

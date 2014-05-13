@@ -21,6 +21,8 @@ angular.module('putioAngularApp')
     //  }
     };
 
+    var _slugMap = this._slugMap = {};
+
     var addEpisodeMeta = function(item,match){
       match = match.toString().replace(/[,]+/g,',').split(',');
       item.name = match[1].replace(/\W+/ig,' ').trim();
@@ -39,7 +41,8 @@ angular.module('putioAngularApp')
       if(typeof _serials[key] === 'undefined'){
         _serials[key] = {
           name:name,
-          seasons:[]
+          seasons:[],
+          season:{}
         };
         var cbScriptTarget = document.getElementsByTagName('head')[0];
         var cbScript = document.createElement('script');
@@ -49,6 +52,18 @@ angular.module('putioAngularApp')
       if(_serials[key].seasons.indexOf(season) < 0){
         _serials[key].seasons.push(season);
       }
+    };
+
+    var episodesLookup = function(serial,key){
+      var cbScriptTarget = document.getElementsByTagName('head')[0];
+      var slug = serial.trakt.url.split('/').pop();
+      _slugMap[key] = slug;
+      _slugMap[slug] = key;
+      angular.forEach(serial.seasons,function(season){
+        var cbScript = document.createElement('script');
+        cbScript.src = 'http://api.trakt.tv/show/season.json/f4980e1fa96b6e330e1ca87430a33160/'+slug+'/'+season+'?callback=traktCB2';
+        cbScriptTarget.appendChild(cbScript);
+      });
     };
 
     var sanatise = function(string){
@@ -97,6 +112,7 @@ angular.module('putioAngularApp')
         if(typeof _serials[key] !== 'undefined'){
           _serials[key].trakt = item;
           _serials[key].name = item.title;
+          episodesLookup(_serials[key],key);
         }
         _self.linkSerials();
         return _serials;
@@ -109,5 +125,21 @@ angular.module('putioAngularApp')
           }
         });
       },
+      addEpisodes: function(data) {
+        var _self = this;
+        var explodeUrl = data[0].url.split('/').reverse();
+        var key = _slugMap[explodeUrl[4]];
+        var season = explodeUrl[2];
+        _serials[key].season[season] = data;
+        _self.linkEpisodes(key,season);
+        return _serials;
+      },
+      linkEpisodes: function(key,season){
+        angular.forEach(_videos, function (video) {
+          if(video.key == key && video.season == season){
+            video.meta = _serials[key].season[season][video.episode-1];
+          }
+        });
+      }
     };
   });

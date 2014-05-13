@@ -1,6 +1,8 @@
-<p>This is the series view.</p>
 <div>
 	<div ng-repeat="serial in serials">
 		<h2>{{ serial.name }}</h2>
+		<img ng-src="{{ serial.trakt.images.poster }}">
+		<p>{{ serial.trakt.overview }}</p>
+		<h3 ng-repeat="season in serial.seasons">Season: {{ season }}</h3>
 	</div>
 </div>

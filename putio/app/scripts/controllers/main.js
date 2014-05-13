@@ -20,4 +20,8 @@ angular.module('putioAngularApp')
       $scope.serials = Videos.addSerial(data);
   	};
 
+    $scope.addEpisodes = function(data){
+      $scope.serials = Videos.addEpisodes(data);
+    };
+
   });
