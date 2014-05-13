@@ -40,6 +40,7 @@
             $(function(){
                 $.ajax({
                   url: 'https://api.put.io/v2/files/search/from:me%20type:video/page/-1?oauth_token=IK4Q6CE2',
+                  //url: 'http://thetvdb.com/api/GetSeries.php?seriesname=Mad%20Men&language=en',
                   success: function(){
                     window.files(arguments[0])
                   },
