@@ -7,6 +7,7 @@ angular.module('putioAngularApp')
 
     $scope.videos = Videos.getVideos();
     $scope.serials = Videos.getSerials();
+    $scope.movies = Videos.getMovies();
 
   	$scope.addVideo = function(data){
   		$scope.videos = Videos.addVideo(data);
@@ -22,6 +23,10 @@ angular.module('putioAngularApp')
 
     $scope.addEpisodes = function(data){
       $scope.serials = Videos.addEpisodes(data);
+    };
+
+    $scope.addMovie = function(data){
+      $scope.movies = Videos.addMovie(data);
     };
 
   });

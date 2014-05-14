@@ -1,0 +1,8 @@
+<div>
+	<div ng-repeat="movie in movies">
+		<h2>{{ movie.name }}</h2>
+		<h3>{{ movie.trakt.title }}</h3>
+		<img ng-src="{{ movie.trakt.images.poster }}">
+		<p>{{ movie.trakt.overview }}</p>
+	</div>
+</div>

@@ -2,8 +2,6 @@
 
 angular.module('putioAngularApp')
   .factory('Videos', function () {
-    // Service logic
-    // ...
     // This is where I can query localstorage using lawnchair
     var jssrc = 'https://api.put.io/v2/files/search/from:me%20type:video/page/-1?oauth_token=IK4Q6CE2&callback=putioCB';
     var cbScriptTarget = document.getElementsByTagName('head')[0];
@@ -13,15 +11,13 @@ angular.module('putioAngularApp')
 
     var _videos = this._videos= [];
 
-    var _serials = this._serials = {
-    //  name:{
-    //    name: 'title'
-    //    season: {}
-    //    trakt: {}
-    //  }
-    };
+    var _serials = this._serials = {};
+
+    var _movies = this._movies = {};
 
     var _slugMap = this._slugMap = {};
+
+    // Serial/Series related functions
 
     var addEpisodeMeta = function(item,match){
       match = match.toString().replace(/[,]+/g,',').split(',');
@@ -46,7 +42,7 @@ angular.module('putioAngularApp')
         };
         var cbScriptTarget = document.getElementsByTagName('head')[0];
         var cbScript = document.createElement('script');
-        cbScript.src = 'http://api.trakt.tv/search/shows.json/f4980e1fa96b6e330e1ca87430a33160?query='+name+'&callback=traktCB';
+        cbScript.src = 'http://api.trakt.tv/search/shows.json/f4980e1fa96b6e330e1ca87430a33160?query='+name+'&limit=1&callback=traktCB';
         cbScriptTarget.appendChild(cbScript);
       }
       if(_serials[key].seasons.indexOf(season) < 0){
@@ -66,43 +62,77 @@ angular.module('putioAngularApp')
       });
     };
 
+    // Movie related functions
+    var addMovieMeta = function(item,match){
+      match = match.toString().replace(/[,]+/g,',').split(',');
+      item.name = match[1].replace(/\W+/ig,' ').trim();
+      item.key = sanatise(match[1]);
+
+      return item;
+    };
+
+    var movieLookup = function(item){
+      var name = item.name;
+      var key = item.key;
+
+      if(typeof _movies[key] === 'undefined'){
+        _movies[key] = {
+          name:item.putio.name,
+          putio:item.putio
+        };
+        var cbScriptTarget = document.getElementsByTagName('head')[0];
+        var cbScript = document.createElement('script');
+        cbScript.src = 'http://api.trakt.tv/search/movies.json/f4980e1fa96b6e330e1ca87430a33160?query='+name+'&limit=1&callback=traktCB3';
+        cbScriptTarget.appendChild(cbScript);
+      }
+    };
+
+    // This is a function to allow mapping of the data returned
+    // from the Trakt api with the keys that I'm putting in.
+    // I'm calling using JSONP callbacks and embedded scripts
+    // otherwise I run into massive issues with CORS. 
+
     var sanatise = function(string){
       return string.replace(/\W+/ig,' ').trim().replace(/\bus$|\buk$|\b\d\d\d\d$/ig,' ').trim().toLowerCase();
     };
 
     // Public API here
     return {
+      // Video related functions
       getVideos: function () {
         return _videos;
       },
       addVideo: function(file) {
-        // Add the data to the videos
-        // collection, then return it
-        var mask = /(.+?)[Ss](\d+)[Ee](\d+)|(.+?)(\d{1,2})x(\d{1,2})|(.+?)season.*?(\d{1,2}).*?episode.*?(\d{1,2})/i;
-        var match = file.name.match(mask);
+        var maskEpisode = /(.+?)[Ss](\d+)[Ee](\d+)|(.+?)(\d{1,2})x(\d{1,2})|(.+?)season.*?(\d{1,2}).*?episode.*?(\d{1,2})/i;
+        var matchEpisode = file.name.match(maskEpisode);
+
+        var maskMovie = /(.+?)(\d\d\d\d)/i;
+        var matchMovie = file.name.match(maskMovie);
+
         var item = {
           name: file.name,
           putio: file
         };
 
-        if(match){
-          item = addEpisodeMeta(item,match);
+        if(matchEpisode){
+          item = addEpisodeMeta(item,matchEpisode);
           serialLookup(item);
+        } else if(matchMovie){
+          item = addMovieMeta(item,matchMovie);
+          movieLookup(item);
         }
 
         _videos.push(item);
+        return _videos;
       },
-      addMany: function(items){
+      addMany: function(files){
         var _self = this;
-        angular.forEach(items,function(item){
-          var video = {
-            name: item.name,
-            putio: item
-          };
-          _self.addVideo(video);
+        angular.forEach(files,function(file){
+          _self.addVideo(file);
         });
         return _videos;
       },
+      // Serial related functions
       getSerials: function () {
         return _serials;
       },
@@ -140,6 +170,16 @@ angular.module('putioAngularApp')
             video.meta = _serials[key].season[season][video.episode-1];
           }
         });
+      },
+      getMovies: function(){
+        return _movies;
+      },
+      addMovie: function(data) {
+        var key = sanatise(data.title);
+        if(typeof _movies[key] !== 'undefined'){
+          _movies[key].trakt = data;
+        }
+        return _movies;
       }
     };
   });

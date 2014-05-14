@@ -21,7 +21,15 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
+    <div class="header">
+      <ul class="nav nav-pills pull-right">
+        <li class="active"><a ng-href="#/">Home</a></li>
+        <li><a ng-href="#/videos">Videos</a></li>
+        <li><a ng-href="#/series">Series</a></li>
+        <li><a ng-href="#/movies">Movies</a></li>
+      </ul>
+      <h3 class="text-muted">putio angular</h3>
+    </div>
     <!-- Add your site or application content here -->
     <div id="application" class="container" ng-view=""></div>
 
@@ -68,6 +76,12 @@
         var scope = getScope();
         scope.$apply(function(){
           scope.addEpisodes(result);
+        });
+      }
+      var traktCB3 = function(result){
+        var scope = getScope();
+        scope.$apply(function(){
+          scope.addMovie(result[0]);
         });
       }
       var putioCB = function(result){
