@@ -1,11 +1,13 @@
 <h3 ng-if="isEmpty(serials)">Searching for series.</h3>
-<div class="column" ng-repeat="serial in serials">
-	<div class="item">
-	  <img ng-src="{{ serial.trakt.images.poster || 'images/poster-dark.jpg' }}" width="100%">
-	  <h3 class="snippet-title">{{ serial.name }}</h3>
-	  <p class="snippet-text">{{ serial.trakt.overview || 'Sorry, I can\'t seem to find any information for this series' }}</p>
-		<a class="w-inline-block more-link" ng-href="#/videos/{{ serial.key }}/{{ season }}" ng-repeat="season in serial.seasons">
-			<div>Season: {{ season }}</div>
-		</a>
+<span ng-repeat="serial in serials">
+	<div class="column" ng-repeat="season in serial.seasons">
+		<div class="item">
+		  <img class="poster-image" src="images/poster.png" ng-style="{'background-image':'url({{ serial.trakt.images.poster || 'images/poster-dark.jpg' }})'}" width="100%">
+		  <h3 class="snippet-title">{{ serial.name }}</h3>
+		  <p class="snippet-text">{{ serial.trakt.overview || 'Sorry, I can\'t seem to find any information for this series' }}</p>
+			<a class="w-inline-block more-link" ng-href="#/videos/{{ serial.key }}/{{ season }}">
+				<div>Season: {{ season }}</div>
+			</a>
+		</div>
 	</div>
-</div>
+</span>

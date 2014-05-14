@@ -1,7 +1,7 @@
 <h3 ng-if="isEmpty(movies)">Searching for movies.</h3>
 <div class="column" ng-repeat="movie in movies">
 	<div class="item">
-	  <img ng-src="{{ movie.trakt.images.poster || 'images/poster-dark.jpg' }}" width="100%">
+	  <img class="poster-image" src="images/poster.png" ng-style="{'background-image':'url({{ movie.trakt.images.poster || 'images/poster-dark.jpg' }})'}" width="100%">
 	  <h3 class="snippet-title">{{ movie.trakt.title || movie.name }}</h3>
 	  <p class="snippet-text">{{ movie.trakt.overview || 'Sorry, I can\'t seem to find any information for this movie' }}</p>
 	  <a class="w-inline-block more-link" href="#">

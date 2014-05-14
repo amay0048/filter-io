@@ -90,9 +90,6 @@ p {
   padding-bottom: 28px;
   background-color: #333;
 }
-.section.grey {
-  background-color: #f2f2f2;
-}
 .nav-link {
   margin-right: 5px;
   margin-left: 5px;
@@ -127,43 +124,9 @@ p {
   font-weight: 400;
   text-transform: none;
 }
-.nav-bar {
-  padding-right: 0px;
-  padding-left: 0px;
-  text-align: right;
-}
-.hero-bg {
-  width: auto;
-  padding-top: 33px;
-  padding-bottom: 33px;
-  background-image: url('../images/example-bg.png');
-}
-.subtitle {
-  margin-bottom: 18px;
-  -webkit-transform: none;
-  -ms-transform: none;
-  -o-transform: none;
-  transform: none;
-  color: rgba(0, 0, 0, 0.56);
-  font-size: 16px;
-  font-weight: 700;
-}
-.section-description {
-  font-size: 14px;
-}
-.snippet {
-  display: block;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  color: black;
-  text-decoration: none;
-}
-.right-col {
-  padding-top: 13px;
-  text-align: right;
-}
 .more-link {
   width: 100%;
+  margin-top: 15px;
   padding: 6px 8px;
   border: 2px solid #c2c2c2;
   border-radius: 5px;
@@ -177,53 +140,29 @@ p {
   text-transform: uppercase;
 }
 .more-link:hover {
-  border: 1px solid #008cff;
+  border: 2px solid #008cff;
   background-color: #008cff;
   -webkit-transition: all 200ms ease;
   -o-transition: all 200ms ease;
   transition: all 200ms ease;
   color: white;
 }
-.snippet-text-section {
-  padding: 10px 12px;
-}
 .snippet-title {
-  margin-bottom: 7px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-bottom: 4px;
   font-size: 14px;
+  line-height: 26px;
   font-weight: 700;
 }
 .snippet-text {
+  overflow-x: scroll;
+  overflow-y: scroll;
+  height: 97px;
+  margin-bottom: 0px;
   color: #737373;
   font-size: 14px;
   line-height: 19px;
-}
-.snippet-row {
-  margin-top: 27px;
-  margin-bottom: 27px;
-}
-.button-column {
-  padding-top: 32px;
-  text-align: center;
-}
-.company-column {
-  padding-right: 0px;
-  padding-left: 0px;
-}
-.img-example {
-  margin-bottom: 34px;
-}
-.footer-link {
-  margin-right: 9px;
-  margin-left: 9px;
-  color: #008cff;
-  font-size: 14px;
-  text-decoration: none;
-}
-.footer-nav-bar {
-  text-align: right;
-}
-.footer-text {
-  font-size: 14px;
 }
 .content-bg {
   padding-top: 39px;
@@ -232,48 +171,35 @@ p {
   background-image: url('../images/example-bg.png');
   background-attachment: fixed;
 }
-.content-bg.two {
-  background-image: url('../images/example-bg.png');
-}
-.example-image {
-  width: 100%;
-}
-.video {
-  width: 25%;
-  min-height: 300px;
-  float: left;
-}
 .column {
   width: 25%;
   float: left;
 }
 .item {
-  min-height: 400px;
   margin: 5px;
   padding: 15px;
   border-radius: 4px;
   background-color: #f2f2f2;
 }
-.cover {
-  padding-bottom: 15px;
+.episode-image {
+  background-image: url('../images/episode-dark.jpg');
+  background-size: cover;
+}
+.poster {
+  background-image: url('../images/poster-dark.jpg');
+  background-size: cover;
+}
+.poster-image {
+  background-image: url('../images/poster-dark.jpg');
+  background-size: cover;
+}
+.season-info {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 14px;
 }
 @media (max-width: 991px) {
   .button {
-    -webkit-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-  }
-  .subtitle {
-    -webkit-transform: none;
-    -ms-transform: none;
-    -o-transform: none;
-    transform: none;
-  }
-  .snippet {
-    -webkit-transform: none;
-    -ms-transform: none;
-    -o-transform: none;
-    transform: none;
     -webkit-transition: all 200ms ease;
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
@@ -315,35 +241,6 @@ p {
   .company-title {
     margin-bottom: 33px;
   }
-  .nav-bar {
-    text-align: center;
-  }
-  .hero-bg {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-  .snippet {
-    margin-bottom: 19px;
-    -webkit-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-  }
-  .right-col {
-    margin-top: -42px;
-  }
-  .button-column {
-    padding-top: 61px;
-  }
-  .company-column {
-    text-align: center;
-  }
-  .footer-nav-bar {
-    text-align: center;
-  }
-  .left-footer-col {
-    margin-bottom: 13px;
-    text-align: center;
-  }
   .content-bg {
     padding-right: 10px;
     padding-left: 10px;
@@ -366,14 +263,6 @@ p {
   .nav-link {
     display: block;
     margin-bottom: 19px;
-    -webkit-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-  }
-  .section-description {
-    width: 50%;
-  }
-  .snippet {
     -webkit-transition: all 200ms ease;
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
