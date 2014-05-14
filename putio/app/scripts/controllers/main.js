@@ -5,8 +5,13 @@ angular.module('putioAngularApp')
 
     window.AngularApp = $scope;
 
-    $scope.filter = $routeParams;
+    $scope.params = $routeParams;
 
+    if(typeof $scope.params.token !== 'undefined'){
+      Videos.setCode($scope.params.token);
+    }
+
+    $scope.code = Videos.getCode();
     $scope.videos = Videos.getVideos();
     $scope.serials = Videos.getSerials();
     $scope.movies = Videos.getMovies();

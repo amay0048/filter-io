@@ -29,6 +29,10 @@ angular
         templateUrl: 'views/movies.html',
         controller: 'MainCtrl'
       })
+      .when('/:token', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

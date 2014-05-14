@@ -1,5 +1,5 @@
 <h3 ng-if="isEmpty(videos)">Searching for files.</h3>
-<div class="column" ng-repeat="video in videos | filter: { key: filter.serial, season: filter.season } | orderBy:['key','season','episode']">
+<div class="column" ng-repeat="video in videos | filter: { key: params.serial, season: params.season } | orderBy:['key','season','episode']">
 	<div class="item">
 	  <img class="episode-image" src="images/episode.png" ng-style="{'background-image':'url({{ video.meta.screen || 'images/episode-dark.jpg' }})'}" width="100%">
 	  <h3 class="snippet-title">{{ video.meta.title || video.name }}</h3>

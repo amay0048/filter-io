@@ -1,9 +1,13 @@
-<a class="w-inline-block more-link" href="#/series">
-  <div>Serials</div>
-</a>
-<a class="w-inline-block more-link" href="#/movies">
-  <div>Movies</div>
-</a>
-<a class="w-inline-block more-link" href="#/videos">
-  <div>All Videos</div>
-</a>
+<a ng-if="!code" class="w-inline-block more-link" href="https://api.put.io/v2/oauth2/authenticate?client_id=1019&response_type=token&redirect_uri=http://filter.io/putio/app/">Put.IO Login</a>
+
+<span ng-if="code">
+	<a class="w-inline-block more-link" href="#/series">
+	  <div>Serials</div>
+	</a>
+	<a class="w-inline-block more-link" href="#/movies">
+	  <div>Movies</div>
+	</a>
+	<a class="w-inline-block more-link" href="#/videos">
+	  <div>All Videos</div>
+	</a>
+</span>

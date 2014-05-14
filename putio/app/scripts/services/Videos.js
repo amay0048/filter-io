@@ -3,16 +3,12 @@
 angular.module('putioAngularApp')
   .factory('Videos', function () {
     // This is where I can query localstorage using lawnchair
-    var jssrc = 'https://api.put.io/v2/files/search/from:me%20type:video/page/-1?oauth_token=IK4Q6CE2&callback=putioCB';
-    var cbScriptTarget = document.getElementsByTagName('head')[0];
-    var cbScript = document.createElement('script');
-    cbScript.src = jssrc;
-    cbScriptTarget.appendChild(cbScript);
 
     var _videos = this._videos= [];
     var _serials = this._serials = {};
     var _movies = this._movies = {};
     var _slugMap = this._slugMap = {};
+    var _code = this._code = null;
 
     if(Lawnchair){
       Lawnchair(function(){
@@ -38,6 +34,14 @@ angular.module('putioAngularApp')
           }
         });
       });
+    }
+
+    var getFiles = function(code){
+      var jssrc = 'https://api.put.io/v2/files/search/from:me%20type:video/page/-1?oauth_token='+code+'&callback=putioCB';
+      var cbScriptTarget = document.getElementsByTagName('head')[0];
+      var cbScript = document.createElement('script');
+      cbScript.src = jssrc;
+      cbScriptTarget.appendChild(cbScript);
     }
 
     // Serial/Series related functions
@@ -133,6 +137,17 @@ angular.module('putioAngularApp')
 
     // Public API here
     return {
+      getCode: function() {
+        return _code;
+      },
+      setCode: function(token){
+        var code = token.split('=').pop();
+        console.log(token);
+        if(!_code && code.length){
+          getFiles(code);
+        }
+        _code = code;
+      },
       // Video related functions
       getVideos: function () {
         return _videos;
