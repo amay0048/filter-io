@@ -10,14 +10,48 @@ angular.module('putioAngularApp')
     cbScriptTarget.appendChild(cbScript);
 
     var _videos = this._videos= [];
-
     var _serials = this._serials = {};
-
     var _movies = this._movies = {};
-
     var _slugMap = this._slugMap = {};
 
+    if(Lawnchair){
+      Lawnchair(function(){
+        this.get('videos', function(obj) {
+          console.log(obj);
+          if(typeof obj !== 'undefined'){
+            _videos = obj.value;
+          }
+        });
+        this.get('serials', function(obj) {
+          if(typeof obj !== 'undefined'){
+            _serials = obj.value;
+          }
+        });
+        this.get('movies', function(obj) {
+          if(typeof obj !== 'undefined'){
+            _movies = obj.value;
+          }
+        });
+        this.get('slugMap', function(obj) {
+          if(typeof obj !== 'undefined'){
+            _slugMap = obj.value;
+          }
+        });
+      });
+    }
+
     // Serial/Series related functions
+
+    var updateCache = function(){
+      if(Lawnchair){
+        Lawnchair(function(){
+          this.save({key:'videos', value:_videos});
+          this.save({key:'serials', value:_serials});
+          this.save({key:'movies', value:_movies});
+          this.save({key:'slugMap', value:_slugMap});
+        });
+      }
+    };
 
     var addEpisodeMeta = function(item,match){
       match = match.toString().replace(/[,]+/g,',').split(',');
@@ -37,6 +71,7 @@ angular.module('putioAngularApp')
       if(typeof _serials[key] === 'undefined'){
         _serials[key] = {
           name:name,
+          key:key,
           seasons:[],
           season:{}
         };
@@ -111,7 +146,8 @@ angular.module('putioAngularApp')
 
         var item = {
           name: file.name,
-          putio: file
+          putio: file,
+          new: true
         };
 
         if(matchEpisode){
@@ -122,7 +158,15 @@ angular.module('putioAngularApp')
           movieLookup(item);
         }
 
-        _videos.push(item);
+        angular.forEach(_videos,function(obj){
+          if(obj.putio.id == item.putio.id){
+            delete item.new;
+          }
+        });
+        if(item.new){
+          _videos.push(item);
+          updateCache();
+        }
         return _videos;
       },
       addMany: function(files){
@@ -145,15 +189,18 @@ angular.module('putioAngularApp')
           episodesLookup(_serials[key],key);
         }
         _self.linkSerials();
+        updateCache();
         return _serials;
       },
       linkSerials: function(){
+        var _self = this;
         angular.forEach(_videos,function(video){
           var key = video.key;
           if(typeof _serials[key] !== 'undefined' && typeof video.trakt === 'undefined'){
             video.trakt = _serials[key].trakt;
           }
         });
+        _self.linkEpisodes();
       },
       addEpisodes: function(data) {
         var _self = this;
@@ -170,6 +217,7 @@ angular.module('putioAngularApp')
             video.meta = _serials[key].season[season][video.episode-1];
           }
         });
+        updateCache();
       },
       getMovies: function(){
         return _movies;
@@ -179,6 +227,7 @@ angular.module('putioAngularApp')
         if(typeof _movies[key] !== 'undefined'){
           _movies[key].trakt = data;
         }
+        updateCache();
         return _movies;
       }
     };

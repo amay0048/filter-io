@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('putioAngularApp')
-  .controller('MainCtrl', function ($scope,Videos) {
+  .controller('MainCtrl', function ($scope,$routeParams,Videos) {
 
     window.AngularApp = $scope;
+
+    $scope.filter = $routeParams;
 
     $scope.videos = Videos.getVideos();
     $scope.serials = Videos.getSerials();
@@ -27,6 +29,14 @@ angular.module('putioAngularApp')
 
     $scope.addMovie = function(data){
       $scope.movies = Videos.addMovie(data);
+    };
+
+    $scope.isEmpty = function (obj) {
+      return angular.equals({},obj); 
+    };
+
+    $scope.isFull = function (obj) {
+      return !isNaN(obj); 
     };
 
   });

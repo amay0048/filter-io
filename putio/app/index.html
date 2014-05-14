@@ -5,7 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <!-- webflow -->
+    <title>Putio Trakt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Webflow">
+    <link rel="stylesheet" type="text/css" href="webflow/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="webflow/css/webflow.css">
+    <link rel="stylesheet" type="text/css" href="webflow/css/putio-trakt.webflow.css">
+    <script type="text/javascript" src="webflow/js/modernizr.js"></script>
+    <!-- endwebflow -->
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -21,17 +29,32 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="header">
-      <ul class="nav nav-pills pull-right">
-        <li class="active"><a ng-href="#/">Home</a></li>
-        <li><a ng-href="#/videos">Videos</a></li>
-        <li><a ng-href="#/series">Series</a></li>
-        <li><a ng-href="#/movies">Movies</a></li>
-      </ul>
-      <h3 class="text-muted">putio angular</h3>
+    <div class="w-nav section header" data-collapse="tiny" data-animation="default" data-duration="400" data-contain="1">
+      <div class="w-container">
+        <a class="w-nav-brand company-title" href="#">
+          <div>Website Title</div>
+        </a>
+        <nav class="w-nav-menu" role="navigation">
+          <a class="w-nav-link nav-link" href="#/">Home</a>
+          <a class="w-nav-link nav-link" href="#/series">Series</a>
+          <a class="w-nav-link nav-link" href="#/movies">Movies</a>
+          <a class="w-nav-link nav-link" href="#/videos">All Videos</a>
+          <a class="w-nav-link nav-link sign-up" href="#">Sign In</a>
+        </nav>
+        <div class="w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div>
+      </div>
     </div>
-    <!-- Add your site or application content here -->
-    <div id="application" class="container" ng-view=""></div>
+    <div class="section">
+
+      <!-- Add your site or application content here -->
+      <div id="application" class="w-container" ng-view=""></div>
+
+    </div>
+
+    <script src="http://brian.io/lawnchair/downloads/lawnchair-0.6.1.min.js"></script>
+    <script src="http://brian.io/lawnchair/downloads/lawnchair-adapter-indexed-db-0.6.1.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <!--script>
@@ -95,6 +118,12 @@
         return angular.element(appEl).scope();
       };
     </script>
+
+    <!-- webflow -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="webflow/js/webflow.js"></script>
+    <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+    <!-- endwebflow -->
     
 </body>
 </html>
