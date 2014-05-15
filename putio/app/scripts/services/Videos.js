@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('putioAngularApp')
-  .factory('Videos', function () {
+  .factory('Videos', function ($http) {
     // This is where I can query localstorage using lawnchair
 
     var _videos = this._videos= [];
@@ -9,6 +9,21 @@ angular.module('putioAngularApp')
     var _movies = this._movies = {};
     var _slugMap = this._slugMap = {};
     var _code = this._code = null;
+    var _scrobbleKey = this._scrobbleKey = '518b4f4ed52cf8acbe32e8d578fc5b49a289373b';
+
+    var data = {
+      'username': 'amay0048',
+      'password': 'b6b2cc8af9ff1117fad1bb2a7f4a15113ffb25de',
+      'tvdb_id': 153021,
+      'title': 'The Walking Dead',
+      'year': 2010,
+      'season': 1,
+      'episode': 1,
+    };
+
+    //$http.post('http://api.trakt.tv/show/checkin/'+_scrobbleKey, data).success(function(response,responseCode,getName,request){
+      //console.log(response);
+    //});
 
     if(Lawnchair){
       Lawnchair(function(){
@@ -36,12 +51,19 @@ angular.module('putioAngularApp')
       });
     }
 
+    var startLoad = function(){
+      if(NProgress){
+        NProgress.inc();
+      }
+    };
+
     var getFiles = function(code){
       var jssrc = 'https://api.put.io/v2/files/search/from:me%20type:video/page/-1?oauth_token='+code+'&callback=putioCB';
       var cbScriptTarget = document.getElementsByTagName('head')[0];
       var cbScript = document.createElement('script');
       cbScript.src = jssrc;
       cbScriptTarget.appendChild(cbScript);
+      startLoad();
     }
 
     // Serial/Series related functions
@@ -83,6 +105,7 @@ angular.module('putioAngularApp')
         var cbScript = document.createElement('script');
         cbScript.src = 'http://api.trakt.tv/search/shows.json/f4980e1fa96b6e330e1ca87430a33160?query='+name+'&limit=1&callback=traktCB';
         cbScriptTarget.appendChild(cbScript);
+        startLoad();
       }
       if(_serials[key].seasons.indexOf(season) < 0){
         _serials[key].seasons.push(season);
@@ -98,6 +121,7 @@ angular.module('putioAngularApp')
         var cbScript = document.createElement('script');
         cbScript.src = 'http://api.trakt.tv/show/season.json/f4980e1fa96b6e330e1ca87430a33160/'+slug+'/'+season+'?callback=traktCB2';
         cbScriptTarget.appendChild(cbScript);
+        startLoad();
       });
     };
 
@@ -123,6 +147,7 @@ angular.module('putioAngularApp')
         var cbScript = document.createElement('script');
         cbScript.src = 'http://api.trakt.tv/search/movies.json/f4980e1fa96b6e330e1ca87430a33160?query='+name+'&limit=1&callback=traktCB3';
         cbScriptTarget.appendChild(cbScript);
+        startLoad();
       }
     };
 
@@ -164,6 +189,12 @@ angular.module('putioAngularApp')
           putio: file,
           new: true
         };
+
+        if(!file.is_mp4_available){
+          item.uri = 'https://put.io/v2/files/'+file.id+'/stream?'+'token='+_code;
+        } else {
+          item.uri = 'https://put.io/v2/files/'+file.id+'/mp4/stream?'+'token='+_code;
+        }
 
         if(matchEpisode){
           item = addEpisodeMeta(item,matchEpisode);

@@ -25,6 +25,7 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/rstacruz/nprogress/master/nprogress.css">
   </head>
   <body ng-app="putioAngularApp">
     <!--[if lt IE 7]>
@@ -95,24 +96,28 @@
         scope.$apply(function(){
           scope.addSerial(result[0]);
         });
+        NProgress.done();
       }
       var traktCB2 = function(result){
         var scope = getScope();
         scope.$apply(function(){
           scope.addEpisodes(result);
         });
+        NProgress.done();
       }
       var traktCB3 = function(result){
         var scope = getScope();
         scope.$apply(function(){
           scope.addMovie(result[0]);
         });
+        NProgress.done();
       }
       var putioCB = function(result){
         var scope = getScope();
         scope.$apply(function(){
           scope.addVideos(result.files);
         });
+        NProgress.done();
       }
       var getScope = function(){
         var appEl = document.getElementById('application');
@@ -123,6 +128,7 @@
     <!-- webflow -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="webflow/js/webflow.js"></script>
+    <script src="https://raw.githubusercontent.com/rstacruz/nprogress/master/nprogress.js"></script>
     <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
     <!-- endwebflow -->
     

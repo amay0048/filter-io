@@ -1,11 +1,13 @@
 <h3 ng-if="isEmpty(videos)">Searching for files.</h3>
 <div class="column" ng-repeat="video in videos | filter: { key: params.serial, season: params.season } | orderBy:['key','season','episode']">
 	<div class="item">
-	  <img class="episode-image" src="images/episode.png" ng-style="{'background-image':'url({{ video.meta.screen || 'images/episode-dark.jpg' }})'}" width="100%">
+		<a target="_blank" ng-href="{{video.uri}}">
+		  <img class="episode-image" src="images/episode.png" ng-style="{'background-image':'url({{ video.meta.screen || 'images/episode-dark.jpg' }})'}" width="100%">
+		</a>
 	  <h3 class="snippet-title">{{ video.meta.title || video.name }}</h3>
 	  <p class="season-info">Season: {{ video.season || 'n/a' }}, Episode: {{ video.episode || 'n/a' }}</p>
 	  <p class="snippet-text">{{ video.meta.overview || 'Sorry, I can\'t seem to find any information for this file' }}</p>
-		<a class="w-inline-block more-link" href="#">
+		<a class="w-inline-block more-link" target="_blank" ng-href="{{video.uri}}">
 			<div>Watch</div>
 		</a>
 	</div>
