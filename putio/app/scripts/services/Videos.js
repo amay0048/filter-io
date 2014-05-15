@@ -25,7 +25,7 @@ angular.module('putioAngularApp')
       //console.log(response);
     //});
 
-    if(Lawnchair){
+    if(typeof Lawnchair !== 'undefined'){
       Lawnchair(function(){
         this.get('videos', function(obj) {
           console.log(obj);
