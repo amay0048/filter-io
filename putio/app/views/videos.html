@@ -1,14 +1,23 @@
-<h3 ng-if="isEmpty(videos)">Searching for files.</h3>
-<div class="column" ng-repeat="video in videos | filter: { key: params.serial, season: params.season } | orderBy:['key','season','episode']">
-	<div class="item">
-		<a target="_blank" ng-href="{{video.uri}}">
-		  <img class="episode-image" src="images/episode.png" ng-style="{'background-image':'url({{ video.meta.screen || 'images/episode-dark.jpg' }})'}" width="100%">
-		</a>
-	  <h3 class="snippet-title">{{ video.meta.title || video.name }}</h3>
-	  <p class="season-info">Season: {{ video.season || 'n/a' }}, Episode: {{ video.episode || 'n/a' }}</p>
-	  <p class="snippet-text">{{ video.meta.overview || 'Sorry, I can\'t seem to find any information for this file' }}</p>
-		<a class="w-inline-block more-link" target="_blank" ng-href="{{video.uri}}">
-			<div>Watch</div>
-		</a>
+<div class="w-container banner-container">
+  <img src="images/banner.png" width="100%" alt="537711ca26e44b537338728d_banner.png">
+</div>
+<div class="banner-dropshadow">
+	<div class="w-container tiles">
+		<!-- item repeater -->
+		<h3 ng-if="isEmpty(videos)">Searching for files.</h3>
+		<div class="column" ng-repeat="video in videos | filter: { key: params.serial, season: params.season } | orderBy:['key','season','episode']">
+			<div class="item">
+				<a ng-click="videoLink(video);">
+				  <img class="episode-image" src="images/episode.png" ng-style="{'background-image':'url({{ video.meta.screen || 'images/episode-dark.jpg' }})'}" width="100%">
+				</a>
+			  <h3 class="snippet-title">{{ video.meta.title || video.name }}</h3>
+			  <p class="season-info">Season: {{ video.season || 'n/a' }}, Episode: {{ video.episode || 'n/a' }}</p>
+			  <p class="snippet-text">{{ video.meta.overview || 'Sorry, I can\'t seem to find any information for this file' }}</p>
+				<a class="w-inline-block more-link" target="_blank" ng-click="videoLink(video);">
+					<div>Watch</div>
+				</a>
+			</div>
+		</div>
+		<!-- end item repeater -->
 	</div>
 </div>

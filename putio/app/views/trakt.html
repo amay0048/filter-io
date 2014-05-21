@@ -1,0 +1,23 @@
+<style>
+.section.main{
+	background-image:url('images/signup-tron.jpg');
+}
+</style>
+<div class="w-container banner-container">
+	<div>
+	  <form class="trakt-form" ng-submit="updateTrakt($event);">
+	    <label class="label" for="name">Username:</label>
+	    <input class="w-input text-input" ng-model="traktLogin.name" id="name" type="text" placeholder="Enter your trak.tv username" name="name" autofocus="autofocus">
+	    <label class="label" for="password">Password:</label>
+	    <input class="w-input text-input" ng-model="traktLogin.password" id="password" type="password" placeholder="Enter your password" name="password" data-name="Password" required="required">
+	    <input class="w-button full-button" type="submit" value="Submit" data-wait="Please wait...">
+	  </form>
+	  <div class="w-form-done">
+	    <p>Thank you! Your submission has been received!</p>
+	  </div>
+	  <div class="w-form-fail">
+	    <p>Oops! Something went wrong while submitting the form :(</p>
+	  </div>
+	</div>
+	<img src="images/banner.png" width="100%" alt="537711ca26e44b537338728d_banner.png">
+</div>

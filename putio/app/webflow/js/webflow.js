@@ -1444,8 +1444,11 @@ Webflow.define('slider', function ($, _) {
       data.el.on('swipe' + namespace, handler(data));
       data.left.on('tap' + namespace, previous(data));
       data.right.on('tap' + namespace, next(data));
-      // Start timer if autoplay is true
-      data.config.autoplay && startTimer(data);
+      // Start timer if autoplay is true, only once
+      if (data.config.autoplay && !data.hasTimer) {
+        data.hasTimer = true;
+        startTimer(data);
+      }
     }
 
     // Listen to nav events
@@ -1637,8 +1640,8 @@ Webflow.define('slider', function ($, _) {
     var fadeRule = 'opacity ' + duration + 'ms ' + easing;
     var slideRule = 'transform ' + duration + 'ms ' + easing;
 
-    // Set immediately after layout changes
-    if (options.immediate) {
+    // Set immediately after layout changes (but not during redraw)
+    if (options.immediate && !redraw) {
       tram(targets).set(resetConfig);
       resetOthers();
       return;

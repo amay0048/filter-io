@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Tue May 20 2014 06:19:00 GMT+0000 (UTC) -->
+<!-- Last Published: Tue May 20 2014 06:18:59 GMT+0000 (UTC) -->
 <html data-wf-site="5372ca38dcbd8f9d5f72e3d4">
 <head>
   <meta charset="utf-8">
-  <title>Putio Trakt</title>
+  <title>Putio Trakt - Trakt Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -124,107 +124,30 @@
           <a class="w-nav-brand company-title" href="#">
             <div>Put.IO &gt; Trakt</div>
           </a>
-          <nav class="w-nav-menu" role="navigation"><a class="w-nav-link nav-link" href="#">Home</a><a class="w-nav-link nav-link" href="#">About</a><a class="w-nav-link nav-link sign-up" href="#">Contact</a>
+          <nav class="w-nav-menu" role="navigation"><a class="w-nav-link nav-link" href="#">Home</a><a class="w-nav-link nav-link" href="#">About</a><a class="w-nav-link nav-link sign-up" href="#">Trakt</a>
           </nav>
           <div class="w-nav-button">
-            <img src="images/icon_10135.png" width="30" alt="537acade5e68599506078cf3_icon_10135.png">
+            <img src="images/icon_10135.png" width="25" alt="537acade5e68599506078cf3_icon_10135.png">
           </div>
         </div>
       </div>
       <div class="w-container banner-container">
-        <img src="images/banner.png" width="100%" alt="537711ca26e44b537338728d_banner.png">
-      </div>
-      <div class="banner-dropshadow">
-        <div class="w-container tiles">
-          <div class="column">
-            <div class="item">
-              <img class="poster-image" src="images/poster.png" alt="537323ab5932f20a1763d860_poster.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
+        <div class="w-form">
+          <form class="trakt-form" id="wf-form-trakt-login" name="wf-form-trakt-login" data-name="Trakt Login">
+            <label class="label" for="name">Username:</label>
+            <input class="w-input text-input" id="name" type="text" placeholder="Enter your trak.tv username" name="name" data-name="Name" required="required" autofocus="autofocus">
+            <label class="label" for="password">Password:</label>
+            <input class="w-input text-input" id="password" type="password" placeholder="Enter your password" name="password" data-name="Password" required="required">
+            <input class="w-button full-button" type="submit" value="Submit" data-wait="Please wait...">
+          </form>
+          <div class="w-form-done">
+            <p>Thank you! Your submission has been received!</p>
           </div>
-          <div class="column">
-            <div class="item">
-              <img class="poster-image" src="images/poster.png" alt="537323ab5932f20a1763d860_poster.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <img class="poster-image" src="images/poster.png" alt="537323ab5932f20a1763d860_poster.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <img class="poster-image" src="images/poster.png" alt="537323ab5932f20a1763d860_poster.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <img class="episode-image" src="images/episode.png" alt="5373243edcbd8f9d5f72e892_episode.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <img class="episode-image" src="images/episode.png" alt="5373243edcbd8f9d5f72e892_episode.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <img class="episode-image" src="images/episode.png" alt="5373243edcbd8f9d5f72e892_episode.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <img class="episode-image" src="images/episode.png" alt="5373243edcbd8f9d5f72e892_episode.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
+          <div class="w-form-fail">
+            <p>Oops! Something went wrong while submitting the form :(</p>
           </div>
         </div>
+        <img src="images/banner.png" width="100%" alt="537711ca26e44b537338728d_banner.png">
       </div>
     </div>
   </div>

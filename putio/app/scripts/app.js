@@ -5,7 +5,10 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    //amay0048
+    'ngAnimate',
+    'llNotifier'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -27,6 +30,10 @@ angular
       })
       .when('/movies', {
         templateUrl: 'views/movies.html',
+        controller: 'MainCtrl'
+      })
+      .when('/trakt', {
+        templateUrl: 'views/trakt.html',
         controller: 'MainCtrl'
       })
       .when('/:token', {

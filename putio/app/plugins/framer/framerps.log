@@ -1,0 +1,18 @@
+{"docName":"interface","path":"~/Dropbox/_putio-db/interface","relativeImagePath":"images","imagePath":"~/Dropbox/_putio-db/interface/images","framerPath":"~/Dropbox/_putio-db/interface/framer","viewInfoPath":"~/Dropbox/_putio-db/interface/framer/views.interface.js","logPaths":["/tmp/framerps.log","~/Dropbox/_putio-db/interface/framer/framerps.log"]}
+
+Running for ~/Dropbox/_putio-db/interface
+Could not read data file
+one: Exporting image
+PROGRESS: 50
+two: Exporting image
+PROGRESS: 75
+three: Exporting image
+PROGRESS: 100
+PROGRESS: 100
+4 views changed
+Writing ~/Dropbox/_putio-db/interface/index.html
+Writing ~/Dropbox/_putio-db/interface/app.js
+Writing ~/Dropbox/_putio-db/interface/framer/framer.js
+Writing ~/Dropbox/_putio-db/interface/framer/framerps.js
+
+SUCCESS: ~/Dropbox/_putio-db/interface

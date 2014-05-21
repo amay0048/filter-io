@@ -20,43 +20,46 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-notifier/dist/angular-notifier.min.css">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/rstacruz/nprogress/master/nprogress.css">
+    <link rel="stylesheet" href="https://rawgit.com/rstacruz/nprogress/master/nprogress.css">
   </head>
   <body ng-app="putioAngularApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="w-nav section header" data-collapse="tiny" data-animation="default" data-duration="400" data-contain="1">
-      <div class="w-container">
-        <a class="w-nav-brand company-title" href="#">
-          <div>Website Title</div>
-        </a>
-        <nav class="w-nav-menu" role="navigation">
-          <a class="w-nav-link nav-link" href="#/">Home</a>
-          <a class="w-nav-link nav-link" href="#/series">Series</a>
-          <a class="w-nav-link nav-link" href="#/movies">Movies</a>
-          <a class="w-nav-link nav-link" href="#/videos">All Videos</a>
-          <a class="w-nav-link nav-link sign-up" ng-click="logOut()" href="#">Sign Out</a>
-        </nav>
-        <div class="w-nav-button">
-          <div class="w-icon-nav-menu"></div>
+    <div class="content-master">
+      <div class="section main">
+        <div class="w-nav section header" data-collapse="tiny" data-animation="default" data-duration="400" data-contain="1">
+          <div class="w-container">
+            <a class="w-nav-brand company-title" href="#">
+              <div>Put.IO &gt; Trakt</div>
+            </a>
+            <nav class="w-nav-menu" role="navigation">
+            <a class="w-nav-link nav-link" href="#/">Home</a>
+            <a class="w-nav-link nav-link" href="#/series">Series</a>
+            <a class="w-nav-link nav-link" href="#/movies">Movies</a>
+            <a class="w-nav-link nav-link" href="#/videos">All Videos</a>
+            <a class="w-nav-link nav-link sign-up" ng-click="logOut()">Put.IO - Logout</a>
+            <a class="w-nav-link nav-link sign-up" href="#/trakt">Trakt.io</a>
+            </nav>
+            <div class="w-nav-button">
+              <img src="images/icon_10135.png" width="30" alt="537acade5e68599506078cf3_icon_10135.png">
+            </div>
+          </div>
         </div>
+          <!-- Add your site or application content here -->
+        <div id="application" ng-view=""></div>
       </div>
-    </div>
-    <div class="section">
-
-      <!-- Add your site or application content here -->
-      <div id="application" class="w-container" ng-view=""></div>
-
     </div>
 
     <script src="http://brian.io/lawnchair/downloads/lawnchair-0.6.1.min.js"></script>
     <script src="https://raw.githubusercontent.com/brianleroux/lawnchair/master/src/adapters/indexed-db.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <!--script>
@@ -81,6 +84,9 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- amay0048 -->
+    <script src="bower_components/angular-notifier/dist/angular-notifier.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -129,6 +135,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="webflow/js/webflow.js"></script>
     <script src="https://raw.githubusercontent.com/rstacruz/nprogress/master/nprogress.js"></script>
+    <script src="https://rawgit.com/carhartl/jquery-cookie/master/jquery.cookie.js"></script>
     <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
     <!-- endwebflow -->
     

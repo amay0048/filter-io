@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('putioAngularApp')
-  .factory('Videos', function ($http) {
+  .factory('Videos', function () {
     // This is where I can query localstorage using lawnchair
 
     var _videos = this._videos= [];
@@ -9,26 +9,25 @@ angular.module('putioAngularApp')
     var _movies = this._movies = {};
     var _slugMap = this._slugMap = {};
     var _code = this._code = null;
+    var _traktLogin = this._traktLogin = {};
     var _scrobbleKey = this._scrobbleKey = '518b4f4ed52cf8acbe32e8d578fc5b49a289373b';
+    var _cookieExpires = this._cookieExpires = 20*365;
 
-    var data = {
-      'username': 'amay0048',
-      'password': 'b6b2cc8af9ff1117fad1bb2a7f4a15113ffb25de',
-      'tvdb_id': 153021,
-      'title': 'The Walking Dead',
-      'year': 2010,
-      'season': 1,
-      'episode': 1,
-    };
+    if(typeof $ !== 'undefined' && typeof $.cookie('code') !== 'undefined'){
+      _code = $.cookie('code');
+      $.cookie('code', _code, { expires: _cookieExpires });
+    }
 
-    //$http.post('http://api.trakt.tv/show/checkin/'+_scrobbleKey, data).success(function(response,responseCode,getName,request){
-      //console.log(response);
-    //});
+    if(typeof $ !== 'undefined' && typeof $.cookie('traktUsername') !== 'undefined' && typeof $.cookie('traktSHA1') !== 'undefined'){
+      _traktLogin.name = $.cookie('traktUsername');
+      _traktLogin.password = $.cookie('traktSHA1');
+      $.cookie('traktUsername', _traktLogin.name, { expires: _cookieExpires });
+      $.cookie('traktSHA1', _traktLogin.password, { expires: _cookieExpires });
+    }
 
     if(typeof Lawnchair !== 'undefined'){
       Lawnchair(function(){
         this.get('videos', function(obj) {
-          console.log(obj);
           if(typeof obj !== 'undefined'){
             _videos = obj.value;
           }
@@ -64,6 +63,10 @@ angular.module('putioAngularApp')
       cbScript.src = jssrc;
       cbScriptTarget.appendChild(cbScript);
       startLoad();
+    }
+
+    if(_code){
+      getFiles(_code);
     }
 
     // Serial/Series related functions
@@ -167,11 +170,29 @@ angular.module('putioAngularApp')
       },
       setCode: function(token){
         var code = token.split('=').pop();
-        console.log(token);
-        if(!_code && code.length){
+        if(code){
           getFiles(code);
         }
+        if(typeof $ !== 'undefined' && typeof $.cookie('code') !== 'undefined'){
+          $.cookie('code', code, { expires: _cookieExpires });
+        }
         _code = code;
+      },
+      getTraktLogin: function(){
+        return _traktLogin;
+      },
+      updateTraktLogin: function(data){
+        console.log(data);
+        data.password = CryptoJS.SHA1(data.password.toString()).toString();
+        _traktLogin = data;
+        if(typeof $ !== undefined){
+          $.cookie('traktUsername', _traktLogin.name, { expires: _cookieExpires });
+          $.cookie('traktSHA1', _traktLogin.password, { expires: _cookieExpires });
+        }
+        return _traktLogin;
+      },
+      getScrobbleKey: function(){
+        return _scrobbleKey;
       },
       // Video related functions
       getVideos: function () {
@@ -259,8 +280,9 @@ angular.module('putioAngularApp')
       },
       linkEpisodes: function(key,season){
         angular.forEach(_videos, function (video) {
+          // The following statement throws an error, not sure why
           if(video.key == key && video.season == season){
-            video.meta = _serials[key].season[season][video.episode-1];
+              video.meta = _serials[key].season[season][video.episode-1];
           }
         });
         updateCache();

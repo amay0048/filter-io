@@ -1,11 +1,21 @@
-<h3 ng-if="isEmpty(movies)">Searching for movies.</h3>
-<div class="column" ng-repeat="movie in movies">
-	<div class="item">
-	  <img class="poster-image" src="images/poster.png" ng-style="{'background-image':'url({{ movie.trakt.images.poster || 'images/poster-dark.jpg' }})'}" width="100%">
-	  <h3 class="snippet-title">{{ movie.trakt.title || movie.name }}</h3>
-	  <p class="snippet-text">{{ movie.trakt.overview || 'Sorry, I can\'t seem to find any information for this movie' }}</p>
-	  <a class="w-inline-block more-link" href="#">
-	    <div>Watch</div>
-	  </a>
+<div class="w-container banner-container">
+  <img src="images/banner.png" width="100%" alt="537711ca26e44b537338728d_banner.png">
+</div>
+<div class="banner-dropshadow">
+	<div class="w-container tiles">
+		<!-- item repeater -->
+			<h3 ng-if="isEmpty(movies)">Searching for movies.</h3>
+			<div class="column" ng-repeat="movie in movies">
+				{{setBackground(movies)}}
+				<div class="item">
+				  <img class="poster-image" src="images/poster.png" ng-click="videoLink(movie);" ng-style="{'background-image':'url({{ movie.trakt.images.poster || 'images/poster-dark.jpg' }})'}" width="100%">
+				  <h3 class="snippet-title">{{ movie.trakt.title || movie.name }}</h3>
+				  <p class="snippet-text">{{ movie.trakt.overview || 'Sorry, I can\'t seem to find any information for this movie' }}</p>
+				  <a class="w-inline-block more-link" ng-click="videoLink(movie);">
+				    <div>Watch</div>
+				  </a>
+				</div>
+			</div>
+		<!-- end item repeater -->
 	</div>
 </div>

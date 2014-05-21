@@ -82,6 +82,7 @@ p {
   padding-bottom: 43px;
 }
 .section.header {
+  position: fixed;
   left: 0px;
   top: 0px;
   right: 0px;
@@ -89,6 +90,23 @@ p {
   padding-top: 28px;
   padding-bottom: 28px;
   background-color: #333;
+  box-shadow: black 0px 0px 6px 0px;
+}
+.section.main {
+  margin-top: 82px;
+  padding-top: 6px;
+  padding-bottom: 0px;
+  background-image: url('../images/signup-tron.jpg');
+  background-position: 0px 0px;
+  background-size: 110%;
+  background-repeat: no-repeat;
+}
+.section.main.trakt {
+  background-image: none;
+  background-position: 0% 0%;
+  background-size: auto;
+  background-repeat: repeat;
+  background-attachment: scroll;
 }
 .nav-link {
   margin-right: 5px;
@@ -121,6 +139,7 @@ p {
 .company-title {
   color: white;
   font-size: 20px;
+  line-height: 41px;
   font-weight: 400;
   text-transform: none;
 }
@@ -164,13 +183,6 @@ p {
   font-size: 14px;
   line-height: 19px;
 }
-.content-bg {
-  padding-top: 39px;
-  padding-bottom: 39px;
-  background-color: lightgrey;
-  background-image: url('../images/example-bg.png');
-  background-attachment: fixed;
-}
 .column {
   width: 25%;
   float: left;
@@ -185,10 +197,6 @@ p {
   background-image: url('../images/episode-dark.jpg');
   background-size: cover;
 }
-.poster {
-  background-image: url('../images/poster-dark.jpg');
-  background-size: cover;
-}
 .poster-image {
   background-image: url('../images/poster-dark.jpg');
   background-size: cover;
@@ -198,14 +206,41 @@ p {
   font-size: 12px;
   line-height: 14px;
 }
+.banner-dropshadow {
+  background-color: white;
+  box-shadow: black 0px 0px 6px 0px;
+}
+.full-button {
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.trakt-form {
+  margin-top: 120px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.label {
+  color: white;
+}
+.text-input {
+  border-radius: 5px;
+  font-size: 16px;
+}
 @media (max-width: 991px) {
   .button {
     -webkit-transition: all 200ms ease;
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
   }
+  .section.header {
+    box-shadow: black 0px 0px 6px 0px;
+  }
   .column {
     width: 33%;
+  }
+  .banner-dropshadow {
+    box-shadow: black 0px 0px 6px 0px;
   }
 }
 @media (max-width: 767px) {
@@ -238,15 +273,11 @@ p {
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
   }
-  .company-title {
-    margin-bottom: 33px;
-  }
-  .content-bg {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
   .column {
     width: 50%;
+  }
+  .trakt-form {
+    margin-top: 50px;
   }
 }
 @media (max-width: 479px) {
@@ -256,9 +287,14 @@ p {
     transition: all 200ms ease;
   }
   .section.header {
-    padding-right: 16px;
-    padding-bottom: 8px;
-    padding-left: 16px;
+    z-index: 0;
+    padding: 8px 16px;
+  }
+  .section.main {
+    padding-bottom: 0px;
+  }
+  .section.main.trakt {
+    margin-top: 72px;
   }
   .nav-link {
     display: block;
@@ -267,10 +303,29 @@ p {
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
   }
-  .content-bg {
-    min-height: 330px;
+  .company-title {
+    line-height: 64px;
+  }
+  .snippet-text {
+    height: 47px;
   }
   .column {
+    display: inline-block;
     width: 100%;
+    float: none;
+  }
+  .content-master {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .full-button {
+    border-radius: 5px;
+  }
+  .trakt-form {
+    margin-top: 100px;
+  }
+  .text-input {
+    border-radius: 5px;
   }
 }
+
