@@ -72,7 +72,7 @@ angular.module('putioAngularApp')
     // Serial/Series related functions
 
     var updateCache = function(){
-      if(Lawnchair){
+      if(typeof Lawnchair !== 'undefined'){
         Lawnchair(function(){
           this.save({key:'videos', value:_videos});
           this.save({key:'serials', value:_serials});
