@@ -1,23 +1,12 @@
-<div class="w-container banner-container">
-  <img src="images/banner.png" width="100%" alt="537711ca26e44b537338728d_banner.png">
+<!-- item repeater -->
+<h3 ng-if="isEmpty(serials)">Searching for series.</h3>
+
+<div ng-repeat="serial in serials" class="movie gran-torino bgimage" ng-style="{'background-image':'url({{ serial.trakt.images.fanart || 'images/poster-dark.jpg' }})'}">
+  <div class="w-container conatiner">
+    <h2 class="light">{{ serial.name }}</h2>
+    <img class="movie-poster episode-image" ng-class-odd="'right'" src="images/poster.png" ng-style="{'background-image':'url({{ serial.trakt.images.poster || 'images/poster-dark.jpg' }})'}">
+    <p class="light">{{ serial.trakt.overview || 'Sorry, I can\'t seem to find any information for this series' }}</p>
+    <h4 class="light">Season</h4><a class="more-link" ng-href="#/videos/{{ serial.key }}/{{ season }}" ng-repeat="season in serial.seasons">{{ season }}</a>
+  </div>
 </div>
-<div class="banner-dropshadow">
-	<div class="w-container tiles">
-		<!-- item repeater -->
-		<h3 ng-if="isEmpty(serials)">Searching for series.</h3>
-		<span ng-repeat="serial in serials">
-			{{setBackground(serials)}}
-			<div class="column" ng-repeat="season in serial.seasons">
-				<div class="item">
-				  <img class="poster-image" src="images/poster.png" ng-style="{'background-image':'url({{ serial.trakt.images.poster || 'images/poster-dark.jpg' }})'}" width="100%">
-				  <h3 class="snippet-title">{{ serial.name }}</h3>
-				  <p class="snippet-text">{{ serial.trakt.overview || 'Sorry, I can\'t seem to find any information for this series' }}</p>
-					<a class="w-inline-block more-link" ng-href="#/videos/{{ serial.key }}/{{ season }}">
-						<div>Season: {{ season }}</div>
-					</a>
-				</div>
-			</div>
-		</span>
-		<!-- end item repeater -->
-	</div>
-</div>
+<!-- end item repeater -->

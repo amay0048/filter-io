@@ -13,6 +13,14 @@
     <link rel="stylesheet" type="text/css" href="webflow/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="webflow/css/webflow.css">
     <link rel="stylesheet" type="text/css" href="webflow/css/putio-trakt.webflow.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ["Oswald:300,400,700"]
+        }
+      });
+    </script>
     <script type="text/javascript" src="webflow/js/modernizr.js"></script>
     <!-- endwebflow -->
     <meta name="description" content="">
@@ -32,32 +40,30 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="content-master">
-      <div class="section main">
-        <div class="w-nav section header" data-collapse="tiny" data-animation="default" data-duration="400" data-contain="1">
-          <div class="w-container">
-            <a class="w-nav-brand company-title" href="#">
-              <div>Put.IO &gt; Trakt</div>
-            </a>
-            <nav class="w-nav-menu" role="navigation">
-            <a class="w-nav-link nav-link" href="#/">Home</a>
-            <a class="w-nav-link nav-link" href="#/series">Series</a>
-            <a class="w-nav-link nav-link" href="#/movies">Movies</a>
-            <a class="w-nav-link nav-link" href="#/videos">All Videos</a>
-            <a class="w-nav-link nav-link sign-up" ng-click="logOut()">Put.IO - Logout</a>
-            <a class="w-nav-link nav-link sign-up" href="#/trakt">Trakt.io</a>
-            </nav>
-            <div class="w-nav-button">
-              <img src="images/icon_10135.png" width="30" alt="537acade5e68599506078cf3_icon_10135.png">
-            </div>
-          </div>
+    <div class="w-nav section header" data-collapse="tiny" data-animation="default" data-duration="400" data-contain="1">
+      <div class="w-container">
+        <a class="w-nav-brand company-title" href="#">
+          <div>Nibble</div>
+        </a>
+        <nav class="w-nav-menu" role="navigation">
+          <a class="w-nav-link nav-link" href="#/">Home</a>
+          <a class="w-nav-link nav-link" href="#/movies">Movies</a>
+          <a class="w-nav-link nav-link" href="#/series">Series</a>
+          <!--a class="w-nav-link nav-link" href="#/videos">Videos</a-->
+          <a class="w-nav-link nav-link sign-up" href="#/trakt">Accounts</a>
+        </nav>
+        <div class="w-nav-button">
+          <img src="images/icon_10135.png" width="30" alt="537acade5e68599506078cf3_icon_10135.png">
         </div>
+      </div>
+    </div>
+    <div class="content-master">
           <!-- Add your site or application content here -->
         <div id="application" ng-view=""></div>
       </div>
     </div>
 
-    <script src="https://rawgit.com/brianleroux/lawnchair/master/src/adapters/indexed-db.js"></script>
+    <script src="http://brian.io/lawnchair/downloads/lawnchair-0.6.1.min.js"></script>
     <script src="https://rawgit.com/brianleroux/lawnchair/master/src/adapters/indexed-db.js"></script>
     <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
 

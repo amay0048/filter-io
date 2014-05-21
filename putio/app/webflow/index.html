@@ -1,267 +1,56 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Tue May 20 2014 06:19:00 GMT+0000 (UTC) -->
-<html data-wf-site="5372ca38dcbd8f9d5f72e3d4">
+<!-- Last Published: Wed May 21 2014 09:58:31 GMT+0000 (UTC) -->
+<html data-wf-site="537c41145b41bfe73eb88780">
 <head>
   <meta charset="utf-8">
-  <title>Putio Trakt</title>
+  <title>Flixter - Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/webflow.css">
-  <link rel="stylesheet" type="text/css" href="css/putio-trakt.webflow.css">
+  <link rel="stylesheet" type="text/css" href="css/flixter-2.webflow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Oswald:300,400,700"]
+      }
+    });
+  </script>
   <script type="text/javascript" src="js/modernizr.js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="https://y7v4p6k4.ssl.hwcdn.net/placeholder/favicon.ico">
   <link rel="apple-touch-icon" href="https://y7v4p6k4.ssl.hwcdn.net/51e081c5241660ce7800001f/51e755c7e48178d53e000034_thumbnail-starter.png">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta id="viewport" name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <style>
-    .column {
-      display:inline-block;
-      width:128px;
-      height:250px;
-      -webkit-transition: width 0.2s linear 0.1s;
-      -moz-transition: width 0.2s linear 0.1s;
-      -o-transition: width 0.2s linear 0.1s;
-      transition: width 0.2s linear 0.1s;
-      -webkit-animation-duration: 0.3s;
-      animation-duration: 0.3s;
-    }
-    .item{
-      -webkit-animation-duration: 0.3s;
-      animation-duration: 0.3s;
-      -webkit-animation-fill-mode: both;
-      animation-fill-mode: both;
-      width:312px;
-      padding:4px;
-      -webkit-animation-name: myShrink;
-      animation-name: myShrink;
-      transform-origin:top left;
-      -ms-transform-origin:top left;
-      -webkit-transform-origin:top left;
-    }
-    .current .item{
-      -webkit-animation-name: myGrow;
-      animation-name: myGrow;
-    }
-    .column.current{
-      width:280px;
-    }
-    @-webkit-keyframes myShrink {
-      0%{
-        -webkit-transform: scale(1) translateY(-160px);
-        transform: scale(1) translateY(-160px);
-      }
-      100%{
-        -webkit-transform: scale(0.4) translateY(0);
-        transform: scale(0.4) translateY(0);
-      }
-    }
-    @keyframes myShrink {
-      0% {
-        -webkit-transform: scale(1) translateY(-160px);
-        -ms-transform: scale(1) translateY(-160px);
-        transform: scale(1) translateY(-160px);
-      }
-      100% {
-        -webkit-transform: scale(0.4) translateY(0);
-        -ms-transform: scale(0.4) translateY(0);
-        transform: scale(0.4) translateY(0);
-      }
-    }
-    @-webkit-keyframes myGrow {
-      0%{
-        -webkit-transform: scale(0.4) translateY(0);
-        transform: scale(0.4) translateY(0);
-      }
-      100%{
-        -webkit-transform: scale(1) translateY(-160px);
-        transform: scale(1) translateY(-160px);
-      }
-    }
-    @keyframes myGrow {
-      0% {
-        -webkit-transform: scale(0.4) translateY(0);
-        -ms-transform: scale(0.4) translateY(0);
-        transform: scale(0.4) translateY(0);
-      }
-      100% {
-        -webkit-transform: scale(1) translateY(-160px);
-        -ms-transform: scale(1) translateY(-160px);
-        transform: scale(1) translateY(-160px);
-      }
-    }
-    .section.main{
-      overflow-y:visible;
-      overflow-x:scroll;
-    }
-    .content-master{
-      overflow-y:scroll;
-    }
-  </style>
-  <style>
-    .tiles{
-      white-space:nowrap;
-    }
-    .tiles *{
-      white-space:normal;
-    }
-    .column.current .snippet-text{
-      height:auto;
-      min-height:47px;
-    }
-    .column.current .item{
-        z-index:2;
-        position:relative;
-    }
-  </style>
 </head>
 <body>
+  <div class="w-nav section header" data-collapse="tiny" data-animation="default" data-duration="400" data-contain="1">
+    <div class="w-container">
+      <a class="w-nav-brand company-title" href="#">
+        <div>Nibble</div>
+      </a>
+      <nav class="w-nav-menu" role="navigation"><a class="w-nav-link nav-link" href="index.html">Home</a><a class="w-nav-link nav-link" href="movies.html">Movies</a><a class="w-nav-link nav-link" href="series.html">Series</a><a class="w-nav-link nav-link sign-up" href="trakt-login.html">Accounts</a>
+      </nav>
+      <div class="w-nav-button">
+        <img src="images/icon_10135.png" width="30" alt="537acade5e68599506078cf3_icon_10135.png">
+      </div>
+    </div>
+  </div>
   <div class="content-master">
-    <div class="section main">
-      <div class="w-nav section header" data-collapse="tiny" data-animation="default" data-duration="400" data-contain="1">
-        <div class="w-container">
-          <a class="w-nav-brand company-title" href="#">
-            <div>Put.IO &gt; Trakt</div>
-          </a>
-          <nav class="w-nav-menu" role="navigation"><a class="w-nav-link nav-link" href="#">Home</a><a class="w-nav-link nav-link" href="#">About</a><a class="w-nav-link nav-link sign-up" href="#">Contact</a>
-          </nav>
-          <div class="w-nav-button">
-            <img src="images/icon_10135.png" width="30" alt="537acade5e68599506078cf3_icon_10135.png">
-          </div>
-        </div>
+    <div class="movie vikings">
+      <div class="w-container conatiner">
+        <h2 class="light homepage">Series</h2>
+        <img class="flixter-clip" src="images/banner.png" alt="537711ca26e44b537338728d_banner.png">
       </div>
-      <div class="w-container banner-container">
-        <img src="images/banner.png" width="100%" alt="537711ca26e44b537338728d_banner.png">
-      </div>
-      <div class="banner-dropshadow">
-        <div class="w-container tiles">
-          <div class="column">
-            <div class="item">
-              <img class="poster-image" src="images/poster.png" alt="537323ab5932f20a1763d860_poster.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <img class="poster-image" src="images/poster.png" alt="537323ab5932f20a1763d860_poster.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <img class="poster-image" src="images/poster.png" alt="537323ab5932f20a1763d860_poster.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <img class="poster-image" src="images/poster.png" alt="537323ab5932f20a1763d860_poster.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <img class="episode-image" src="images/episode.png" alt="5373243edcbd8f9d5f72e892_episode.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <img class="episode-image" src="images/episode.png" alt="5373243edcbd8f9d5f72e892_episode.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <img class="episode-image" src="images/episode.png" alt="5373243edcbd8f9d5f72e892_episode.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-          <div class="column">
-            <div class="item">
-              <img class="episode-image" src="images/episode.png" alt="5373243edcbd8f9d5f72e892_episode.png">
-              <h3 class="snippet-title">Heading</h3>
-              <p class="season-info">Season: 1, Episode 1</p>
-              <p class="snippet-text">This is a description...</p>
-              <a class="w-inline-block more-link" href="#">
-                <div>Watch</div>
-              </a>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="movie gran-torino bgimage">
+      <div class="w-container conatiner">
+        <h2 class="light homepage">Movies</h2>
+        <img class="flixter-clip" src="images/banner.png" alt="537711ca26e44b537338728d_banner.png">
       </div>
     </div>
   </div>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script type="text/javascript" src="js/webflow.js"></script>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
-  <script>
-    $(function(){
-      $('.column').on('click',function(){
-        $('.section.main').toggleClass('longScroll');
-        var div = $(this).toggleClass('current');
-        div.addClass('offset'+div.offset().left.toString());
-      });
-      $('.item').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(e){
-        if($(e.target).parent().hasClass('current')){
-          var index = $('.item').index(e.target);
-          $(e.target).parent().get(0).className = 'column current';
-          $('.section.main').scrollLeft(index*128);
-        }
-      });
-    });
-    var dynamicCss = '';
-    for(var i = 1;i<400;i++){
-      dynamicCss += '.current.offset'+i+'{z-index:'+i+';-webkit-animation-name:offset'+i+';}';
-      dynamicCss += '@-webkit-keyframes offset'+i+'{';
-        dynamicCss += '0%{-webkit-transform:translateX(0px);transform:translateX(0px);}';
-        dynamicCss += '100%{-webkit-transform:translateX(-'+i+'px);transform:translateX(-'+i+'px);}';
-      dynamicCss += '}'
-      dynamicCss += '@keyframes offset'+i+'{';
-        dynamicCss += '0%{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}';
-        dynamicCss += '100%{-webkit-transform:translateX(-'+i+'px);-ms-transform:translateX(-'+i+');transform:translateX(-'+i+'px);}';
-      dynamicCss += '}'
-    }
-    var dynamicCssText = document.createTextNode(dynamicCss);
-    var dynamicStyle = document.createElement('style');
-    dynamicStyle.appendChild(dynamicCssText);
-    document.getElementsByTagName('head')[0].appendChild(dynamicStyle);
-  </script>
 </body>
 </html>
