@@ -8,6 +8,7 @@ angular
     'ngRoute',
     //amay0048
     'ngAnimate',
+    'ngTouch',
     'llNotifier'
   ])
   .config(function ($routeProvider) {

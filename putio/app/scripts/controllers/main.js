@@ -21,7 +21,6 @@ angular.module('putioAngularApp')
 
     $scope.videoLink = function(item){
       var uri = item.uri;
-      $scope.screen = window.open(uri, '_blank');
       if($scope.traktLogin){
         var data = {
           'username': $scope.traktLogin.name,
@@ -39,13 +38,14 @@ angular.module('putioAngularApp')
             $scope.notification(response.error);
           }
         });
+        $scope.openUrl(uri,'_blank');
       } else {
         $scope.notification('Please login to trakt to allow scrobbling');
       }
     };
 
-    $scope.locationLink = function(location){
-      $scope.screen = window.open(location, '_self');
+    $scope.openUrl = function(location,target){
+      $scope.screen = window.openUrl(location, target);
     };
 
     $scope.updateTrakt = function(data){

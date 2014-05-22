@@ -1,6 +1,3 @@
-<div class="w-container">
-  <img class="flixter-clip" src="images/banner.png" alt="537711ca26e44b537338728d_banner.png">
-</div>
 <!-- item repeater -->
 <h3 ng-if="isEmpty(videos)">Searching for files.</h3>
 <div class="movie gran-torino" ng-repeat="video in videos | filter: { key: params.serial, season: params.season } | orderBy:['key','season','episode']" ng-style="{'background-image':'url({{ video.trakt.images.fanart || 'images/poster-dark.jpg' }})'}">
@@ -13,6 +10,3 @@
   </div>
 </div>
 <!-- end item repeater -->
-<div class="w-container">
-  <img class="flixter-clip" src="images/banner.png" alt="537711ca26e44b537338728d_banner.png">
-</div>

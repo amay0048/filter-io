@@ -173,7 +173,7 @@ angular.module('putioAngularApp')
         if(code){
           getFiles(code);
         }
-        if(typeof $ !== 'undefined' && typeof $.cookie('code') !== 'undefined'){
+        if(typeof $ !== 'undefined'){
           $.cookie('code', code, { expires: _cookieExpires });
         }
         _code = code;
@@ -281,7 +281,7 @@ angular.module('putioAngularApp')
       linkEpisodes: function(key,season){
         angular.forEach(_videos, function (video) {
           // The following statement throws an error, not sure why
-          if(video.key == key && video.season == season){
+          if(video.key == key && video.season == season && typeof _serials[key] !== 'undefined'){
               video.meta = _serials[key].season[season][video.episode-1];
           }
         });

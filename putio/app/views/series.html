@@ -6,7 +6,7 @@
     <h2 class="light">{{ serial.name }}</h2>
     <img class="movie-poster episode-image" ng-class-odd="'right'" src="images/poster.png" ng-style="{'background-image':'url({{ serial.trakt.images.poster || 'images/poster-dark.jpg' }})'}">
     <p class="light">{{ serial.trakt.overview || 'Sorry, I can\'t seem to find any information for this series' }}</p>
-    <h4 class="light">Season</h4><a class="more-link" ng-href="#/videos/{{ serial.key }}/{{ season }}" ng-repeat="season in serial.seasons">{{ season }}</a>
+    <h4 class="light">Season</h4><a class="more-link" ng-click="openUrl('#/videos/{{ serial.key }}/{{ season }}','_self')" ng-repeat="season in serial.seasons">{{ season }}</a>
   </div>
 </div>
 <!-- end item repeater -->
