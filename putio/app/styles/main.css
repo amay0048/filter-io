@@ -1,14 +1,3 @@
-.section.header{
-	z-index:2;
-}
-.menu-section-container{
-	z-index:2;
-	position:relative;
-}
-.content-master{
-	z-index:1;
-	position:relative;
-}
 body{
 	background:#000;
 }

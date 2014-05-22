@@ -198,7 +198,7 @@ p {
   line-height: 14px;
 }
 .content-master {
-  margin-top: 69px;
+  padding-top: 69px;
 }
 .banner-dropshadow {
   background-color: white;
@@ -397,7 +397,7 @@ p {
     transition: all 200ms ease;
   }
   .section.header {
-    z-index: 0;
+    z-index: 2;
     padding: 8px 16px;
   }
   .section.main {
@@ -426,13 +426,13 @@ p {
   .content-master {
     overflow-x: hidden;
     overflow-y: hidden;
-    margin-top: 82px;
+    padding-top: 82px;
   }
   .full-button {
     border-radius: 5px;
   }
   .trakt-form {
-    margin-top: 100px;
+    padding-top: 100px;
   }
   .text-input {
     border-radius: 5px;
