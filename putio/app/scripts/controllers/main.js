@@ -44,6 +44,10 @@ angular.module('putioAngularApp')
       }
     };
 
+    $scope.locationLink = function(location){
+      $scope.screen = window.open(location, '_self');
+    };
+
     $scope.updateTrakt = function(data){
       var formData = $(data.target).serializeArray(), traktLogin = {};
       console.log(formData);
@@ -91,24 +95,5 @@ angular.module('putioAngularApp')
         };
         notifier.notify(notification);
     };
-    /*
-    var $mainDiv = $('.section.main');
-    $scope.setBackground = function (obj) {
-      var keys = Object.keys(obj);
-      var rand = Math.floor(keys.length * Math.random());
-      if(obj[keys[rand]].trakt){
-        $mainDiv.css('background-image','url('+obj[keys[rand]].trakt.images.fanart+')');
-      }
-      return null;
-    };
-
-    $scope.setBackgroundFilter = function (obj) {
-      console.log(obj);
-      if(obj.trakt){
-        $mainDiv.css('background-image','url('+obj.trakt.images.fanart+')');
-      }
-      return null;
-    };
-    */
 
   });

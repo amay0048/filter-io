@@ -1,15 +1,26 @@
-<a ng-if="!code" class="w-inline-block more-link" href="https://api.put.io/v2/oauth2/authenticate?client_id=1019&response_type=token&redirect_uri=http://filter.io/putio/app/">Put.IO Login</a>
+<div ng-if="!code" class="movie got bgimage">
+  <div class="w-container conatiner" ng-click="locationLink('https://api.put.io/v2/oauth2/authenticate?client_id=1019&response_type=token&redirect_uri=http://filter.io/putio/app/')">
+    <h2 class="light homepage">Connect to Put.IO</h2>
+    <img class="flixter-clip" src="images/banner.png" alt="537711ca26e44b537338728d_banner.png">
+  </div>
+</div>
 
 <span ng-if="code">
     <div class="movie vikings">
-      <div class="w-container conatiner">
+      <div class="w-container conatiner" ng-click="locationLink('#/movies')">
         <h2 class="light homepage">Series</h2>
         <img class="flixter-clip" src="images/banner.png" alt="537711ca26e44b537338728d_banner.png">
       </div>
     </div>
     <div class="movie gran-torino bgimage">
-      <div class="w-container conatiner">
+      <div class="w-container conatiner" ng-click="locationLink('#/movies')">
         <h2 class="light homepage">Movies</h2>
+        <img class="flixter-clip" src="images/banner.png" alt="537711ca26e44b537338728d_banner.png">
+      </div>
+    </div>
+    <div class="movie got bgimage">
+      <div class="w-container conatiner" ng-click="locationLink('#/trakt')">
+        <h2 class="light homepage">Accounts</h2>
         <img class="flixter-clip" src="images/banner.png" alt="537711ca26e44b537338728d_banner.png">
       </div>
     </div>

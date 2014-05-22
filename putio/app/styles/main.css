@@ -1,8 +1,0 @@
-.snippet-title {
-	text-overflow:ellipsis;
-	white-space:nowrap;
-}
-.snippet-text {
-	text-overflow:ellipsis;
-	overflow:hidden;
-}
