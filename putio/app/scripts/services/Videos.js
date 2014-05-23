@@ -28,22 +28,22 @@ angular.module('putioAngularApp')
     if(typeof Lawnchair !== 'undefined'){
       Lawnchair(function(){
         this.get('videos', function(obj) {
-          if(typeof obj !== 'undefined'){
+          if(typeof obj !== 'undefined' && obj !== null){
             _videos = obj.value;
           }
         });
         this.get('serials', function(obj) {
-          if(typeof obj !== 'undefined'){
+          if(typeof obj !== 'undefined' && obj !== null){
             _serials = obj.value;
           }
         });
         this.get('movies', function(obj) {
-          if(typeof obj !== 'undefined'){
+          if(typeof obj !== 'undefined' && obj !== null){
             _movies = obj.value;
           }
         });
         this.get('slugMap', function(obj) {
-          if(typeof obj !== 'undefined'){
+          if(typeof obj !== 'undefined' && obj !== null){
             _slugMap = obj.value;
           }
         });
