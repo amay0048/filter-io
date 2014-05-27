@@ -23,7 +23,7 @@ window.__imported__["01 Map View/layers.json.js"] = [
 		"children": [
 			
 		],
-		"modification": "2122644020"
+		"modification": "983582010"
 	},
 	{
 		"id": 1725,
@@ -61,7 +61,7 @@ window.__imported__["01 Map View/layers.json.js"] = [
 				"children": [
 					
 				],
-				"modification": "2143783461"
+				"modification": "982837324"
 			},
 			{
 				"id": 1727,
@@ -120,10 +120,10 @@ window.__imported__["01 Map View/layers.json.js"] = [
 								"children": [
 									
 								],
-								"modification": "815077178"
+								"modification": "566675738"
 							}
 						],
-						"modification": "1311001408"
+						"modification": "798076546"
 					},
 					{
 						"id": 1814,
@@ -161,7 +161,7 @@ window.__imported__["01 Map View/layers.json.js"] = [
 								"children": [
 									
 								],
-								"modification": "328684865"
+								"modification": "1816386919"
 							},
 							{
 								"id": 1901,
@@ -186,7 +186,7 @@ window.__imported__["01 Map View/layers.json.js"] = [
 								"children": [
 									
 								],
-								"modification": "1298024548"
+								"modification": "786633990"
 							},
 							{
 								"id": 1894,
@@ -211,7 +211,7 @@ window.__imported__["01 Map View/layers.json.js"] = [
 								"children": [
 									
 								],
-								"modification": "609653380"
+								"modification": "1054352798"
 							},
 							{
 								"id": 1880,
@@ -236,7 +236,7 @@ window.__imported__["01 Map View/layers.json.js"] = [
 								"children": [
 									
 								],
-								"modification": "1610028940"
+								"modification": "819314596"
 							},
 							{
 								"id": 1873,
@@ -261,7 +261,7 @@ window.__imported__["01 Map View/layers.json.js"] = [
 								"children": [
 									
 								],
-								"modification": "518195503"
+								"modification": "584276394"
 							},
 							{
 								"id": 1909,
@@ -286,7 +286,7 @@ window.__imported__["01 Map View/layers.json.js"] = [
 								"children": [
 									
 								],
-								"modification": "825231113"
+								"modification": "1296029222"
 							},
 							{
 								"id": 1771,
@@ -311,13 +311,38 @@ window.__imported__["01 Map View/layers.json.js"] = [
 								"children": [
 									
 								],
-								"modification": "826591160"
+								"modification": "1410590175"
 							}
 						],
-						"modification": "1548639564"
+						"modification": "1090564055"
 					}
 				],
-				"modification": "79074414"
+				"modification": "2125959695"
+			},
+			{
+				"id": 2095,
+				"name": "Radius",
+				"layerFrame": {
+					"x": 0,
+					"y": 0,
+					"width": 640,
+					"height": 1136
+				},
+				"maskFrame": null,
+				"image": {
+					"path": "images/Radius.png",
+					"frame": {
+						"x": 170,
+						"y": 527,
+						"width": 436,
+						"height": 436
+					}
+				},
+				"imageType": "png",
+				"children": [
+					
+				],
+				"modification": "983582007"
 			},
 			{
 				"id": 2067,
@@ -342,10 +367,10 @@ window.__imported__["01 Map View/layers.json.js"] = [
 				"children": [
 					
 				],
-				"modification": "825146668"
+				"modification": "983582006"
 			}
 		],
-		"modification": "822316051"
+		"modification": "1198783736"
 	},
 	{
 		"id": 1723,
@@ -412,13 +437,13 @@ window.__imported__["01 Map View/layers.json.js"] = [
 						"children": [
 							
 						],
-						"modification": "2143634511"
+						"modification": "982837297"
 					}
 				],
-				"modification": "315149072"
+				"modification": "2045206175"
 			}
 		],
-		"modification": "28486082"
+		"modification": "289673774"
 	},
 	{
 		"id": 1713,
@@ -477,10 +502,10 @@ window.__imported__["01 Map View/layers.json.js"] = [
 						"children": [
 							
 						],
-						"modification": "766172951"
+						"modification": "695422043"
 					}
 				],
-				"modification": "1392913147"
+				"modification": "1347529705"
 			},
 			{
 				"id": 1719,
@@ -518,7 +543,7 @@ window.__imported__["01 Map View/layers.json.js"] = [
 						"children": [
 							
 						],
-						"modification": "790127599"
+						"modification": "1439929610"
 					},
 					{
 						"id": 2063,
@@ -533,8 +558,8 @@ window.__imported__["01 Map View/layers.json.js"] = [
 						"image": {
 							"path": "images/Image.png",
 							"frame": {
-								"x": 541,
-								"y": 44,
+								"x": 498,
+								"y": 18,
 								"width": 86,
 								"height": 86
 							}
@@ -543,12 +568,12 @@ window.__imported__["01 Map View/layers.json.js"] = [
 						"children": [
 							
 						],
-						"modification": "2142770727"
+						"modification": "982807721"
 					}
 				],
-				"modification": "245927784"
+				"modification": "36130667"
 			}
 		],
-		"modification": "1861321175"
+		"modification": "1804249959"
 	}
 ]

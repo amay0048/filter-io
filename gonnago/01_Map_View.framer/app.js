@@ -57,33 +57,49 @@ $locator.on(window.Events.Click,function(){
 });
 
 var $overlay = myLayers.Overlay;
-$overlay.x = -300;
-$overlay.y = -600;
-$overlay.scale = 4;
+$overlay.opacity = 0;
+
+var $radius = myLayers.Radius;
+$radius.scale = 0.01;
+$radius.x = 170;
+$radius.y = 530;
 
 var pins = [];
 var pinlLength = 7;
 
 for(var i = 0;i < pinlLength;i++){
 	pins[i] =  window['$pin'+Number(i+1)] = myLayers['Pin-'+Number(i+1)];
-	U.iniPos(pins[i],0,-1080);
+	U.iniPos(pins[i],0,0);
 }
 
 var $author = myLayers['Author Pin'];
 
 U.iniPos($author,0,-1080);
 
+U.forEach(pins,function(item,index){
+	item.opacity = 0;
+	item.scale = 0.7;
+});
+
 var initialise = function(){
 	$overlay.animate({
 		properties: {
-			x:0,
-			y:0,
+			opacity:1
+		},
+		curve: "linear",
+		delay:1.9
+	});
+
+	$radius.animate({
+		properties: {
+			//x:0,
+			//y:0,
 			scale:1
 		},
 		curve: "spring",
 		curveOptions: {
 			friction: 18,
-			tension: 100,
+			tension: 50,
 			velocity: 0
 		},
 		delay:1.2
@@ -104,7 +120,8 @@ var initialise = function(){
 	U.forEach(pins,function(item,index){
 		item.animate({
 			properties: {
-				y: item.iniPos.y
+				scale:1,
+				opacity:1
 			},
 			curve: "spring",
 			curveOptions: {
@@ -112,7 +129,7 @@ var initialise = function(){
 				tension: 110,
 				velocity: 8
 			},
-			delay:2+index/5
+			delay:1.3+index/5
 		});
 	});
 };
