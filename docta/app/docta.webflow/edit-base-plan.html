@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Fri May 30 2014 05:28:40 GMT+0000 (UTC) -->
+<html data-wf-site="536affe52a0858ec6a980118">
+<head>
+  <meta charset="utf-8">
+  <title>Docta - Edit Base Plan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="css/docta.webflow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic"]
+      }
+    });
+  </script>
+  <script type="text/javascript" src="js/modernizr.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/placeholder/favicon.ico">
+</head>
+<body>
+  <div class="w-nav top-nav" data-collapse="small" data-animation="default" data-duration="400" data-contain="1">
+    <div class="w-container nav-container">
+      <a class="w-nav-brand" href="index.html">
+        <img src="http://uploads.webflow.com/536affe52a0858ec6a980118/5386ebd30935827b74ff7a1d_docta_logo.png" width="150" alt="5386ebd30935827b74ff7a1d_docta_logo.png">
+      </a>
+      <nav class="w-nav-menu" role="navigation"><a class="button nav-button" href="patient-new-form.html">Patients</a><a class="button nav-button" href="patient-new-form.html">Plans</a><a class="button nav-button" href="#">Notifications (3)</a><a class="button nav-button" href="#">Dr. Rochford</a>
+      </nav>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div class="w-container">
+    <h1 class="inline-h1">Care Planner</h1><a class="button nav-button publish-btn" href="#">Publish Plan</a>
+  </div>
+  <div class="planner-header">
+    <div class="w-container"><a class="button floatright nav-button" href="#">Edit Plan Name</a>
+      <h2>Pregnancy Plan</h2>
+      <h2 class="patient-name">Elizabeth Hurley</h2>
+    </div>
+  </div>
+  <div class="entry-modal" data-ix="close-detail">
+    <div class="w-container">
+      <div class="section-panel modal-panel">
+        <h1 class="dark-header">New Appointment</h1>
+        <div class="w-form">
+          <form id="wf-form-appointmentform" name="wf-form-appointmentform" data-name="AppointmentForm" action="#">
+            <label class="label" for="typeofappointment">Appointment Details</label>
+            <input class="w-input field" id="typeofappointment" type="text" placeholder="Type of Appointment" name="typeofappointment" data-name="TypeOfAppointment">
+            <input class="w-input field" id="providertype" type="text" placeholder="Provider Type" name="providertype" data-name="ProviderType">
+            <div class="w-row">
+              <div class="w-col w-col-6">
+                <input class="w-input field" id="number" type="text" placeholder="Number" name="number" data-name="Number">
+              </div>
+              <div class="w-col w-col-6">
+                <select class="w-select field" id="period" name="period" data-name="Period">
+                  <option value="">Select period...</option>
+                  <option value="hour">Hour</option>
+                  <option value="day">Day</option>
+                  <option value="week">Week</option>
+                </select>
+              </div>
+            </div>
+            <input class="w-input field" id="note" type="text" placeholder="Note" name="note" data-name="Note">
+            <input class="w-button button" type="submit" value="Publish" data-wait="Please wait...">
+          </form>
+          <div class="w-form-done">
+            <p>Thank you! Your submission has been received!</p>
+          </div>
+          <div class="w-form-fail">
+            <p>Oops! Something went wrong while submitting the form :(</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-container">
+    <div class="w-row">
+      <div class="w-col w-col-8 planner-column">
+        <ul class="w-list-unstyled">
+          <li class="w-clearfix week-entry entry-used">
+            <div class="week-div">
+              <p class="week-count count-active">Wk 10</p>
+            </div>
+            <div class="entry-panel">
+              <h2 class="entry-header">Appointment</h2>
+              <p><strong>22nd July</strong> - ObGyn</p>
+            </div>
+            <div class="entry-panel">
+              <h2 class="entry-header">Reminder</h2>
+              <p><strong>24th July</strong> - Pre-Natal Depression Screening</p>
+            </div>
+            <div class="entry-panel">
+              <h2 class="entry-header">Appointment</h2>
+              <p><strong>26th July</strong> - Ultrasound</p>
+            </div>
+            <div class="entry-panel">
+              <h2 class="entry-header">Information</h2>
+              <p>What to expect.</p>
+            </div>
+          </li>
+          <li class="week-entry odd-week">
+            <div class="week-div">
+              <p class="week-count">Wk 11</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="w-list-unstyled">
+          <li class="w-clearfix week-entry">
+            <div class="week-div">
+              <p class="week-count">Wk 12</p>
+            </div>
+          </li>
+          <li class="week-entry odd-week">
+            <div class="week-div">
+              <p class="week-count">Wk 13</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="w-list-unstyled">
+          <li class="w-clearfix week-entry">
+            <div class="week-div">
+              <p class="week-count">Wk 14</p>
+            </div>
+          </li>
+          <li class="week-entry odd-week">
+            <div class="week-div">
+              <p class="week-count">Wk 15</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="w-list-unstyled">
+          <li class="w-clearfix week-entry entry-used">
+            <div class="week-div">
+              <p class="week-count count-active">Wk 16</p>
+            </div>
+            <div class="entry-panel">
+              <h2 class="entry-header">Reminder</h2>
+              <p><strong>24th July</strong> - Pre-Natal Depression Screening</p>
+            </div>
+            <div class="entry-panel">
+              <h2 class="entry-header">Reminder</h2>
+              <p><strong>24th July</strong> - Pre-Natal Depression Screening</p>
+            </div>
+            <div class="entry-panel">
+              <h2 class="entry-header">Reminder</h2>
+              <p><strong>24th July</strong> - Pre-Natal Depression Screening</p>
+            </div>
+            <div class="entry-panel">
+              <h2 class="entry-header">Information</h2>
+              <p>What to expect.</p>
+            </div>
+          </li>
+          <li class="week-entry odd-week">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="w-list-unstyled">
+          <li class="w-clearfix week-entry">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+          <li class="week-entry odd-week">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="w-list-unstyled">
+          <li class="w-clearfix week-entry">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+          <li class="week-entry odd-week">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="w-list-unstyled">
+          <li class="w-clearfix week-entry">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+          <li class="week-entry odd-week">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="w-list-unstyled">
+          <li class="w-clearfix week-entry">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+          <li class="week-entry odd-week">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="w-list-unstyled">
+          <li class="w-clearfix week-entry">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+          <li class="week-entry odd-week">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="w-list-unstyled">
+          <li class="w-clearfix week-entry">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+          <li class="week-entry odd-week">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="w-list-unstyled">
+          <li class="w-clearfix week-entry">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+          <li class="week-entry odd-week">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="w-list-unstyled">
+          <li class="w-clearfix week-entry">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+          <li class="week-entry odd-week">
+            <div class="week-div">
+              <p class="week-count">Wk 10</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="w-col w-col-4 right-planner">
+        <div class="entry-panel new-panel" data-ix="open-detail">
+          <h2 class="entry-header add-header">+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Appointment</h2>
+        </div>
+        <div class="entry-panel new-panel">
+          <h2 class="entry-header add-header">+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Reminder</h2>
+        </div>
+        <div class="entry-panel new-panel">
+          <h2 class="entry-header add-header">+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Information</h2>
+        </div>
+        <h2 class="clear-plan"><a class="text-link clear-plan">Clear Plan</a></h2>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/webflow.js"></script>
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</body>
+</html>

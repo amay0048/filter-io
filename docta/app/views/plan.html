@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+  <div class="entry-modal" data-ix="close-detail" ng-class="{'button': !appointmentFormVisible, 'overlay-visible': appointmentFormVisible}" ng-click="hideAppointmentForm()">
+    <div class="w-container" ng-click="$event.stopPropagation()">
+      <div class="section-panel modal-panel">
+        <h1 class="dark-header">New Appointment</h1>
+        <div class="w-form">
+          <form id="wf-form-appointmentform" name="wf-form-appointmentform" data-name="AppointmentForm" ng-submit="AppointmentFormSubmit()">
+            <label class="label" for="typeofappointment">Appointment Details</label>
+            <input class="w-input field" id="typeofappointment" type="text" placeholder="Type of Appointment" name="typeofappointment" data-name="TypeOfAppointment" ng-model="AppointmentFormModel.TypeOfAppointment"><input class="w-input field" id="providertype" type="text" placeholder="Provider Type" name="providertype" data-name="ProviderType" ng-model="AppointmentFormModel.ProviderType"><div class="w-row">
+              <div class="w-col w-col-6">
+                <input class="w-input field" id="number" type="text" placeholder="Number" name="number" data-name="Number" ng-model="AppointmentFormModel.Number">
+</div>
+              <div class="w-col w-col-6">
+                <select class="w-select field" id="period" name="period" data-name="Period" ng-model="AppointmentFormModel.Period"><option value="">Select period...</option>
+<option value="hour">Hour</option>
+<option value="day">Day</option>
+<option value="week">Week</option></select>
+</div>
+            </div>
+            <input class="w-input field" id="note" type="text" placeholder="Note" name="note" data-name="Note" ng-model="AppointmentFormModel.Note"><input class="w-button button" type="submit" value="Add/Update" data-wait="Please wait...">
+</form>
+          <div class="w-form-done">
+            <p>Thank you! Your submission has been received!</p>
+          </div>
+          <div class="w-form-fail">
+            <p>Oops! Something went wrong while submitting the form :(</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-container">
+    <h1 class="inline-h1">Care Planner</h1>
+<a class="button nav-button publish-btn" ng-click="PlanFormSubmit()">Publish Plan</a>
+  </div>
+  <div class="planner-header">
+    <div class="w-container">
+<a class="button floatright nav-button" href="#">Edit Plan Name</a>
+      <h2>Pregnancy Plan</h2>
+      <h2 class="patient-name">Patient Name</h2>
+    </div>
+  </div>
+  <div class="w-container">
+    <div class="w-row">
+      <div class="w-col w-col-8 planner-column">
+        <ul class="w-list-unstyled">
+          <li class="w-clearfix week-entry entry-used" ng-click="showAppointmentForm(appointment)" ng-repeat="appointment in Plan.appointments.models" ng-class-even="'odd-week'">
+            <div class="week-div">
+              <p class="week-count">{{appointment.attributes.Period}} {{appointment.attributes.Number}}</p>
+            </div>
+            <div class="entry-panel">
+              <h2 class="entry-header">{{appointment.attributes.TypeOfAppointment}}</h2>
+              <p><strong>{{appointment.attributes.ProviderType}}</strong></p>
+              <p>{{appointment.attributes.Note}}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="w-col w-col-4 right-planner">
+        <div class="entry-panel new-panel" data-ix="open-detail" ng-click="showAppointmentForm({})">
+          <h2 class="entry-header add-header">+ Add Appointment</h2>
+        </div>
+        <div class="entry-panel new-panel" ng-click="showAppointmentForm({})">
+          <h2 class="entry-header add-header">+ Add Reminder</h2>
+        </div>
+        <div class="entry-panel new-panel">
+          <h2 class="entry-header add-header">+ Add Information</h2>
+        </div>
+        <h2 class="clear-plan"><a class="text-link clear-plan">Clear Plan</a></h2>
+      </div>
+    </div>
+  </div>
+</body></html>

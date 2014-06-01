@@ -1,0 +1,39 @@
+  <div>
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-8">
+          <h1>Your Patients</h1>
+          <div class="section-panel">
+            <div class="w-row" ng-repeat="group in groupedPatients">
+              <div class="w-col w-col-3" ng-repeat="patient in group">
+                <h3>{{patient.attributes.FullName}}</h3>
+                <img class="block-center" src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" alt="image-placeholder.svg">
+                <p>Progress: 18 Weeks</p>
+                <p>Notices: 1 Result Pending</p><a ng-href="/#/patient/{{patient.id}}">Text Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-4">
+          <div class="section-panel small-section">
+            <div class="w-form">
+              <form id="email-form" name="email-form" data-name="Email Form">
+                <h4>Search Docta</h4>
+                <input class="w-input field small-field" id="name-3" type="text" placeholder="Patients, resources, plans..." name="name-3" data-name="Name 3">
+                <input class="w-button button search-button" type="submit" value="Search" data-wait="Please wait...">
+              </form>
+              <div class="w-form-done">
+                <p>Thank you! Your submission has been received!</p>
+              </div>
+              <div class="w-form-fail">
+                <p>Oops! Something went wrong while submitting the form :(</p>
+              </div>
+            </div>
+          </div>
+          <div class="section-panel small-section">
+            <h4>Actions</h4><a class="button create" href="/#/patient">New Patient</a><a class="button create" href="/#/plan">New Plan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,100 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Docta - Tagline</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="Webflow">
+
+    <link rel="stylesheet" type="text/css" href="docta.webflow/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="docta.webflow/css/webflow.css">
+    <link rel="stylesheet" type="text/css" href="docta.webflow/css/docta.webflow.css">
+    <!--script type="text/javascript" src="docta.webflow/js/modernizr.js"></script-->
+    <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/placeholder/favicon.ico">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <link rel="stylesheet" href="bower_components/ngprogress/ngProgress.css">
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="doctaApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="w-nav top-nav" data-collapse="small" data-animation="default" data-duration="400" data-contain="1">
+      <div class="w-container nav-container">
+        <a class="w-nav-brand" href="index.html">
+          <img src="http://uploads.webflow.com/536affe52a0858ec6a980118/5386ebd30935827b74ff7a1d_docta_logo.png" width="150" alt="5386ebd30935827b74ff7a1d_docta_logo.png">
+        </a>
+        <nav class="w-nav-menu" role="navigation">
+          <a class="w-nav-link nav-button button" href="/#/patients">Patients</a>
+          <a class="w-nav-link nav-button button" href="/#/plans">Plans</a>
+          <a class="w-nav-link nav-button button" href="javascript:alert('Not Implemented Yet');">Account</a>
+        </nav>
+        <div class="w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add your site or application content here -->
+    <div class="container" ng-view=""></div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <script src="http://www.parsecdn.com/js/parse-1.2.15.js"></script>
+    <script src="bower_components/parse-angular-patch/src/parse-angular.js"></script>
+    <script src="bower_components/ngprogress/build/ngProgress.js"></script>
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/services/appointmentform.js"></script>
+        <script src="scripts/services/plans.js"></script>
+        <script src="scripts/controllers/plans.js"></script>
+        <script src="scripts/controllers/plan.js"></script>
+        <script src="scripts/services/patientform.js"></script>
+        <script src="scripts/controllers/patients.js"></script>
+        <script src="scripts/services/patients.js"></script>
+        <script src="scripts/controllers/patient.js"></script>
+        <script src="scripts/filters/modulus.js"></script>
+        <!-- endbuild -->
+
+  <!--script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script-->
+
+</body>
+</html>

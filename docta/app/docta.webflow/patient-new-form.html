@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Fri May 30 2014 05:28:40 GMT+0000 (UTC) -->
+<html data-wf-site="536affe52a0858ec6a980118">
+<head>
+  <meta charset="utf-8">
+  <title>Pipper Provider - Patient New Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="css/docta.webflow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic"]
+      }
+    });
+  </script>
+  <script type="text/javascript" src="js/modernizr.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/placeholder/favicon.ico">
+</head>
+<body>
+  <div class="w-nav top-nav" data-collapse="small" data-animation="default" data-duration="400" data-contain="1">
+    <div class="w-container nav-container">
+      <a class="w-nav-brand" href="index.html">
+        <img src="http://uploads.webflow.com/536affe52a0858ec6a980118/5386ebd30935827b74ff7a1d_docta_logo.png" width="150" alt="5386ebd30935827b74ff7a1d_docta_logo.png">
+      </a>
+      <nav class="w-nav-menu" role="navigation"><a class="button nav-button" href="patient-new-form.html">Patients</a><a class="button nav-button" href="patient-new-form.html">Plans</a><a class="button nav-button" href="#">Notifications (3)</a><a class="button nav-button" href="#">Dr. Rochford</a>
+      </nav>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-8">
+          <h1>New Patient</h1>
+          <div class="section-panel">
+            <div class="w-form">
+              <form id="wf-form-patientform" name="wf-form-patientform" data-name="PatientForm" action="#">
+                <label class="label" for="fullname">Details</label>
+                <input class="w-input field" id="fullname" type="text" placeholder="Full Name" name="fullname" data-name="FullName">
+                <input class="w-input field" id="dateofbirth" type="text" placeholder="Date of Birth" name="dateofbirth" data-name="DateOfBirth">
+                <label class="label" for="medicalhistory">History</label>
+                <input class="w-input field" id="medicalhistory" type="text" placeholder="Medical History" name="medicalhistory" data-name="MedicalHistory">
+                <input class="w-input field" id="surgicalhistory" type="text" placeholder="Surgical History" name="surgicalhistory" data-name="SurgicalHistory">
+                <input class="w-input field" id="pregnancyhistory" type="text" placeholder="Pregnancy History" name="pregnancyhistory" data-name="PregnancyHistory">
+                <input class="w-input field" id="medications" type="text" placeholder="Medications" name="medications" data-name="Medications">
+                <input class="w-input field" id="allergies" type="text" placeholder="Allergies" name="allergies" data-name="Allergies">
+                <input class="w-input field" id="relevantfamilyhistory" type="text" placeholder="Relevant Family History" name="relevantfamilyhistory" required="required" data-name="RelevantFamilyHistory">
+                <label class="label" for="reasonforpresentation">Presentation</label>
+                <input class="w-input field" id="reasonforpresentation" type="text" placeholder="Reason for Presentation" name="reasonforpresentation" required="required" data-name="ReasonForPresentation">
+                <input class="w-input field" id="historyofpresentingcomplaint" type="text" placeholder="History of Presentation" name="historyofpresentingcomplaint" required="required" data-name="HistoryOfPresentingComplaint">
+                <input class="w-input field" id="examination" type="text" placeholder="Examination" name="examination" required="required" data-name="Examination">
+                <input class="w-input field" id="investigations" type="text" placeholder="Investigations" name="investigations" required="required" data-name="Investigations">
+                <input class="w-input field" id="diagnosis" type="text" placeholder="Diagnosis" name="diagnosis" required="required" data-name="Diagnosis">
+                <label class="label" for="managementtemplate">Management Template:</label>
+                <select class="w-select field" id="managementtemplate" name="managementtemplate" data-name="ManagementTemplate">
+                  <option value="">Select one...</option>
+                  <option value="First">First Choice</option>
+                  <option value="Second">Second Choice</option>
+                  <option value="Third">Third Choice</option>
+                </select>
+                <input class="w-button button" type="submit" value="Submit" data-wait="Please wait...">
+              </form>
+              <div class="w-form-done">
+                <p>Thank you! Your submission has been received!</p>
+              </div>
+              <div class="w-form-fail">
+                <p>Oops! Something went wrong while submitting the form :(</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-4">
+          <div class="section-panel small-section">
+            <div class="w-form">
+              <form id="email-form" name="email-form" data-name="Email Form">
+                <h4>Search existing patients</h4>
+                <input class="w-input field small-field" id="name-2" type="text" placeholder="e.g. First or Last name" name="name-2" data-name="Name 2">
+                <input class="w-button button search-button" type="submit" value="Search" data-wait="Please wait...">
+              </form>
+              <div class="w-form-done">
+                <p>Thank you! Your submission has been received!</p>
+              </div>
+              <div class="w-form-fail">
+                <p>Oops! Something went wrong while submitting the form :(</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/webflow.js"></script>
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</body>
+</html>

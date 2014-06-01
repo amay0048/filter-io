@@ -1,0 +1,9 @@
+.overlay-visible{
+	display: block; 
+	transition: opacity 250ms; 
+	-webkit-transition: opacity 250ms; 
+	opacity: 1;
+}
+.week-count{
+	text-transform: capitalize;
+}
