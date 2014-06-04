@@ -87,7 +87,7 @@ angular.module('doctaApp')
         });
       },
       getAppointments: function(plan){
-        return plan.relation('appointments').query().find();
+        return plan.relation('appointments').query().ascending('Number').find();
       },
       createAppointment: function(appointmentFormModel){
         var appointment = new Appointment(appointmentFormModel);
