@@ -3,7 +3,7 @@
     <div class="w-container">
       <div class="w-row">
         <div class="w-col w-col-8">
-          <h1>New Patient</h1>
+          <h1>{{PatientFormModel.FullName || 'New Patient'}}</h1>
           <div class="section-panel">
             <div class="w-form">
               <form id="wf-form-patientform" name="wf-form-patientform" data-name="PatientForm" ng-submit="PatientFormSubmit()">

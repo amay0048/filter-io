@@ -6,10 +6,14 @@
           <div class="section-panel">
             <div class="w-row" ng-repeat="group in groupedPlans | filter:searchText">
               <div class="w-col w-col-3" ng-repeat="plan in group">
-                <h3>{{plan.attributes.Name}}</h3>
-                <img class="block-center" src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" alt="image-placeholder.svg">
-                <p>Notices: 1 Result Pending</p>
-                <a ng-href="#/plan/{{plan.id}}">Edit Plan</a>
+                <div class="patient-column">
+                  <h4>{{plan.attributes.Name}}</h4>
+                  <a ng-href="#/plan/{{plan.id}}">
+                    <img class="block-center" src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" alt="image-placeholder.svg">
+                  </a>
+                  <p>Notices: 1 Result Pending</p>
+                  <a ng-href="#/plan/{{plan.id}}">Edit Plan</a>
+              </div>
               </div>
             </div>
           </div>

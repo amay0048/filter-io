@@ -7,7 +7,7 @@
         <div class="w-form">
           <form id="wf-form-appointmentform" name="wf-form-appointmentform" data-name="AppointmentForm" ng-submit="AppointmentFormSubmit()">
             <label class="label" for="typeofappointment">Appointment Details</label>
-            <input class="w-input field" id="typeofappointment" type="text" placeholder="Type of Appointment" name="typeofappointment" data-name="TypeOfAppointment" ng-model="AppointmentFormModel.TypeOfAppointment"><input class="w-input field" id="providertype" type="text" placeholder="Provider Type" name="providertype" data-name="ProviderType" ng-model="AppointmentFormModel.ProviderType"><div class="w-row">
+            <input class="w-input field" id="typeofappointment" type="text" placeholder="Type of Appointment" name="typeofappointment" data-name="TypeOfAppointment" ng-model="AppointmentFormModel.TypeOfAppointment"><input class="w-input field" id="provider`type" type="text" placeholder="Provider Type" name="providertype" data-name="ProviderType" ng-model="AppointmentFormModel.ProviderType"><div class="w-row">
               <div class="w-col w-col-6">
                 <input class="w-input field" id="number" type="text" placeholder="Number" name="number" data-name="Number" ng-model="AppointmentFormModel.Number">
 </div>
@@ -36,8 +36,8 @@
   </div>
   <div class="planner-header">
     <div class="w-container">
-<a class="button floatright nav-button" href="#">Edit Plan Name</a>
-      <h2>Pregnancy Plan</h2>
+<!--a class="button floatright nav-button" href="#">Edit Plan Name</a-->
+      <h2>{{Plan.attributes.Name || 'New Plan'}}</h2>
       <h2 class="patient-name">Patient Name</h2>
     </div>
   </div>

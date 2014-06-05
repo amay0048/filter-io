@@ -7,3 +7,6 @@
 .week-count{
 	text-transform: capitalize;
 }
+.patient-column h4{
+	min-height:48px;
+}
