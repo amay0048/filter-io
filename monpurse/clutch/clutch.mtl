@@ -1,0 +1,58 @@
+# Blender MTL File: 'None'
+# Material Count: 6
+
+newmtl Material
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Material.001
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.512000 0.512000 0.512000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Trim
+Ns 90.196078
+Ka 0.000000 0.000000 0.000000
+Kd 0.409600 0.409600 0.409600
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd F:\Dropbox\infin8eye\Dropbox\Rayn Ong\Blender files and textures\textures\envelope clutch bag-bump.jpg
+
+newmtl leather
+Ns 90.196078
+Ka 0.000000 0.000000 0.000000
+Kd 0.409600 0.409600 0.409600
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd F:\Dropbox\infin8eye\Dropbox\Rayn Ong\Blender files and textures\textures\envelope clutch bag-bump.jpg
+
+newmtl stitch-black
+Ns 27.450980
+Ka 0.000000 0.000000 0.000000
+Kd 0.009389 0.009389 0.009389
+Ks 0.200000 0.200000 0.200000
+Ni 1.000000
+d 0.794872
+illum 2
+
+newmtl stitch-purple
+Ns 27.450980
+Ka 0.000000 0.000000 0.000000
+Kd 0.148768 0.045253 0.189243
+Ks 0.200000 0.200000 0.200000
+Ni 1.000000
+d 0.794872
+illum 2

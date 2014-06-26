@@ -59,6 +59,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "docta/views/plan.html",
+			"settings":
+			{
+				"buffer_size": 4093,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -104,6 +112,16 @@
 	},
 	"file_history":
 	[
+		"/Users/anthonyjmay/Downloads/NEHTA_1610_2013_PrescriptionandDispenseViewStyleSheet_StylesheetWithCSS_v1.1.0/NEHTA_PCEHR_Prescription_and_Dispense_View_CDA_Stylesheet-1.1.0x.css",
+		"/Users/anthonyjmay/docta/NEHTA/EP_1685_2014_eHealthIntegrationSampleCode_v1.0/NEHTA_1688_2014_eHealthIntegrationSampleCode_SourceCode_v1.0/HIPS Web UI 1.0.0 Source/HIPS.Web.UI/Global.asax.cs",
+		"/Users/anthonyjmay/filter-io/docta/views/plans.html",
+		"/Users/anthonyjmay/filter-io/docta/views/plan.html",
+		"/Users/anthonyjmay/filter-io/docta/docta.webflow/css/docta.webflow.css",
+		"/Users/anthonyjmay/filter-io/docta/views/main.html",
+		"/Users/anthonyjmay/filter-io/docta/views/patients.html",
+		"/Users/anthonyjmay/filter-io/docta/styles/main.css",
+		"/Users/anthonyjmay/filter-io/docta/.htaccess",
+		"/Users/anthonyjmay/filter-io/docta/views/patient.html",
 		"/Users/anthonyjmay/Dropbox/_GonnaGo/01 Map View/01 Map View.framer/app.js",
 		"/Users/anthonyjmay/mapbox/GonnaGo/Podfile",
 		"/Users/anthonyjmay/filter-io/gonnago/01_Map_View.framer/index.html",
@@ -255,6 +273,34 @@
 		{
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "docta/views/plan.html",
+					"settings":
+					{
+						"buffer_size": 4093,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1232,
+								1232
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
