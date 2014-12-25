@@ -35,7 +35,6 @@
     "commit": "f58acd05db84fbca350cebbe58bab4f6e00055d4"
   },
   "_source": "git://github.com/l-lin/angular-notifier.git",
-  "_target": "~0.0.3",
-  "_originalSource": "angular-notifier",
-  "_direct": true
+  "_target": "0.0.3",
+  "_originalSource": "angular-notifier"
 }

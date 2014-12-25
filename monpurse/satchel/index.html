@@ -45,7 +45,7 @@
 				container = document.createElement('div');
 				document.body.appendChild(container);
  
-				camera = new THREE.PerspectiveCamera(75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 100000);
+				camera = new THREE.PerspectiveCamera(1, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 1000000);
 				camera.position.x = 400;
 				camera.position.y = 200;
 				camera.position.z = 400;
@@ -68,7 +68,7 @@
 				container.appendChild(webglRenderer.domElement);
  
 				var loader = new THREE.JSONLoader(),
-				callbackKey = function(geometry) {createScene(geometry,  0, 0, 0, 15, "mesh.jpg")};
+				callbackKey = function(geometry) {createScene(geometry,  0, 0, 0, 15, "mesh.png")};
 				loader.load("mesh.js", callbackKey);
  
 				window.addEventListener('resize', onWindowResize, false);

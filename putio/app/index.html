@@ -10,9 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="generator" content="Webflow">
-    <link rel="stylesheet" type="text/css" href="webflow/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="webflow/css/webflow.css">
-    <link rel="stylesheet" type="text/css" href="webflow/css/putio-trakt.webflow.css">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
     <script>
       WebFont.load({
@@ -21,20 +18,23 @@
         }
       });
     </script>
-    <script type="text/javascript" src="webflow/js/modernizr.js"></script>
     <!-- endwebflow -->
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/angular-notifier/dist/angular-notifier.min.css">
+    <link rel="stylesheet" href="bower_components/angular-notifier/dist/angular-notifier.css" />
+    <link rel="stylesheet" href="bower_components/angular-notifier/dist/angular-notifier.min.css" />
+    <link rel="stylesheet" href="bower_components/nprogress/nprogress.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/webflow.css">
+    <link rel="stylesheet" href="styles/putio-trakt.webflow.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <link rel="stylesheet" href="https://rawgit.com/rstacruz/nprogress/master/nprogress.css">
   </head>
   <body ng-app="putioAngularApp">
     <!--[if lt IE 7]>
@@ -64,7 +64,7 @@
     </div>
 
     <script src="http://brian.io/lawnchair/downloads/lawnchair-0.6.1.min.js"></script>
-    <script src="https://rawgit.com/brianleroux/lawnchair/master/src/adapters/indexed-db.js"></script>
+    <script src="https://rawgit.com/brianleroux/lawnchair/master/src/adapters/dom.js"></script>
     <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
 
     <!-- phonegap
@@ -89,22 +89,27 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-    <!-- amay0048 -->
-    <script src="bower_components/angular-notifier/dist/angular-notifier.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-notifier/dist/angular-notifier.js"></script>
+    <script src="bower_components/angular-notifier/dist/angular-notifier.min.js"></script>
+    <script src="bower_components/jquery-cookie/jquery.cookie.js"></script>
+    <script src="bower_components/nprogress/nprogress.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/external/modernizr.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/services/Videos.js"></script>
+        <script src="scripts/services/airplay.js"></script>
         <!-- endbuild -->
     
     <script>
@@ -132,7 +137,7 @@
       var putioCB = function(result){
         var scope = getScope();
         scope.$apply(function(){
-          scope.addVideos(result.files);
+          scope.addFiles(result.files);
         });
         NProgress.done();
       }
@@ -149,14 +154,6 @@
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
     end phonegap -->
-
-    <!-- webflow -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript" src="webflow/js/webflow.js"></script>
-    <script src="https://rawgit.com/rstacruz/nprogress/master/nprogress.js"></script>
-    <script src="https://rawgit.com/carhartl/jquery-cookie/master/jquery.cookie.js"></script>
-    <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
-    <!-- endwebflow -->
     
 </body>
 </html>

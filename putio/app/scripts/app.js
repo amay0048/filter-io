@@ -13,10 +13,10 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
+      // .when('/', {
+      //   templateUrl: 'views/main.html',
+      //   controller: 'MainCtrl'
+      // })
       .when('/series', {
         templateUrl: 'views/series.html',
         controller: 'MainCtrl'
@@ -42,6 +42,6 @@ angular
         controller: 'MainCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/access_token=IK4Q6CE2'
       });
   });

@@ -5,7 +5,7 @@
     <h2 class="light">{{ movie.trakt.title || movie.name }}</h2>
     <img class="movie-poster episode-image" ng-class-odd="'right'" src="images/poster.png" ng-click="videoLink(movie);" ng-style="{'background-image':'url({{ movie.trakt.images.poster || 'images/poster-dark.jpg' }})'}">
     <p class="light">{{ movie.trakt.overview || 'Sorry, I can\'t seem to find any information for this movie' }}</p>
-    <a class="more-link" ng-click="videoLink(movie);">Watch</a>
+    <a class="more-link" ng-click="videoLink(movie,$event);" ng-href="{{movie.uri}}">Watch</a>
   </div>
 </div>
 <!-- end item repeater -->

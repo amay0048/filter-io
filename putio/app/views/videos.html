@@ -6,7 +6,7 @@
     <img class="movie-poster episode-image" src="images/episode.png" ng-class-odd="'right'" ng-style="{'background-image':'url({{ video.meta.screen || 'images/episode-dark.jpg' }})'}" ng-click="videoLink(movie);">
     <p class="light">Season: {{ video.season || 'n/a' }}, Episode: {{ video.episode || 'n/a' }}</p>
     <p class="light">{{ video.meta.overview || 'Sorry, I can\'t seem to find any information for this file' }}</p>
-    <a class="more-link" ng-click="videoLink(video);">Watch</a>
+    <a class="more-link" ng-click="videoLink(video,$event);" ng-href="{{video.uri}}">Watch</a>
   </div>
 </div>
 <!-- end item repeater -->

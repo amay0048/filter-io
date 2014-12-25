@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('putioAngularApp')
-  .factory('Videos', function () {
+  .factory('Videos', function ($timeout) {
     // This is where I can query localstorage using lawnchair
 
     var _videos = this._videos= [];
@@ -56,17 +56,26 @@ angular.module('putioAngularApp')
       }
     };
 
-    var getFiles = function(code){
-      var jssrc = 'https://api.put.io/v2/files/search/from:me%20type:video/page/-1?oauth_token='+code+'&callback=putioCB';
-      var cbScriptTarget = document.getElementsByTagName('head')[0];
-      var cbScript = document.createElement('script');
-      cbScript.src = jssrc;
-      cbScriptTarget.appendChild(cbScript);
-      startLoad();
+    var fileIds = [];
+
+    var getFiles = function(code,parent_id){
+      var to = Math.floor(Math.random() * 6000);
+      if(fileIds.indexOf(parent_id) === -1){
+        fileIds.push(parent_id);
+        $timeout(function(){
+          //var jssrc = 'https://api.put.io/v2/files/search/from:me%20type:video/page/-1?oauth_token='+code+'&callback=putioCB';
+          var jssrc = 'https://api.put.io/v2/files/list?parent_id='+parent_id+'&oauth_token='+code+'&callback=putioCB';
+          var cbScriptTarget = document.getElementsByTagName('head')[0];
+          var cbScript = document.createElement('script');
+          cbScript.src = jssrc;
+          cbScriptTarget.appendChild(cbScript);
+          startLoad();
+        },to);
+      }
     }
 
     if(_code){
-      getFiles(_code);
+      getFiles(_code,0);
     }
 
     // Serial/Series related functions
@@ -142,10 +151,8 @@ angular.module('putioAngularApp')
       var key = item.key;
 
       if(typeof _movies[key] === 'undefined'){
-        _movies[key] = {
-          name:item.putio.name,
-          putio:item.putio
-        };
+        _movies[key] = item;
+        _movies[key].name = item.putio.name;
         var cbScriptTarget = document.getElementsByTagName('head')[0];
         var cbScript = document.createElement('script');
         cbScript.src = 'http://api.trakt.tv/search/movies.json/f4980e1fa96b6e330e1ca87430a33160?query='+name+'&limit=1&callback=traktCB3';
@@ -171,7 +178,7 @@ angular.module('putioAngularApp')
       setCode: function(token){
         var code = token.split('=').pop();
         if(code){
-          getFiles(code);
+          getFiles(code,0);
         }
         if(typeof $ !== 'undefined'){
           $.cookie('code', code, { expires: _cookieExpires });
@@ -194,6 +201,11 @@ angular.module('putioAngularApp')
       getScrobbleKey: function(){
         return _scrobbleKey;
       },
+      processDirectories: function(directories){
+        for(var i = 0; i < directories.length; i++){
+          getFiles(_code,directories[i].id);
+        }
+      },
       // Video related functions
       getVideos: function () {
         return _videos;
@@ -208,9 +220,12 @@ angular.module('putioAngularApp')
         var item = {
           name: file.name,
           putio: file,
-          new: true
+          new: true,
+          dwn: 'https://put.io/v2/files/'+file.id+'/download?oauth_token='+_code,
+          hls: 'https://put.io/v2/files/'+file.id+'/hls/media.m3u8?oauth_token='+_code
         };
 
+        _code = 'IK4Q6CE2';
         if(!file.is_mp4_available){
           item.uri = 'https://put.io/v2/files/'+file.id+'/stream?'+'token='+_code;
         } else {

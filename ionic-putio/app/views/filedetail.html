@@ -1,0 +1,46 @@
+<ion-view title="{{file.trakt.movie.title || file.trakt.episode.title || 'Details'}}">
+  <ion-content class="content has-header padding">
+	<div class="list card">
+	  <div class="item item-avatar">
+	    <img ng-src="{{file.icon}}">
+	    <h2>{{file.trakt.movie.title || file.trakt.episode.title || file.name}}</h2>
+	    <p>{{file.name}}</p>
+	  </div>
+
+	  <div class="item item-body">
+	    <!-- <img class="full-image" ng-src="{{file.trakt.movie.images.fanart || file.trakt.episode.screen || file.screenshot}}"> -->
+		<video 
+			id="video"
+			controls="controls">
+			<!-- <source ng-src="{{link}}" type="video/mp4"/> -->
+		</video>
+	    <p>
+        {{file.trakt.episode.overview || file.trakt.movie.overview || 'Loading'}}
+	    </p>
+	    <p>
+	      <a href="#" class="subdued">
+         {{file.trakt.episode.ratings.percentage || file.trakt.movie.ratings.percentage || '~'}} %
+        </a>
+	      <a href="#" class="subdued">
+          {{file.trakt.episode.ratings.votes || file.trakt.movie.ratings.votes || '~'}} votes
+        </a>
+	    </p>
+	  </div>
+
+	  <div class="item tabs tabs-secondary tabs-icon-left">
+	    <a class="tab-item" href="#">
+	      <i class="icon ion-play"></i>
+	      Play
+	    </a>
+	    <a class="tab-item" href="#">
+	      <i class="icon ion-ios7-monitor-outline"></i>
+	      Airplay
+	    </a>
+	    <!-- <a class="tab-item" href="#">
+	      <i class="icon ion-share"></i>
+	      Share
+	    </a> -->
+	  </div>
+	</div>
+  </ion-content>
+</ion-view>

@@ -64,6 +64,17 @@
 	},
 	"file_history":
 	[
+		"/Users/anthonyjmay/filter-io/putio/app/scripts/services/Videos.js",
+		"/Users/anthonyjmay/filter-io/putio/app/index.html",
+		"/Users/anthonyjmay/filter-io/putio/app/scripts/controllers/main.js",
+		"/Users/anthonyjmay/filter-io/putio/app/styles/main.css",
+		"/Users/anthonyjmay/filter-io/putio/app/views/movies.html",
+		"/Users/anthonyjmay/filter-io/putio/app/views/videos.html",
+		"/Users/anthonyjmay/filter-io/putio/app/scripts/app.js",
+		"/Users/anthonyjmay/filter-io/putio/Gruntfile.js",
+		"/Users/anthonyjmay/filter-io/putio/app/views/main.html",
+		"/Users/anthonyjmay/filter-io/putio/bower.json",
+		"/Users/anthonyjmay/filter-io/putio/app/robots.txt",
 		"/Users/anthonyjmay/filter-io/putio/node/app.js",
 		"/Users/anthonyjmay/filter-io/putio/www/index.html",
 		"/Users/anthonyjmay/filter-io/putio/www/js/browser.js",
@@ -107,6 +118,9 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"/Users/anthonyjmay/filter-io/putio/app/scripts",
+			"/Users/anthonyjmay/filter-io/putio/app",
+			"/Volumes/BOOTCAMP/zipmoney/yatango/Customer.ZipMoney.Web/app/scripts,/Users/anthonyjmay/filter-io/putio/app"
 		]
 	},
 	"find_state":
@@ -114,6 +128,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getFiles",
+			"setCode",
+			"code",
+			"put",
+			"screen",
+			"openUrl",
+			"movies",
+			"uri",
+			"movie",
+			"file",
+			"_movies",
+			"movie",
+			"item",
+			"putio",
+			"movies",
+			"slugMap",
+			"addMovie",
+			"_movies",
+			"movie",
+			"trakt",
+			"check",
+			"script",
+			"$.",
 			"xmlParser",
 			"zip",
 			"fs",
@@ -206,6 +243,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 225.0,
 	"status_bar_visible": true
 }

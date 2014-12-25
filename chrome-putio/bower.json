@@ -1,0 +1,8 @@
+{
+  "name": "putio-for-chrome",
+  "version": "0.0.0",
+  "dependencies": {
+    "cryptojslib":"~3.1.2"
+  },
+  "devDependencies": {}
+}

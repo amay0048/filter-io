@@ -3,3 +3,4 @@ wordpress/wp-content/uploads/**
 tv/wp-content/uploads/**
 
 putio/node/node_modules/**
+app.app

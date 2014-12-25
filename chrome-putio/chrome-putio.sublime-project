@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/anthonyjmay/filter-io/putio"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/anthonyjmay/filter-io/ionic-putio"
+		}
+	]
+}

@@ -1,3 +1,18 @@
 body{
 	background:#000;
 }
+.conatiner {
+	padding-bottom:25px;
+}
+.flixter-clip,
+.movie-poster,
+.movie-poster.right {
+	margin-bottom:0;
+}
+@media (max-width: 479px) {
+	.flixter-clip,
+	.movie-poster,
+	.movie-poster.right {
+		margin-bottom:25px;
+	}
+}

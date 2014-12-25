@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Putio for Chrome",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Adds metadata and allow",
+    "description": "The description of the application"
+  }
+}
