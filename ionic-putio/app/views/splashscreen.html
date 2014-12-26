@@ -1,9 +1,19 @@
 <ion-view title="Splashscreen">
   <ion-content class="padding">
-    <h1>Splashscreen</h1>
+    <img src="images/putio-logo.png" style="width:100%;">
 	<button class="button button-block button-positive"
 		ng-click="loginOnClick()">
 		Login
 	</button>
+	<button class="button button-block button-assertive"
+		ng-click="downloadTest()">
+		Test Download
+	</button>
+	<div ng-repeat="download in activeDownloads">
+		DOWNLOAD
+		<div ng-repeat="thread in download.threads">
+			THREAD: {{threadPercent(thread)}}
+		</div>
+	</div>
   </ion-content>
 </ion-view>

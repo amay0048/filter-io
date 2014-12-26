@@ -1,0 +1,3 @@
+curl  --header "Range: bytes=0-100000000" "https://mel1.put.io/download/261000625?tunnel=1&storage=s13&token=7bf1d7f99a6207b7772a69ec6d3b8cbfc2a41cff&u=mJmonWpfXJlhWGBnWmRdX5SSnGFXWl9VY15oZFxdaFpVYFZsYWdoYl1iWFSWjpg%3D&attachment=1" -o part1
+curl  --header "Range: bytes=100000001-200000000" "https://mel1.put.io/download/261000625?tunnel=1&storage=s13&token=7bf1d7f99a6207b7772a69ec6d3b8cbfc2a41cff&u=mJmonWpfXJlhWGBnWmRdX5SSnGFXWl9VY15oZFxdaFpVYFZsYWdoYl1iWFSWjpg%3D&attachment=1" -o part2
+cat part1 part2 >> test1.mp4
