@@ -8,10 +8,11 @@
  * Factory in the airplayPutioApp.
  */
 angular.module('downloader.thread',[])
-  .factory('DownloadThread', function ($q) {
+  .factory('DownloadThread', function ($q, LocalFile) {
 
-    var Thread = function(url, start, end){
+    var Thread = function(filename, part, url, start, end){
       this.url = url;
+      this.part = part;
       this.range = {
         start: start
       };
@@ -20,6 +21,8 @@ angular.module('downloader.thread',[])
         percent: 0,
         error: false
       };
+      this.filename = filename;
+      
       if(typeof end !== 'undefined')
       {
         this.range.end = end;
@@ -31,14 +34,32 @@ angular.module('downloader.thread',[])
       return this.range;
     };
 
+    Thread.prototype.isComplete = function(){
+      if(this.status.percent < 1)
+      {
+        return false;
+      }
+      else if(this.status.running)
+      {
+        return false;
+      }
+      else
+      {
+        return true;
+      }
+    };
+
+    var deferred = {};
     Thread.prototype.start = function(){
+
       if(this.status.running)
       {
-        return;
+        return deferred.promise;
       }
 
-      var deferred = $q.defer(),
-          oReq = new XMLHttpRequest();
+      deferred = $q.defer();
+      this.status.running = true;
+      var oReq = new XMLHttpRequest();
 
       var updateProgress = (function(thread,deferred){
         return function (oEvent) {
@@ -51,15 +72,19 @@ angular.module('downloader.thread',[])
             deferred.notify(oEvent);
           }
         };
-      })(this,deferred);
-
-      var transferComplete = (function(thread, deferred){
-        return function (evt) {
-          thread.status.running = false;
-          thread.status.percent = 1;
-          deferred.resolve("The transfer is complete.");
-        };        
       })(this, deferred);
+
+      var transferComplete = (function(thread, deferred, oReq){
+        return function (oEvent) {
+          thread.file = new LocalFile(thread.filename);
+          var blob = new Blob([oEvent.target.response]);
+          thread.file.create(blob).then(function(){
+            thread.status.running = false;
+            thread.status.percent = 1;
+            deferred.resolve(thread);
+          });
+        };        
+      })(this, deferred, oReq);
 
       oReq.addEventListener('progress', updateProgress, false);
       oReq.addEventListener('load', transferComplete, false);
@@ -73,6 +98,7 @@ angular.module('downloader.thread',[])
       }
       oReq.open('GET',this.url,true);
       oReq.setRequestHeader('Range', range);
+      oReq.responseType = 'arraybuffer';
       oReq.send(null);
 
       function transferFailed(evt) {
@@ -85,6 +111,6 @@ angular.module('downloader.thread',[])
 
       return deferred.promise;
     };
-    // Public API here
+    
     return Thread;
   });

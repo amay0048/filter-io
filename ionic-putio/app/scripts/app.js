@@ -46,6 +46,15 @@ angular.module('airplayPutioApp', ['ionic', 'config', 'downloader'])
         }
       }
     })
+    .state('app.downloads', {
+      url: '/downloads',
+      views: {
+        'menuContent' :{
+          templateUrl: 'views/downloads.html',
+          controller: 'DownloadsCtrl'
+        }
+      }
+    })
     .state('app.listfiles', {
       url: '/listfiles/:fileId',
       views: {
@@ -60,6 +69,15 @@ angular.module('airplayPutioApp', ['ionic', 'config', 'downloader'])
       views: {
         'menuContent' :{
           templateUrl: 'views/filedetail.html',
+          controller: 'FiledetailCtrl'
+        }
+      }
+    })
+    .state('app.local', {
+      url: '/local',
+      views: {
+        'menuContent' :{
+          templateUrl: 'views/local.html',
           controller: 'FiledetailCtrl'
         }
       }

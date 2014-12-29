@@ -16,17 +16,9 @@ angular.module('downloader.manager',['downloader.download'])
 
     this.pending = [];
     this.active = [];
-    this.threads = [];
+    this.complete = [];
 
-    var processActive = function(){
-      if(_self.active.length)
-      {
-        var current = _self.active[0];
-        current.start();
-      }
-    };
-
-    var processPending = function(){
+    function processPending(){
       if(_self.active.length < maxDownloads && _self.pending.length)
       {
         _self.active.push(_self.pending.shift());
@@ -34,8 +26,29 @@ angular.module('downloader.manager',['downloader.download'])
       }
     };
 
-    this.addDownload = function(url){
-      var download = new Download(url);
+    function processActive(){
+      if(_self.active.length)
+      {
+        var current = _self.active[0];
+        current.start().then(function(download){
+          processComplete();
+        },function(err){
+          processComplete();
+          console.log(err);
+        });
+      }
+    };
+
+    function processComplete(){
+      if(_self.active.length)
+      {
+        _self.complete.push(_self.active.shift());
+      }
+      processPending();
+    };
+
+    this.addDownload = function(url,options){
+      var download = new Download(url,options);
       download.createThreads().then(function(download){
         _self.pending.push(download);
         processPending();

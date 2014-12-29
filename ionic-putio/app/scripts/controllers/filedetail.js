@@ -8,7 +8,7 @@
  * Controller of the airplayPutioApp
  */
 angular.module('airplayPutioApp')
-  .controller('FiledetailCtrl', function ($scope, $http, $rootScope, $stateParams, Putio, Trakt, VideoPlayer) {
+  .controller('FiledetailCtrl', function ($scope, $http, $rootScope, $stateParams, Putio, Trakt, VideoPlayer, DownloadManager) {
 
     $scope.fileId = 0;
     
@@ -16,9 +16,6 @@ angular.module('airplayPutioApp')
     {
       $scope.fileId = $stateParams.fileId;
     }
-
-    var streamUrl = 'https://put.io/v2/files/'+$scope.fileId+'/mp4/stream?token='+$rootScope.token;
-    var url = 'https://api.put.io/v2/files/'+$scope.fileId+'?oauth_token='+$rootScope.token;
     
     $scope.file = {
       name:'Loading...'
@@ -29,6 +26,7 @@ angular.module('airplayPutioApp')
       if(Object.keys($scope.file).length > 1)
       {
         $scope.file = Trakt.addMeta($scope.file);
+        aCheck();
       }
     },function(err){
       console.log(err);
@@ -37,13 +35,33 @@ angular.module('airplayPutioApp')
       if(Object.keys($scope.file).length > 1)
       {
         $scope.file = Trakt.addMeta($scope.file);
+        aCheck();
       }
     });
 
-    var aCheck = function(link){
-      var xhr = new XMLHttpRequest();
+    $scope.downloadOnClick = function(){
+      var url = 'https://put.io/v2/files/'+$scope.file.id;
+      
+          if($scope.file.is_mp4_available)
+          {
+            url += '/mp4'
+          }
+          url += '/stream?token='+$rootScope.token;
 
-      xhr.open('HEAD', link, true);
+      DownloadManager.addDownload(url,$scope.file);
+    };
+
+    var aCheck = function(){
+
+      var url = 'https://put.io/v2/files/'+$scope.file.id;
+      if($scope.file.is_mp4_available)
+      {
+        url += '/mp4'
+      }
+      url += '/stream?token='+$rootScope.token;
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('HEAD', url, true);
       xhr.addEventListener('load', function(progress) {
         var link = progress.target.responseURL;
         VideoPlayer.play(link);
@@ -51,6 +69,5 @@ angular.module('airplayPutioApp')
 
       xhr.send(null);
     };
-    aCheck(streamUrl);
 
   });

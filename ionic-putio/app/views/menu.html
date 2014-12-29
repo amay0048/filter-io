@@ -24,6 +24,36 @@
         <ion-item 
           nav-clear 
           menu-close 
+          ng-show="loggedin"
+          href="#/app/listfiles/0">
+          Remote
+        </ion-item>
+        <ion-item 
+          nav-clear 
+          menu-close 
+          ng-show="loggedin"
+          href="#/app/downloads">
+          Downloads
+        </ion-item>
+        <ion-item 
+          nav-clear 
+          menu-close 
+          ng-show="loggedin"
+          href="#/app/local">
+          Local
+        </ion-item>
+        <!--
+          <ion-item 
+            nav-clear 
+            menu-close 
+            ng-show="loggedin"
+            href="#/app/playlists">
+            Playlists
+          </ion-item>
+        -->
+        <ion-item 
+          nav-clear 
+          menu-close 
           ng-hide="loggedin"
           ng-click="login()">
           Login
@@ -34,27 +64,6 @@
           ng-show="loggedin"
           ng-click="logout()">
           Logout
-        </ion-item>
-        <ion-item 
-          nav-clear 
-          menu-close 
-          ng-show="loggedin"
-          href="#/app/listfiles/0">
-          Files
-        </ion-item>
-        <ion-item 
-          nav-clear 
-          menu-close 
-          ng-show="loggedin"
-          href="#/app/browse">
-          Browse
-        </ion-item>
-        <ion-item 
-          nav-clear 
-          menu-close 
-          ng-show="loggedin"
-          href="#/app/playlists">
-          Playlists
         </ion-item>
       </ion-list>
     </ion-content>

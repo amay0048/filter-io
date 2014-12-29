@@ -9,11 +9,9 @@
 		ng-click="downloadTest()">
 		Test Download
 	</button>
-	<div ng-repeat="download in activeDownloads">
-		DOWNLOAD
-		<div ng-repeat="thread in download.threads">
-			THREAD: {{threadPercent(thread)}}
-		</div>
-	</div>
+	<!-- <button class="button button-block button-outline button-assertive"
+		ng-click="fsTest()">
+		Test Filesystem
+	</button> -->
   </ion-content>
 </ion-view>

@@ -31,14 +31,13 @@ angular.module('airplayPutioApp')
     	});
     };
 
-    window.foo = $scope;
-    $scope.threadPercent = function(thread){
-        return Math.floor(thread.status.percent * 100) + '%';
-    };
-
     $scope.activeDownloads = DownloadManager.active;
     $scope.downloadTest = function(){
-        DownloadManager.addDownload('https://put.io/v2/files/260240625/mp4/stream?token=7bf1d7f99a6207b7772a69ec6d3b8cbfc2a41cff');
+        // DownloadManager.addDownload('https://put.io/v2/files/260240625/mp4/stream?token=7bf1d7f99a6207b7772a69ec6d3b8cbfc2a41cff');
+        DownloadManager.addDownload('https://put.io/v2/files/260759729/mp4/download?token=7bf1d7f99a6207b7772a69ec6d3b8cbfc2a41cff');
+    };
+    $scope.threadPercent = function(thread){
+        return Math.floor(thread.status.percent * 100) + '%';
     };
 
   });
